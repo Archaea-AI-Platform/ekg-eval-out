@@ -1,0 +1,7 @@
+# the full SQLite is over GitHub's 100 MB limit: commit graph.sqlite.gz, rebuild or gunzip the rest
+*.sqlite
+*.sqlite.tmp
+.env
+.env.*
+*.bak
+.DS_Store

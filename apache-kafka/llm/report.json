@@ -1,0 +1,387 @@
+{
+ "graph": "../ekg-eval-out/apache-kafka",
+ "prompt_version": "fill-v1",
+ "mode": "run",
+ "kinds": {
+  "pr_ticket": {
+   "to_ask": 12,
+   "no_candidate": {
+    "marked as needing no ticket (MINOR / hotfix)": 51,
+    "names a ticket outside the download": 1,
+    "no candidate ticket": 3
+   },
+   "prompt_chars_max": 4951,
+   "asked": 12,
+   "rejected": 10,
+   "accepted": 2,
+   "why_not": {
+    "llm": 10
+   }
+  },
+  "commit_pr": {
+   "to_ask": 0,
+   "no_candidate": {
+    "no candidate PR": 3
+   },
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "ticket_fix": {
+   "to_ask": 5,
+   "no_candidate": {
+    "no candidate PR or commit": 3
+   },
+   "prompt_chars_max": 4552,
+   "asked": 5,
+   "rejected": 5,
+   "why_not": {
+    "llm": 5
+   }
+  },
+  "email_topic": {
+   "to_ask": 152,
+   "no_candidate": {
+    "no candidate ticket or proposal": 18
+   },
+   "prompt_chars_max": 6580,
+   "asked": 152,
+   "rejected": 104,
+   "accepted": 48,
+   "why_not": {
+    "llm": 98,
+    "check": 6
+   }
+  },
+  "identity": {
+   "to_ask": 20,
+   "no_candidate": {
+    "jira: no candidate person": 549,
+    "github: no candidate person": 157,
+    "confluence: no candidate person": 447
+   },
+   "prompt_chars_max": 1727,
+   "asked": 20,
+   "accepted": 16,
+   "rejected": 4,
+   "why_not": {
+    "llm": 4
+   }
+  },
+  "decision_status": {
+   "to_ask": 323,
+   "no_candidate": {
+    "no page text": 1
+   },
+   "prompt_chars_max": 4124,
+   "asked": 323,
+   "rejected": 100,
+   "accepted": 223,
+   "why_not": {
+    "llm": 99,
+    "check": 1
+   }
+  },
+  "knowledge": {
+   "to_ask": 502,
+   "no_candidate": {
+    "too short to hold knowledge": 2059
+   },
+   "prompt_chars_max": 13572,
+   "asked": 502,
+   "accepted": 492,
+   "rejected": 10,
+   "accepted, not written": 5,
+   "why_not": {
+    "check": 6,
+    "llm": 3,
+    "schema: MADE_IN cannot go Decision -> Review (allowed ['Decision'] -> ['CalendarEvent', 'Comment', 'DocSection', 'Docume": 2,
+    "already linked by an adapter": 2,
+    "llm judge": 1,
+    "already linked by an adapter; already linked by an adapter": 1
+   }
+  }
+ },
+ "model": "openrouter mistralai/devstral-2512",
+ "calls": {
+  "made": 1506,
+  "answered_from_responses": 1
+ },
+ "written": {
+  "records_new_or_patched": 1597,
+  "links_new": 2419,
+  "links_by_type": {
+   "DISCUSSES": 35,
+   "RAISED_IN": 258,
+   "ABOUT": 941,
+   "MADE_IN": 289,
+   "EXTRACTED_FROM": 878,
+   "HAS_ACCOUNT": 16,
+   "IMPLEMENTS": 2
+  },
+  "records_by_type": {
+   "Decision": 456,
+   "DerivationRun": 5,
+   "ActionItem": 203,
+   "Knowledge": 878,
+   "Question": 55
+  }
+ },
+ "adapter_hints": {
+  "decision_status": [
+   {
+    "template": "Current state: \"Under Discussion\"",
+    "count": 75,
+    "where": {
+     "Document text": 75
+    },
+    "cues": [
+     "Current state: ...",
+     "Current state: \"...\"",
+     "Current state: "
+    ],
+    "examples": [
+     "Current state: \"Under Discussion\"",
+     "Current state: \"Under Discussion\"",
+     "Current state: \"Under Discussion\""
+    ]
+   },
+   {
+    "template": "Current state: \"Accepted\"",
+    "count": 67,
+    "where": {
+     "Document text": 67
+    },
+    "cues": [
+     "Current state: \"...\"",
+     "Current state: ",
+     "Current state: ..."
+    ],
+    "examples": [
+     "Current state: \"Accepted\"",
+     "Current state: \"Accepted\"",
+     "Current state: \"Accepted\""
+    ]
+   },
+   {
+    "template": "Current state: \"Adopted\"",
+    "count": 9,
+    "where": {
+     "Document text": 9
+    },
+    "cues": [
+     "Current state: \"<status>\"",
+     "Current state: \"...\"",
+     "Current state: ..."
+    ],
+    "examples": [
+     "Current state: \"Adopted\"",
+     "Current state: \"Adopted\"",
+     "Current state: \"Adopted\""
+    ]
+   },
+   {
+    "template": "Current state: Accepted",
+    "count": 5,
+    "where": {
+     "Document text": 5
+    },
+    "cues": [
+     "Current state: <status>"
+    ],
+    "examples": [
+     "Current state: Accepted",
+     "Current state: Accepted",
+     "Current state: Accepted"
+    ]
+   },
+   {
+    "template": "Current state: \"Voting in progress\"",
+    "count": 4,
+    "where": {
+     "Document text": 4
+    },
+    "cues": [
+     "Current state: ...",
+     "Current state: \"...\""
+    ],
+    "examples": [
+     "Current state: \"Voting in progress\"",
+     "Current state: \"Voting in progress\"",
+     "Current state: \"Voting in progress\""
+    ]
+   }
+  ],
+  "email_topic": [
+   {
+    "template": "<KEY> Support Hierarchical Transactional Acknowledgments for Share Groups",
+    "count": 3,
+    "where": {
+     "EmailMessage title": 3
+    },
+    "cues": [
+     "KIP identifier in subject line and body",
+     "Subject line explicitly references KIP-1289 and discusses its proposal details",
+     "Subject line and repeated references to KIP-1289 in the email thread"
+    ],
+    "examples": [
+     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
+     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
+     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups"
+    ]
+   },
+   {
+    "template": "<KEY> Reduce build time: use lazy creation for Gradle tasks",
+    "count": 3,
+    "where": {
+     "EmailMessage text": 3
+    },
+    "cues": [
+     "Ticket key and description explicitly mentioned in the email subject and body",
+     "ticket key and title explicitly mentioned in PR link",
+     "Explicit ticket key and description in the email body"
+    ],
+    "examples": [
+     "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks",
+     "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks",
+     "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks"
+    ]
+   },
+   {
+    "template": "I have created <URL> which is a blocker too, to handle that busy loop.",
+    "count": 2,
+    "where": {
+     "EmailMessage text": 2
+    },
+    "cues": [
+     "JIRA ticket URL explicitly mentioned in the thread",
+     "JIRA ticket URL explicitly mentioned in the email thread"
+    ],
+    "examples": [
+     "I have created https://issues.apache.org/jira/browse/KAFKA-20970, which is a blocker too, to handle that busy loop.",
+     "I have created https://issues.apache.org/jira/browse/KAFKA-20970, which is a blocker too, to handle that busy loop."
+    ]
+   },
+   {
+    "template": "<KEY>",
+    "count": 1,
+    "where": {
+     "EmailMessage text": 1
+    },
+    "cues": [
+     "ticket key explicitly mentioned in the mail thread"
+    ],
+    "examples": [
+     "KAFKA-21178"
+    ]
+   },
+   {
+    "template": "<KEY> Gradle feature for reproducible archives is turned *on*",
+    "count": 1,
+    "where": {
+     "EmailMessage text": 1
+    },
+    "cues": [
+     "ticket key in the PR description"
+    ],
+    "examples": [
+     "KAFKA-19762 Gradle feature for reproducible archives is turned *on*"
+    ]
+   }
+  ],
+  "identity": [
+   {
+    "template": "display name: Manikumar",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches first name of candidate"
+    ],
+    "examples": [
+     "display name: Manikumar"
+    ]
+   },
+   {
+    "template": "confluence:lbrutschy (Lucas Brutschy)",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "account name matches display name with full name in parentheses"
+    ],
+    "examples": [
+     "confluence:lbrutschy (Lucas Brutschy)"
+    ]
+   },
+   {
+    "template": "jira:jsancio (José Armando García Sancio)",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "explicit mapping of jira account to full name in candidate's known accounts"
+    ],
+    "examples": [
+     "jira:jsancio (José Armando García Sancio)"
+    ]
+   },
+   {
+    "template": "directory id: cmccabe",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github account login"
+    ],
+    "examples": [
+     "directory id: cmccabe"
+    ]
+   },
+   {
+    "template": "directory id: ijuma",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github account login"
+    ],
+    "examples": [
+     "directory id: ijuma"
+    ]
+   }
+  ],
+  "pr_ticket": [
+   {
+    "template": "branch <KEY>",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "ticket key in the branch name"
+    ],
+    "examples": [
+     "branch KAFKA-10623"
+    ]
+   },
+   {
+    "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
+    "count": 1,
+    "where": {
+     "Ticket text": 1
+    },
+    "cues": [
+     "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
+    ],
+    "examples": [
+     "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
+    ]
+   }
+  ]
+ }
+}
