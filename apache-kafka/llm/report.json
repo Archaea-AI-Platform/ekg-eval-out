@@ -1,17 +1,17 @@
 {
- "graph": "../ekg-eval-out/apache-kafka",
+ "graph": "C:\\Users\\Kanthamai 4\\Desktop\\Archaea Beta mamata local\\ekg-eval-out\\apache-kafka",
  "prompt_version": "fill-v1",
  "mode": "run",
  "kinds": {
   "pr_ticket": {
    "to_ask": 12,
    "no_candidate": {
-    "marked as needing no ticket (MINOR / hotfix)": 51,
+    "marked as needing no ticket (MINOR / hotfix)": 50,
     "names a ticket outside the download": 1,
     "no candidate ticket": 3
    },
    "prompt_chars_max": 4951,
-   "asked": 12,
+   "cached": 12,
    "rejected": 10,
    "accepted": 2,
    "why_not": {
@@ -32,24 +32,24 @@
     "no candidate PR or commit": 3
    },
    "prompt_chars_max": 4552,
-   "asked": 5,
+   "cached": 5,
    "rejected": 5,
    "why_not": {
     "llm": 5
    }
   },
   "email_topic": {
-   "to_ask": 152,
+   "to_ask": 107,
    "no_candidate": {
-    "no candidate ticket or proposal": 18
+    "no candidate ticket or proposal": 16
    },
-   "prompt_chars_max": 6580,
-   "asked": 152,
-   "rejected": 104,
-   "accepted": 48,
+   "prompt_chars_max": 6483,
+   "cached": 107,
+   "accepted": 22,
+   "rejected": 85,
    "why_not": {
-    "llm": 98,
-    "check": 6
+    "llm": 81,
+    "check": 4
    }
   },
   "identity": {
@@ -60,7 +60,7 @@
     "confluence: no candidate person": 447
    },
    "prompt_chars_max": 1727,
-   "asked": 20,
+   "cached": 20,
    "accepted": 16,
    "rejected": 4,
    "why_not": {
@@ -68,16 +68,16 @@
    }
   },
   "decision_status": {
-   "to_ask": 323,
+   "to_ask": 84,
    "no_candidate": {
     "no page text": 1
    },
    "prompt_chars_max": 4124,
-   "asked": 323,
-   "rejected": 100,
-   "accepted": 223,
+   "cached": 84,
+   "accepted": 57,
+   "rejected": 27,
    "why_not": {
-    "llm": 99,
+    "llm": 26,
     "check": 1
    }
   },
@@ -86,128 +86,95 @@
    "no_candidate": {
     "too short to hold knowledge": 2059
    },
-   "prompt_chars_max": 13572,
-   "asked": 502,
-   "accepted": 492,
-   "rejected": 10,
-   "accepted, not written": 5,
+   "prompt_chars_max": 13840,
+   "cached": 498,
+   "accepted": 485,
+   "rejected": 17,
+   "asked": 4,
    "why_not": {
-    "check": 6,
-    "llm": 3,
-    "schema: MADE_IN cannot go Decision -> Review (allowed ['Decision'] -> ['CalendarEvent', 'Comment', 'DocSection', 'Docume": 2,
-    "already linked by an adapter": 2,
-    "llm judge": 1,
-    "already linked by an adapter; already linked by an adapter": 1
+    "check": 8,
+    "llm": 8,
+    "llm judge": 1
    }
+  },
+  "doc_knowledge": {
+   "to_ask": 86,
+   "no_candidate": {
+    "wiki page not edited recently": 1584,
+    "too short to hold knowledge": 1
+   },
+   "prompt_chars_max": 10615,
+   "cached": 86,
+   "accepted": 86,
+   "why_not": {}
   }
  },
  "model": "openrouter mistralai/devstral-2512",
  "calls": {
-  "made": 1506,
-  "answered_from_responses": 1
+  "made": 0,
+  "answered_from_responses": 8
  },
  "written": {
-  "records_new_or_patched": 1597,
-  "links_new": 2419,
+  "records_new_or_patched": 1759,
+  "links_new": 3964,
+  "people_links": {
+   "AUTHORED_BY: source has no author": 65,
+   "AUTHORED_BY: linked": 833,
+   "ASKED_BY: linked": 33,
+   "ASSIGNED_TO: linked": 152,
+   "ASSIGNED_TO: source has no author": 9,
+   "ASKED_BY: source has no author": 5,
+   "DECIDED_BY: linked": 199
+  },
   "links_by_type": {
-   "DISCUSSES": 35,
-   "RAISED_IN": 258,
-   "ABOUT": 941,
-   "MADE_IN": 289,
-   "EXTRACTED_FROM": 878,
+   "IMPLEMENTS": 2,
+   "MADE_IN": 245,
+   "DISCUSSES": 9,
    "HAS_ACCOUNT": 16,
-   "IMPLEMENTS": 2
+   "EXTRACTED_FROM": 1297,
+   "AUTHORED_BY": 833,
+   "RAISED_IN": 200,
+   "ASKED_BY": 33,
+   "ASSIGNED_TO": 152,
+   "ABOUT": 978,
+   "DECIDED_BY": 199
   },
   "records_by_type": {
-   "Decision": 456,
-   "DerivationRun": 5,
-   "ActionItem": 203,
-   "Knowledge": 878,
-   "Question": 55
+   "Decision": 256,
+   "DerivationRun": 6,
+   "Guideline": 179,
+   "Knowledge": 898,
+   "Question": 38,
+   "Requirement": 220,
+   "ActionItem": 162
   }
  },
  "adapter_hints": {
-  "decision_status": [
+  "pr_ticket": [
    {
-    "template": "Current state: \"Under Discussion\"",
-    "count": 75,
+    "template": "branch <KEY>",
+    "count": 1,
     "where": {
-     "Document text": 75
+     "PullRequest title": 1
     },
     "cues": [
-     "Current state: ...",
-     "Current state: \"...\"",
-     "Current state: "
+     "ticket key in the branch name"
     ],
     "examples": [
-     "Current state: \"Under Discussion\"",
-     "Current state: \"Under Discussion\"",
-     "Current state: \"Under Discussion\""
+     "branch KAFKA-10623"
     ]
    },
    {
-    "template": "Current state: \"Accepted\"",
-    "count": 67,
+    "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
+    "count": 1,
     "where": {
-     "Document text": 67
+     "Ticket text": 1
     },
     "cues": [
-     "Current state: \"...\"",
-     "Current state: ",
-     "Current state: ..."
+     "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
     ],
     "examples": [
-     "Current state: \"Accepted\"",
-     "Current state: \"Accepted\"",
-     "Current state: \"Accepted\""
-    ]
-   },
-   {
-    "template": "Current state: \"Adopted\"",
-    "count": 9,
-    "where": {
-     "Document text": 9
-    },
-    "cues": [
-     "Current state: \"<status>\"",
-     "Current state: \"...\"",
-     "Current state: ..."
-    ],
-    "examples": [
-     "Current state: \"Adopted\"",
-     "Current state: \"Adopted\"",
-     "Current state: \"Adopted\""
-    ]
-   },
-   {
-    "template": "Current state: Accepted",
-    "count": 5,
-    "where": {
-     "Document text": 5
-    },
-    "cues": [
-     "Current state: <status>"
-    ],
-    "examples": [
-     "Current state: Accepted",
-     "Current state: Accepted",
-     "Current state: Accepted"
-    ]
-   },
-   {
-    "template": "Current state: \"Voting in progress\"",
-    "count": 4,
-    "where": {
-     "Document text": 4
-    },
-    "cues": [
-     "Current state: ...",
-     "Current state: \"...\""
-    ],
-    "examples": [
-     "Current state: \"Voting in progress\"",
-     "Current state: \"Voting in progress\"",
-     "Current state: \"Voting in progress\""
+     "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
     ]
    }
   ],
@@ -220,8 +187,7 @@
     },
     "cues": [
      "KIP identifier in subject line and body",
-     "Subject line explicitly references KIP-1289 and discusses its proposal details",
-     "Subject line and repeated references to KIP-1289 in the email thread"
+     "Subject line and repeated references to KIP-1289"
     ],
     "examples": [
      "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
@@ -230,61 +196,55 @@
     ]
    },
    {
-    "template": "<KEY> Reduce build time: use lazy creation for Gradle tasks",
-    "count": 3,
+    "template": "[DISCUSS] KIP:<N>: Dead letter queue support for global store/KTable",
+    "count": 1,
     "where": {
-     "EmailMessage text": 3
+     "EmailMessage title": 1
     },
     "cues": [
-     "Ticket key and description explicitly mentioned in the email subject and body",
-     "ticket key and title explicitly mentioned in PR link",
-     "Explicit ticket key and description in the email body"
+     "Subject line explicitly references the KIP number and title"
     ],
     "examples": [
-     "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks",
-     "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks",
-     "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks"
+     "[DISCUSS] KIP:1295: Dead letter queue support for global store/KTable"
     ]
    },
    {
-    "template": "I have created <URL> which is a blocker too, to handle that busy loop.",
-    "count": 2,
+    "template": "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)",
+    "count": 1,
     "where": {
-     "EmailMessage text": 2
+     "EmailMessage title": 1
     },
     "cues": [
-     "JIRA ticket URL explicitly mentioned in the thread",
-     "JIRA ticket URL explicitly mentioned in the email thread"
+     "PR title matches ticket description and rationale"
     ],
     "examples": [
-     "I have created https://issues.apache.org/jira/browse/KAFKA-20970, which is a blocker too, to handle that busy loop.",
-     "I have created https://issues.apache.org/jira/browse/KAFKA-20970, which is a blocker too, to handle that busy loop."
+     "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)"
     ]
    },
    {
-    "template": "<KEY>",
+    "template": "revert <KEY> entirely if we have to",
     "count": 1,
     "where": {
      "EmailMessage text": 1
     },
     "cues": [
-     "ticket key explicitly mentioned in the mail thread"
+     "explicit mention of a KIP identifier in the context of a potential revert"
     ],
     "examples": [
-     "KAFKA-21178"
+     "revert KIP-909 entirely if we have to"
     ]
    },
    {
-    "template": "<KEY> Gradle feature for reproducible archives is turned *on*",
+    "template": "unifying configuration validation (<KEY>)",
     "count": 1,
     "where": {
      "EmailMessage text": 1
     },
     "cues": [
-     "ticket key in the PR description"
+     "explicit reference to KIP-1161 in the context of the contributor's work"
     ],
     "examples": [
-     "KAFKA-19762 Gradle feature for reproducible archives is turned *on*"
+     "unifying configuration validation (KIP-1161)"
     ]
    }
   ],
@@ -335,7 +295,7 @@
      "Person text": 1
     },
     "cues": [
-     "directory id matches github account login"
+     "matching directory id and github account login"
     ],
     "examples": [
      "directory id: cmccabe"
@@ -355,31 +315,82 @@
     ]
    }
   ],
-  "pr_ticket": [
+  "decision_status": [
    {
-    "template": "branch <KEY>",
-    "count": 1,
+    "template": "Current state: \"Accepted\"",
+    "count": 6,
     "where": {
-     "PullRequest title": 1
+     "Document text": 6
     },
     "cues": [
-     "ticket key in the branch name"
+     "Current state: \"...\"",
+     "Current state: "
     ],
     "examples": [
-     "branch KAFKA-10623"
+     "Current state: \"Accepted\"",
+     "Current state: \"Accepted\"",
+     "Current state: \"Accepted\""
     ]
    },
    {
-    "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
-    "count": 1,
+    "template": "Current state: Accepted",
+    "count": 5,
     "where": {
-     "Ticket text": 1
+     "Document text": 5
     },
     "cues": [
-     "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
+     "Current state: <status>"
     ],
     "examples": [
-     "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
+     "Current state: Accepted",
+     "Current state: Accepted",
+     "Current state: Accepted"
+    ]
+   },
+   {
+    "template": "Current state: [Accepted]",
+    "count": 3,
+    "where": {
+     "Document text": 3
+    },
+    "cues": [
+     "Current state: [...]"
+    ],
+    "examples": [
+     "Current state: [Accepted]",
+     "Current state: [Accepted]",
+     "Current state: [Accepted]"
+    ]
+   },
+   {
+    "template": "Current state: [\"Under Discussion\"]",
+    "count": 3,
+    "where": {
+     "Document text": 3
+    },
+    "cues": [
+     "Current state: [...]",
+     "Current state: [\"...\"],"
+    ],
+    "examples": [
+     "Current state: [\"Under Discussion\"]",
+     "Current state: [\"Under Discussion\"]",
+     "Current state: [\"Under Discussion\"]"
+    ]
+   },
+   {
+    "template": "Current state: Accept",
+    "count": 3,
+    "where": {
+     "Document text": 3
+    },
+    "cues": [
+     "Current state: <status>"
+    ],
+    "examples": [
+     "Current state: Accept",
+     "Current state: Accept",
+     "Current state: Accept"
     ]
    }
   ]

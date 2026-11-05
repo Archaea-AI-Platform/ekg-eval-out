@@ -1,0 +1,923 @@
+{
+ "data": "ekg-eval-raw\\apache-kafka",
+ "window": {
+  "since": "2026-07-31",
+  "until": "2026-10-29"
+ },
+ "project": "kafka",
+ "tenant": "apache",
+ "out": "C:\\Users\\Kanthamai 4\\Desktop\\Archaea Beta mamata local\\ekg-eval-out\\apache-kafka",
+ "settings": {
+  "default_branch": "trunk",
+  "decision_prefix": "KIP",
+  "mail_lists": {},
+  "notifiers": {
+   "jira@apache.org": "jira",
+   "git@apache.org": "github",
+   "notifications@github.com": "github",
+   "builds@apache.org": "ci"
+  },
+  "ci_subject": "^\\[(GH|CI|BUILD)\\]|workflow run|build (failed|fixed|is back)|\\bjenkins\\b",
+  "issue_tracker": null,
+  "infer_people": "auto",
+  "public": true
+ },
+ "adapters": {
+  "people": {
+   "status": "ran",
+   "problems": []
+  },
+  "jira": {
+   "status": "ran",
+   "problems": []
+  },
+  "github": {
+   "status": "ran",
+   "problems": []
+  },
+  "git": {
+   "status": "ran",
+   "problems": []
+  },
+  "mail": {
+   "status": "ran",
+   "problems": []
+  },
+  "wiki": {
+   "status": "ran",
+   "problems": []
+  }
+ },
+ "sources": [
+  "people",
+  "jira",
+  "github",
+  "git",
+  "mail",
+  "wiki"
+ ],
+ "totals": {
+  "records": 76489,
+  "records_valid": 76489,
+  "links": 145463,
+  "links_valid": 145463,
+  "record_types": 32,
+  "link_types": 47
+ },
+ "raw": null,
+ "records": {
+  "AccessScope (ekg)": {
+   "checked": 6,
+   "valid": 6,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Account (asf)": {
+   "checked": 73,
+   "valid": 73,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Account (confluence)": {
+   "checked": 520,
+   "valid": 520,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Account (github)": {
+   "checked": 179,
+   "valid": 179,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Account (jira)": {
+   "checked": 617,
+   "valid": 617,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Activity (jira)": {
+   "checked": 15976,
+   "valid": 15976,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Branch (github)": {
+   "checked": 313,
+   "valid": 313,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Comment (confluence)": {
+   "checked": 3,
+   "valid": 3,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Comment (github)": {
+   "checked": 1869,
+   "valid": 1869,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Comment (jira)": {
+   "checked": 2469,
+   "valid": 2469,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Commit (git)": {
+   "checked": 568,
+   "valid": 568,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "ContentVersion (confluence)": {
+   "checked": 3503,
+   "valid": 3503,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "ContentVersion (github)": {
+   "checked": 297,
+   "valid": 297,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "ContentVersion (jira)": {
+   "checked": 1770,
+   "valid": 1770,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Decision (derived)": {
+   "checked": 1348,
+   "valid": 1348,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Document (confluence)": {
+   "checked": 1671,
+   "valid": 1671,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "EmailAddress (email)": {
+   "checked": 314,
+   "valid": 314,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "EmailMessage (mail)": {
+   "checked": 1947,
+   "valid": 1947,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "EmailThread (mail)": {
+   "checked": 1141,
+   "valid": 1141,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "FieldChange (jira)": {
+   "checked": 17205,
+   "valid": 17205,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "File (git)": {
+   "checked": 2463,
+   "valid": 2463,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Folder (confluence)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Group (asf)": {
+   "checked": 2,
+   "valid": 2,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Group (jira)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Label (confluence)": {
+   "checked": 26,
+   "valid": 26,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Label (github)": {
+   "checked": 30,
+   "valid": 30,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Label (jira)": {
+   "checked": 159,
+   "valid": 159,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "MailingList (mail)": {
+   "checked": 2,
+   "valid": 2,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Person (asf)": {
+   "checked": 73,
+   "valid": 73,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Piece (confluence)": {
+   "checked": 16435,
+   "valid": 16435,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Pipeline (github)": {
+   "checked": 30,
+   "valid": 30,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "PipelineRun (github)": {
+   "checked": 500,
+   "valid": 500,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Position (asf)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Public (ekg)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "PullRequest (github)": {
+   "checked": 1673,
+   "valid": 1673,
+   "stubs": 1373,
+   "top_errors": {}
+  },
+  "Release (jira)": {
+   "checked": 128,
+   "valid": 128,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Repository (github)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Review (github)": {
+   "checked": 888,
+   "valid": 888,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Tag (github)": {
+   "checked": 326,
+   "valid": 326,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Thread (github)": {
+   "checked": 626,
+   "valid": 626,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Ticket (jira)": {
+   "checked": 1328,
+   "valid": 1328,
+   "stubs": 208,
+   "top_errors": {}
+  },
+  "TicketState (jira)": {
+   "checked": 6,
+   "valid": 6,
+   "stubs": 0,
+   "top_errors": {}
+  }
+ },
+ "links": {
+  "ABOUT": {
+   "checked": 295,
+   "valid": 295,
+   "methods": {
+    "text_rule": 295
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ACTED_BY": {
+   "checked": 16476,
+   "valid": 16476,
+   "methods": {
+    "field": 16476
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ACTS_ON": {
+   "checked": 15976,
+   "valid": 15976,
+   "methods": {
+    "field": 15976
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ADDRESS_OF": {
+   "checked": 110,
+   "valid": 110,
+   "methods": {
+    "snapshot": 73,
+    "field": 37
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ANNOUNCES": {
+   "checked": 998,
+   "valid": 998,
+   "methods": {
+    "integration": 998
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "APPROVED_BY": {
+   "checked": 112,
+   "valid": 112,
+   "methods": {
+    "inferred": 112
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ASSIGNED_TO": {
+   "checked": 1382,
+   "valid": 1382,
+   "methods": {
+    "field": 1382
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "AUTHORED_BY": {
+   "checked": 6177,
+   "valid": 6177,
+   "methods": {
+    "field": 6177
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "BASE": {
+   "checked": 300,
+   "valid": 300,
+   "methods": {
+    "field": 300
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "BLOCKS": {
+   "checked": 20,
+   "valid": 20,
+   "methods": {
+    "field": 20
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "CAN_ACCESS": {
+   "checked": 6,
+   "valid": 6,
+   "methods": {
+    "snapshot": 6
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "CHANGES": {
+   "checked": 4910,
+   "valid": 4910,
+   "methods": {
+    "field": 4910
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "CHILD_OF": {
+   "checked": 188,
+   "valid": 188,
+   "methods": {
+    "field": 188
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "CREATED_BY": {
+   "checked": 2792,
+   "valid": 2792,
+   "methods": {
+    "field": 2792
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "DISCUSSES": {
+   "checked": 28,
+   "valid": 28,
+   "methods": {
+    "text_rule": 28
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "DUPLICATE_OF": {
+   "checked": 20,
+   "valid": 20,
+   "methods": {
+    "field": 20
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ENACTS": {
+   "checked": 21,
+   "valid": 21,
+   "methods": {
+    "convention": 21
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "FROM": {
+   "checked": 1761,
+   "valid": 1761,
+   "methods": {
+    "field": 1761
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "GOVERNED_BY": {
+   "checked": 1,
+   "valid": 1,
+   "methods": {
+    "snapshot": 1
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "HAS_ACCOUNT": {
+   "checked": 213,
+   "valid": 213,
+   "methods": {
+    "snapshot": 73,
+    "inferred": 140
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "HAS_ALIAS": {
+   "checked": 104,
+   "valid": 104,
+   "methods": {
+    "snapshot": 73,
+    "inferred": 31
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "HAS_LABEL": {
+   "checked": 2745,
+   "valid": 2745,
+   "methods": {
+    "field": 2713,
+    "snapshot": 32
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "HEAD": {
+   "checked": 300,
+   "valid": 300,
+   "methods": {
+    "field": 300
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "HOLDS_POSITION": {
+   "checked": 1,
+   "valid": 1,
+   "methods": {
+    "snapshot": 1
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "IMPLEMENTS": {
+   "checked": 586,
+   "valid": 586,
+   "methods": {
+    "convention": 586
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "IN": {
+   "checked": 11131,
+   "valid": 11131,
+   "methods": {
+    "field": 11131
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "INSTANCE_OF": {
+   "checked": 500,
+   "valid": 500,
+   "methods": {
+    "field": 500
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "IN_RELEASE": {
+   "checked": 529,
+   "valid": 529,
+   "methods": {
+    "field": 529
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "IN_STATE": {
+   "checked": 2149,
+   "valid": 2149,
+   "methods": {
+    "field": 2149
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "LINKS_TO": {
+   "checked": 1873,
+   "valid": 1873,
+   "methods": {
+    "integration": 1360,
+    "field": 513
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "MADE_IN": {
+   "checked": 1509,
+   "valid": 1509,
+   "methods": {
+    "text_rule": 1509
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "MEMBER_OF": {
+   "checked": 117,
+   "valid": 117,
+   "methods": {
+    "snapshot": 117
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "MENTIONS": {
+   "checked": 156,
+   "valid": 156,
+   "methods": {
+    "text_rule": 156
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "MERGED_AS": {
+   "checked": 565,
+   "valid": 565,
+   "methods": {
+    "convention": 565
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "MERGED_BY": {
+   "checked": 77,
+   "valid": 77,
+   "methods": {
+    "field": 77
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "NEXT": {
+   "checked": 2545,
+   "valid": 2545,
+   "methods": {
+    "field": 2545
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "OF_VERSION": {
+   "checked": 16435,
+   "valid": 16435,
+   "methods": {
+    "field": 16435
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ON": {
+   "checked": 5808,
+   "valid": 5808,
+   "methods": {
+    "field": 5808
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "PARENT": {
+   "checked": 567,
+   "valid": 567,
+   "methods": {
+    "field": 567
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "PARTICIPATED_IN": {
+   "checked": 1759,
+   "valid": 1759,
+   "methods": {
+    "field": 1759
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "PART_OF": {
+   "checked": 35305,
+   "valid": 35305,
+   "methods": {
+    "field": 35305
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "POINTS_TO": {
+   "checked": 351,
+   "valid": 351,
+   "methods": {
+    "field": 351
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "RELATED_TO": {
+   "checked": 137,
+   "valid": 137,
+   "methods": {
+    "field": 137
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "REPLY_TO": {
+   "checked": 685,
+   "valid": 685,
+   "methods": {
+    "field": 685
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "REVIEW_REQUESTED": {
+   "checked": 164,
+   "valid": 164,
+   "methods": {
+    "field": 164
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "SENT_TO": {
+   "checked": 2009,
+   "valid": 2009,
+   "methods": {
+    "field": 2009
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "VERSION_OF": {
+   "checked": 5570,
+   "valid": 5570,
+   "methods": {
+    "field": 5570
+   },
+   "top_errors": {},
+   "warnings": {}
+  }
+ },
+ "cross_pillar": {
+  "Conversations ↔ People": 3520,
+  "Code ↔ Tickets": 2336,
+  "Documents ↔ Knowledge": 1362,
+  "Conversations ↔ Tickets": 1171,
+  "Code ↔ People": 695,
+  "Knowledge ↔ Tickets": 295,
+  "Conversations ↔ Knowledge": 147,
+  "Code ↔ Conversations": 134,
+  "Documents ↔ People": 69,
+  "People ↔ Tickets": 61,
+  "Code ↔ Knowledge": 21,
+  "Access ↔ Code": 1
+ },
+ "linker": {
+  "resolved": {
+   "Ticket → PullRequest: LINKS_TO (integration)": 11174,
+   "Ticket → Ticket: RELATED_TO (field)": 137,
+   "Ticket → Ticket: CHILD_OF (field)": 188,
+   "Comment → PullRequest: LINKS_TO (field)": 390,
+   "Ticket → Ticket: DUPLICATE_OF (field)": 20,
+   "Ticket → Ticket: BLOCKS (field)": 20,
+   "Decision → Ticket: ABOUT (text_rule)": 328,
+   "PullRequest → Ticket: IMPLEMENTS (convention)": 235,
+   "PullRequest → Decision: ENACTS (convention)": 6,
+   "PipelineRun → Commit: POINTS_TO (field)": 351,
+   "PullRequest → Commit: MERGED_AS (convention)": 565,
+   "Commit → Ticket: IMPLEMENTS (convention)": 351,
+   "Commit → Decision: ENACTS (convention)": 15,
+   "EmailMessage → Ticket: ANNOUNCES (integration)": 987,
+   "Decision → EmailMessage: MADE_IN (text_rule)": 147,
+   "EmailMessage → PullRequest: LINKS_TO (field)": 123,
+   "EmailMessage → Ticket: DISCUSSES (text_rule)": 28,
+   "EmailMessage → Ticket: MENTIONS (text_rule)": 156,
+   "EmailMessage → PullRequest: ANNOUNCES (integration)": 11
+  },
+  "unresolved": {
+   "PullRequest → Commit: CONTAINS (field)": 1140,
+   "PullRequest → Ticket: IMPLEMENTS (convention)": 2,
+   "PipelineRun → Commit: POINTS_TO (field)": 149,
+   "Tag → Commit: POINTS_TO (field)": 326,
+   "EmailMessage → PullRequest: LINKS_TO (field)": 10,
+   "EmailMessage → Ticket: MENTIONS (text_rule)": 18,
+   "EmailMessage → Ticket: DISCUSSES (text_rule)": 5,
+   "Decision → Ticket: ABOUT (text_rule)": 1581
+  },
+  "stubbed_targets": {
+   "PullRequest": 1373,
+   "Ticket": 208
+  }
+ },
+ "identity": {
+  "links": {
+   "email: unique display name": 31,
+   "github: merged PR's commit author address": 9,
+   "github: noreply address owned by the person": 1,
+   "jira: same login as the directory": 44,
+   "jira: unresolved (no directory match)": 556,
+   "jira: unique display name": 17,
+   "confluence: same login as the directory": 46,
+   "confluence: unresolved (no directory match)": 451,
+   "confluence: unique display name": 23,
+   "github: unresolved (no person match)": 167
+  },
+  "persons": 73,
+  "persons_by_tool_count": {
+   "1 tool": 7,
+   "2 tools": 10,
+   "3 tools": 34,
+   "4 tools": 7,
+   "5 tools": 7,
+   "6 tools": 8
+  },
+  "persons_in_tool": {
+   "directory": 73,
+   "confluence": 64,
+   "jira": 55,
+   "github": 10,
+   "git": 17,
+   "mail": 21
+  }
+ },
+ "coverage": {
+  "tickets linked to a PR or commit": {
+   "of": 1120,
+   "linked": 882
+  },
+  "tickets announced or discussed on a mailing list": {
+   "of": 1120,
+   "linked": 710
+  },
+  "PRs linked to a ticket": {
+   "of": 300,
+   "linked": 235
+  },
+  "merged PRs linked to their merge commit": {
+   "of": 77,
+   "linked": 65
+  },
+  "commits linked to a PR": {
+   "of": 568,
+   "linked": 565
+  },
+  "commits linked to a ticket": {
+   "of": 568,
+   "linked": 349
+  },
+  "KIP decisions linked to a discussion email": {
+   "of": 1348,
+   "linked": 75
+  },
+  "KIP decisions linked to a ticket": {
+   "of": 1348,
+   "linked": 160
+  },
+  "KIP decisions enacted by a PR or commit": {
+   "of": 1348,
+   "linked": 17
+  },
+  "emails linked to a ticket or decision": {
+   "of": 1947,
+   "linked": 1231
+  }
+ },
+ "stubs": {
+  "PullRequest": 1373,
+  "Ticket": 208
+ },
+ "notes": {
+  "git: committed by GitHub's web merge (merger comes from the PR's merged_by)": 565,
+  "github: CI runs without job detail (no Check records yet)": 500,
+  "github: approvals made stale by a later commit": 26,
+  "github: bot comments (CI notices, kept but marked by the bot author)": 442,
+  "jira: done as 'canceled' by resolution (state type stays completed)": 12,
+  "jira: done as 'duplicate' by resolution (state type stays completed)": 29,
+  "jira: reporter differs from creator (CREATED_BY role reporter; AUTHORED_BY does not allow Ticket)": 2,
+  "knowledge: KIP discussion link to an email outside the window": 376,
+  "knowledge: KIP discussion links without a Message-ID (lists.apache.org/thread/…)": 1195,
+  "knowledge: KIP status -> accepted": 715,
+  "knowledge: KIP status -> proposed": 484,
+  "knowledge: KIP status -> rejected": 12,
+  "knowledge: KIP status -> superseded": 3,
+  "knowledge: KIP status -> unmapped": 33,
+  "knowledge: KIP status -> unparsed": 61,
+  "knowledge: KIP status -> withdrawn": 54,
+  "mail: From header with no parseable address": 16,
+  "mail: code-host notifications (ANNOUNCES their PR or issue)": 11,
+  "mail: code-host notifications for another repo, not linked": 124,
+  "mail: cross-posted copy merged into one message": 62,
+  "mail: duplicate copy in the same list, kept once": 1,
+  "mail: no Date header (archive receive time used, precision approximate)": 1,
+  "mail: reply whose parent is outside the window": 1043,
+  "mail: sender rewritten to the list address (sender_name kept, no FROM link)": 170,
+  "mail: tracker notifications (ANNOUNCES their ticket)": 987,
+  "people: persons with no title, manager or employer in the source": 73,
+  "wiki: version list cut at 200 by the downloader": 3,
+  "wiki: versions kept as metadata only (body not fetched)": 1653
+ },
+ "timings_s": {
+  "people adapter": 0.1,
+  "jira adapter": 11.2,
+  "github adapter": 3.7,
+  "git adapter": 0.8,
+  "mail adapter": 4.6,
+  "wiki adapter + decisions": 21.6,
+  "cross-source linker": 0.9,
+  "identity resolution": 0.3,
+  "validation": 21.5,
+  "write graph": 3.5,
+  "total": 68.5
+ }
+}

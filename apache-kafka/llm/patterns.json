@@ -1,54 +1,522 @@
 {
- "decision_status": [
+ "pr_ticket": [
   {
-   "template": "Current state: \"Under Discussion\"",
-   "count": 75,
+   "template": "branch <KEY>",
+   "count": 1,
    "where": {
-    "Document text": 75
+    "PullRequest title": 1
    },
    "cues": [
-    "Current state: ...",
-    "Current state: \"...\"",
-    "Current state: "
+    "ticket key in the branch name"
    ],
    "examples": [
-    "Current state: \"Under Discussion\"",
-    "Current state: \"Under Discussion\"",
-    "Current state: \"Under Discussion\""
+    "branch KAFKA-10623"
    ]
   },
   {
-   "template": "Current state: \"Accepted\"",
-   "count": 67,
+   "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
+   "count": 1,
    "where": {
-    "Document text": 67
+    "Ticket text": 1
+   },
+   "cues": [
+    "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
+   ],
+   "examples": [
+    "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
+   ]
+  }
+ ],
+ "email_topic": [
+  {
+   "template": "<KEY> Support Hierarchical Transactional Acknowledgments for Share Groups",
+   "count": 3,
+   "where": {
+    "EmailMessage title": 3
+   },
+   "cues": [
+    "KIP identifier in subject line and body",
+    "Subject line and repeated references to KIP-1289"
+   ],
+   "examples": [
+    "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
+    "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
+    "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups"
+   ]
+  },
+  {
+   "template": "[DISCUSS] KIP:<N>: Dead letter queue support for global store/KTable",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references the KIP number and title"
+   ],
+   "examples": [
+    "[DISCUSS] KIP:1295: Dead letter queue support for global store/KTable"
+   ]
+  },
+  {
+   "template": "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description and rationale"
+   ],
+   "examples": [
+    "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)"
+   ]
+  },
+  {
+   "template": "revert <KEY> entirely if we have to",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of a KIP identifier in the context of a potential revert"
+   ],
+   "examples": [
+    "revert KIP-909 entirely if we have to"
+   ]
+  },
+  {
+   "template": "unifying configuration validation (<KEY>)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit reference to KIP-1161 in the context of the contributor's work"
+   ],
+   "examples": [
+    "unifying configuration validation (KIP-1161)"
+   ]
+  },
+  {
+   "template": "<KEY> disables the new DNS resolution behavior by default",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "ticket key in the text (KAFKA-20939) and discussion about marking DNS resolution as experimental"
+   ],
+   "examples": [
+    "KAFKA-20939 disables the new DNS resolution behavior by default"
+   ]
+  },
+  {
+   "template": "DISCUSS: <KEY>: Allow Consumer Group Renaming in MirrorMaker <N> Checkpoint Connector",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references the KIP number and title"
+   ],
+   "examples": [
+    "DISCUSS: KIP-1378: Allow Consumer Group Renaming in MirrorMaker 2 Checkpoint Connector"
+   ]
+  },
+  {
+   "template": "Java consumer with SubscriptionPattern stops refreshing metadata after an assigned topic is deleted (<N>+)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Bug report title matches ticket description and error message"
+   ],
+   "examples": [
+    "Java consumer with SubscriptionPattern stops refreshing metadata after an assigned topic is deleted (4.1+)"
+   ]
+  },
+  {
+   "template": "<KEY>: Making the __remote_log_metadata Topic Compacted",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1266 and its proposal in the subject and body"
+   ],
+   "examples": [
+    "KIP-1266: Making the __remote_log_metadata Topic Compacted"
+   ]
+  },
+  {
+   "template": "two potential data loss issues in tiered storage size-based retention and time index truncation",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of 'time index truncation' in release notes"
+   ],
+   "examples": [
+    "two potential data loss issues in tiered storage size-based retention and time index truncation"
+   ]
+  },
+  {
+   "template": "<KEY>: Configurations for KRaft Fetch and FetchSnapshot Byte Size",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Proposal title explicitly mentioning FetchSnapshot"
+   ],
+   "examples": [
+    "KIP-1219: Configurations for KRaft Fetch and FetchSnapshot Byte Size"
+   ]
+  },
+  {
+   "template": "<KEY> (<N>)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "KIP reference in the description of the issue"
+   ],
+   "examples": [
+    "KIP-768 (3.1.0)"
+   ]
+  },
+  {
+   "template": "Since PR #<N> (github.com/<repo>/pull/<ID>) (<N>, \"MINOR: Fixed metrics decompression\")",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "PR reference with version and fix description matching the CVE's mitigation"
+   ],
+   "examples": [
+    "Since PR #22327 (https://github.com/apache/kafka/pull/22327) (4.3.1, \"MINOR: Fixed metrics decompression\")"
+   ]
+  },
+  {
+   "template": "<KEY>-<N>: Apache Kafka: Kafka Streams StreamThread hang from integer overflow in stream-time punctuation",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "CVE description matching proposal title's focus on stream-time protection from future record poisoning"
+   ],
+   "examples": [
+    "CVE-2026-111496: Apache Kafka: Kafka Streams StreamThread hang from integer overflow in stream-time punctuation"
+   ]
+  },
+  {
+   "template": "Connect admin listener does not apply response.http.headers.config",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "Exact ticket description matching the vulnerability context (admin listener misconfiguration)"
+   ],
+   "examples": [
+    "Connect admin listener does not apply response.http.headers.config"
+   ]
+  },
+  {
+   "template": "RemoteLogInputStream can attempt an unbounded memory allocation when reading a corrupted remote log segment",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "unbounded memory allocation"
+   ],
+   "examples": [
+    "RemoteLogInputStream can attempt an unbounded memory allocation when reading a corrupted remote log segment"
+   ]
+  },
+  {
+   "template": "retention time 604800000ms breach based on the largest record timestamp in the segment",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of retention policy tied to record timestamp"
+   ],
+   "examples": [
+    "retention time 604800000ms breach based on the largest record timestamp in the segment"
+   ]
+  },
+  {
+   "template": "zstd: \"<N>-<N>\" is included. However the fix for these <N> vulnerabilities is in Fixed version: <N>-<N> and later.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of zstd-jni version and CVEs requiring an update"
+   ],
+   "examples": [
+    "zstd: \"1.5.6-10\" is included. However the fix for these 3 vulnerabilities is in Fixed version: 1.5.7-14 and later."
+   ]
+  },
+  {
+   "template": "Upgrade jline from <N> to <N>",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "explicit mention of jline version upgrade and vulnerabilities"
+   ],
+   "examples": [
+    "Upgrade jline from 3.30.16 to 4.2.1"
+   ]
+  },
+  {
+   "template": "Diskless Topics move Kafka's replication from local disks to object storage",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of 'Diskless Topics' in the subject and body"
+   ],
+   "examples": [
+    "Diskless Topics move Kafka's replication from local disks to object storage"
+   ]
+  }
+ ],
+ "identity": [
+  {
+   "template": "display name: Manikumar",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches first name of candidate"
+   ],
+   "examples": [
+    "display name: Manikumar"
+   ]
+  },
+  {
+   "template": "confluence:lbrutschy (Lucas Brutschy)",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "account name matches display name with full name in parentheses"
+   ],
+   "examples": [
+    "confluence:lbrutschy (Lucas Brutschy)"
+   ]
+  },
+  {
+   "template": "jira:jsancio (José Armando García Sancio)",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "explicit mapping of jira account to full name in candidate's known accounts"
+   ],
+   "examples": [
+    "jira:jsancio (José Armando García Sancio)"
+   ]
+  },
+  {
+   "template": "directory id: cmccabe",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "matching directory id and github account login"
+   ],
+   "examples": [
+    "directory id: cmccabe"
+   ]
+  },
+  {
+   "template": "directory id: ijuma",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: ijuma"
+   ]
+  },
+  {
+   "template": "directory id: mimaison",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github login"
+   ],
+   "examples": [
+    "directory id: mimaison"
+   ]
+  },
+  {
+   "template": "github account kirktrue",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "github account kirktrue"
+   ]
+  },
+  {
+   "template": "directory id: frankvicky",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: frankvicky"
+   ]
+  },
+  {
+   "template": "directory id: showuon",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account name"
+   ],
+   "examples": [
+    "directory id: showuon"
+   ]
+  },
+  {
+   "template": "directory id: jolshan",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: jolshan"
+   ]
+  },
+  {
+   "template": "directory id: clolov",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account name"
+   ],
+   "examples": [
+    "directory id: clolov"
+   ]
+  },
+  {
+   "template": "github account junrao",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account name"
+   ],
+   "examples": [
+    "github account junrao"
+   ]
+  },
+  {
+   "template": "github account jsancio",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "github account jsancio"
+   ]
+  },
+  {
+   "template": "confluence:jjkoshy (Joel Jacob Koshy)",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "explicit account mapping with full name match"
+   ],
+   "examples": [
+    "confluence:jjkoshy (Joel Jacob Koshy)"
+   ]
+  },
+  {
+   "template": "display name: Manikumar Reddy O.",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate's full name"
+   ],
+   "examples": [
+    "display name: Manikumar Reddy O."
+   ]
+  },
+  {
+   "template": "confluence:jsancio (José Armando García Sancio)",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "explicit account mapping in candidate's known accounts"
+   ],
+   "examples": [
+    "confluence:jsancio (José Armando García Sancio)"
+   ]
+  }
+ ],
+ "decision_status": [
+  {
+   "template": "Current state: \"Accepted\"",
+   "count": 6,
+   "where": {
+    "Document text": 6
    },
    "cues": [
     "Current state: \"...\"",
-    "Current state: ",
-    "Current state: ..."
+    "Current state: "
    ],
    "examples": [
     "Current state: \"Accepted\"",
     "Current state: \"Accepted\"",
     "Current state: \"Accepted\""
-   ]
-  },
-  {
-   "template": "Current state: \"Adopted\"",
-   "count": 9,
-   "where": {
-    "Document text": 9
-   },
-   "cues": [
-    "Current state: \"<status>\"",
-    "Current state: \"...\"",
-    "Current state: ..."
-   ],
-   "examples": [
-    "Current state: \"Adopted\"",
-    "Current state: \"Adopted\"",
-    "Current state: \"Adopted\""
    ]
   },
   {
@@ -67,19 +535,18 @@
    ]
   },
   {
-   "template": "Current state: \"Voting in progress\"",
-   "count": 4,
+   "template": "Current state: [Accepted]",
+   "count": 3,
    "where": {
-    "Document text": 4
+    "Document text": 3
    },
    "cues": [
-    "Current state: ...",
-    "Current state: \"...\""
+    "Current state: [...]"
    ],
    "examples": [
-    "Current state: \"Voting in progress\"",
-    "Current state: \"Voting in progress\"",
-    "Current state: \"Voting in progress\""
+    "Current state: [Accepted]",
+    "Current state: [Accepted]",
+    "Current state: [Accepted]"
    ]
   },
   {
@@ -99,21 +566,6 @@
    ]
   },
   {
-   "template": "Current state: [Accepted]",
-   "count": 3,
-   "where": {
-    "Document text": 3
-   },
-   "cues": [
-    "Current state: [...]"
-   ],
-   "examples": [
-    "Current state: [Accepted]",
-    "Current state: [Accepted]",
-    "Current state: [Accepted]"
-   ]
-  },
-  {
    "template": "Current state: Accept",
    "count": 3,
    "where": {
@@ -129,18 +581,18 @@
    ]
   },
   {
-   "template": "Current state: \"In Discussion\"",
+   "template": "Current state: \"accepted\"",
    "count": 2,
    "where": {
     "Document text": 2
    },
    "cues": [
     "Current state: <status>",
-    "Current state: "
+    "Current state: ..."
    ],
    "examples": [
-    "Current state: \"In Discussion\"",
-    "Current state: \"In Discussion\""
+    "Current state: \"accepted\"",
+    "Current state: \"accepted\""
    ]
   },
   {
@@ -158,65 +610,6 @@
    ]
   },
   {
-   "template": "Current state: \"Voting\"",
-   "count": 2,
-   "where": {
-    "Document text": 2
-   },
-   "cues": [
-    "Current state: \"...\""
-   ],
-   "examples": [
-    "Current state: \"Voting\"",
-    "Current state: \"Voting\""
-   ]
-  },
-  {
-   "template": "Current state:\"Under Discussion\"",
-   "count": 2,
-   "where": {
-    "Document text": 2
-   },
-   "cues": [
-    "Current state: \"...\"",
-    "Current state:"
-   ],
-   "examples": [
-    "Current state:\"Under Discussion\"",
-    "Current state:\"Under Discussion\""
-   ]
-  },
-  {
-   "template": "Current state: \"Draft\"",
-   "count": 2,
-   "where": {
-    "Document text": 2
-   },
-   "cues": [
-    "Current state: \"...\"",
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state: \"Draft\"",
-    "Current state: \"Draft\""
-   ]
-  },
-  {
-   "template": "Current state: \"accepted\"",
-   "count": 2,
-   "where": {
-    "Document text": 2
-   },
-   "cues": [
-    "Current state: ...",
-    "Current state: \"...\""
-   ],
-   "examples": [
-    "Current state: \"accepted\"",
-    "Current state: \"accepted\""
-   ]
-  },
-  {
    "template": "Status: Draft",
    "count": 2,
    "where": {
@@ -231,16 +624,94 @@
    ]
   },
   {
-   "template": "Current state: \"Accepted\" (v1.<N>)",
+   "template": "Current state: [\"Under Discussion\"",
    "count": 1,
    "where": {
     "Document text": 1
    },
    "cues": [
-    "Current state: ..."
+    "Current state: [\"...\""
    ],
    "examples": [
-    "Current state: \"Accepted\" (v1.2.0)"
+    "Current state: [\"Under Discussion\""
+   ]
+  },
+  {
+   "template": "Current state: Voted on, but never adopted. Superseded by <KEY>",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: ... Superseded by"
+   ],
+   "examples": [
+    "Current state: Voted on, but never adopted. Superseded by KIP-504"
+   ]
+  },
+  {
+   "template": "Current state: Committed",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: <status>"
+   ],
+   "examples": [
+    "Current state: Committed"
+   ]
+  },
+  {
+   "template": "Current state: [Under discussion]",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: [...]"
+   ],
+   "examples": [
+    "Current state: [Under discussion]"
+   ]
+  },
+  {
+   "template": "Current state: DISCUSS",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: <status>"
+   ],
+   "examples": [
+    "Current state: DISCUSS"
+   ]
+  },
+  {
+   "template": "Current state: Closed (Covered by <KEY>)",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: Closed (Covered by ...)"
+   ],
+   "examples": [
+    "Current state: Closed (Covered by KIP-189)"
+   ]
+  },
+  {
+   "template": "Current state: \"retired\" - superseded by",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: ... superseded by"
+   ],
+   "examples": [
+    "Current state: \"retired\" - superseded by"
    ]
   },
   {
@@ -254,32 +725,6 @@
    ],
    "examples": [
     "Current state: Merged (target: 1.2"
-   ]
-  },
-  {
-   "template": "Current state: Discarded. (<KEY> supersedes this with a much more complete vision)",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: ... supersedes this ..."
-   ],
-   "examples": [
-    "Current state: Discarded. (KIP-382 supersedes this with a much more complete vision)"
-   ]
-  },
-  {
-   "template": "Current state: [\"Adopted\"]",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: [\"...\" ]"
-   ],
-   "examples": [
-    "Current state: [\"Adopted\"]"
    ]
   },
   {
@@ -309,6 +754,97 @@
    ]
   },
   {
+   "template": "Current state: Subsumed by <KEY>",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: <status>"
+   ],
+   "examples": [
+    "Current state: Subsumed by KIP-365"
+   ]
+  },
+  {
+   "template": "Current State: \"Accepted\".",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current State: <status>"
+   ],
+   "examples": [
+    "Current State: \"Accepted\"."
+   ]
+  },
+  {
+   "template": "Current state: \"Accept\"",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: \"...\""
+   ],
+   "examples": [
+    "Current state: \"Accept\""
+   ]
+  },
+  {
+   "template": "Current state: Partially Done in <N>: new cache size config and metrics",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: <status>"
+   ],
+   "examples": [
+    "Current state: Partially Done in 3.4: new cache size config and metrics"
+   ]
+  },
+  {
+   "template": "The current KIP won't be implemented and will replaced by <KEY>",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "replaced by KIP-<number>"
+   ],
+   "examples": [
+    "The current KIP won't be implemented and will replaced by KIP-839"
+   ]
+  },
+  {
+   "template": "Current state: GreenAccepted (4x+<N> binding, 1x+<N> non-binding)",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: <status>"
+   ],
+   "examples": [
+    "Current state: GreenAccepted (4x+1 binding, 1x+1 non-binding)"
+   ]
+  },
+  {
+   "template": "Current state: [\"Adopted\"]",
+   "count": 1,
+   "where": {
+    "Document text": 1
+   },
+   "cues": [
+    "Current state: [\"...\" ]"
+   ],
+   "examples": [
+    "Current state: [\"Adopted\"]"
+   ]
+  },
+  {
    "template": "Current state: Merged",
    "count": 1,
    "where": {
@@ -322,42 +858,16 @@
    ]
   },
   {
-   "template": "Current state: Subsumed by <KEY>",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: Subsumed by"
-   ],
-   "examples": [
-    "Current state: Subsumed by KIP-365"
-   ]
-  },
-  {
    "template": "Current state:Merged",
    "count": 1,
    "where": {
     "Document text": 1
    },
    "cues": [
-    "Current state:"
+    "Current state: <status>"
    ],
    "examples": [
     "Current state:Merged"
-   ]
-  },
-  {
-   "template": "Current state: \"Adopted",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: \"<status>"
-   ],
-   "examples": [
-    "Current state: \"Adopted"
    ]
   },
   {
@@ -387,32 +897,6 @@
    ]
   },
   {
-   "template": "Current state: \"Adopted\" (<N>)",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: ..."
-   ],
-   "examples": [
-    "Current state: \"Adopted\" (2.2.0)"
-   ]
-  },
-  {
-   "template": "Current State: \"Accepted\".",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current State: <status>"
-   ],
-   "examples": [
-    "Current State: \"Accepted\"."
-   ]
-  },
-  {
    "template": "Current state: Complete",
    "count": 1,
    "where": {
@@ -423,45 +907,6 @@
    ],
    "examples": [
     "Current state: Complete"
-   ]
-  },
-  {
-   "template": "Current state: 'Accepted'",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: '...'"
-   ],
-   "examples": [
-    "Current state: 'Accepted'"
-   ]
-  },
-  {
-   "template": "Current state: \"Vote\"",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state: \"Vote\""
-   ]
-  },
-  {
-   "template": "Current state: \"Adopted\" (in version <N>)",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: ..."
-   ],
-   "examples": [
-    "Current state: \"Adopted\" (in version 2.5)"
    ]
   },
   {
@@ -530,29 +975,16 @@
    ]
   },
   {
-   "template": "Current state: \"Under discussion\"",
+   "template": "Current state: \"Voting in progress\"",
    "count": 1,
    "where": {
     "Document text": 1
    },
    "cues": [
-    "Current state: "
+    "Current state: \"...\""
    ],
    "examples": [
-    "Current state: \"Under discussion\""
-   ]
-  },
-  {
-   "template": "Current state: [\"Under Discussion\"",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: [\"...\""
-   ],
-   "examples": [
-    "Current state: [\"Under Discussion\""
+    "Current state: \"Voting in progress\""
    ]
   },
   {
@@ -569,58 +1001,6 @@
    ]
   },
   {
-   "template": "Current state: Voted on, but never adopted. Superseded by <KEY>",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: ... Superseded by"
-   ],
-   "examples": [
-    "Current state: Voted on, but never adopted. Superseded by KIP-504"
-   ]
-  },
-  {
-   "template": "Current state: Committed",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state: Committed"
-   ]
-  },
-  {
-   "template": "Current state: [Under discussion]",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: [...]"
-   ],
-   "examples": [
-    "Current state: [Under discussion]"
-   ]
-  },
-  {
-   "template": "Current state: DISCUSS",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state: DISCUSS"
-   ]
-  },
-  {
    "template": "Current state: Under Discussion",
    "count": 1,
    "where": {
@@ -634,58 +1014,6 @@
    ]
   },
   {
-   "template": "Current state: Closed (Covered by <KEY>)",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: Closed (Covered by ...)"
-   ],
-   "examples": [
-    "Current state: Closed (Covered by KIP-189)"
-   ]
-  },
-  {
-   "template": "Current state: \"Accept\"",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: \"...\""
-   ],
-   "examples": [
-    "Current state: \"Accept\""
-   ]
-  },
-  {
-   "template": "Current state: Partially Done in <N>: new cache size config and metrics",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state: Partially Done in 3.4: new cache size config and metrics"
-   ]
-  },
-  {
-   "template": "Current state: \"retired\" - superseded by",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: ... superseded by"
-   ],
-   "examples": [
-    "Current state: \"retired\" - superseded by"
-   ]
-  },
-  {
    "template": "Current state: “Under Discussion\"",
    "count": 1,
    "where": {
@@ -696,867 +1024,6 @@
    ],
    "examples": [
     "Current state: “Under Discussion\""
-   ]
-  },
-  {
-   "template": "The current KIP won't be implemented and will replaced by <KEY>",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "replaced by KIP-<number>"
-   ],
-   "examples": [
-    "The current KIP won't be implemented and will replaced by KIP-839"
-   ]
-  },
-  {
-   "template": "Current state:\"Approved\"",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state:\"Approved\""
-   ]
-  },
-  {
-   "template": "Current state: Discarded - Superseded by <KEY>",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: ... Superseded by ..."
-   ],
-   "examples": [
-    "Current state: Discarded - Superseded by KIP-875"
-   ]
-  },
-  {
-   "template": "Current state: GreenAccepted (4x+<N> binding, 1x+<N> non-binding)",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: <status>"
-   ],
-   "examples": [
-    "Current state: GreenAccepted (4x+1 binding, 1x+1 non-binding)"
-   ]
-  }
- ],
- "email_topic": [
-  {
-   "template": "<KEY> Support Hierarchical Transactional Acknowledgments for Share Groups",
-   "count": 3,
-   "where": {
-    "EmailMessage title": 3
-   },
-   "cues": [
-    "KIP identifier in subject line and body",
-    "Subject line explicitly references KIP-1289 and discusses its proposal details",
-    "Subject line and repeated references to KIP-1289 in the email thread"
-   ],
-   "examples": [
-    "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
-    "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
-    "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups"
-   ]
-  },
-  {
-   "template": "<KEY> Reduce build time: use lazy creation for Gradle tasks",
-   "count": 3,
-   "where": {
-    "EmailMessage text": 3
-   },
-   "cues": [
-    "Ticket key and description explicitly mentioned in the email subject and body",
-    "ticket key and title explicitly mentioned in PR link",
-    "Explicit ticket key and description in the email body"
-   ],
-   "examples": [
-    "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks",
-    "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks",
-    "KAFKA-20882 Reduce build time: use lazy creation for Gradle tasks"
-   ]
-  },
-  {
-   "template": "I have created <URL> which is a blocker too, to handle that busy loop.",
-   "count": 2,
-   "where": {
-    "EmailMessage text": 2
-   },
-   "cues": [
-    "JIRA ticket URL explicitly mentioned in the thread",
-    "JIRA ticket URL explicitly mentioned in the email thread"
-   ],
-   "examples": [
-    "I have created https://issues.apache.org/jira/browse/KAFKA-20970, which is a blocker too, to handle that busy loop.",
-    "I have created https://issues.apache.org/jira/browse/KAFKA-20970, which is a blocker too, to handle that busy loop."
-   ]
-  },
-  {
-   "template": "<KEY>",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "ticket key explicitly mentioned in the mail thread"
-   ],
-   "examples": [
-    "KAFKA-21178"
-   ]
-  },
-  {
-   "template": "<KEY> Gradle feature for reproducible archives is turned *on*",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "ticket key in the PR description"
-   ],
-   "examples": [
-    "KAFKA-19762 Gradle feature for reproducible archives is turned *on*"
-   ]
-  },
-  {
-   "template": "<KEY> Gradle feature for reproducible archives is turned *ON*",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "ticket key in PR description"
-   ],
-   "examples": [
-    "KAFKA-19762 Gradle feature for reproducible archives is turned *ON*"
-   ]
-  },
-  {
-   "template": "<KEY> Gradle RAT plugin version upgrade; redundant custom style file is removed",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Ticket key and description explicitly mentioned in PR list"
-   ],
-   "examples": [
-    "KAFKA-21064 Gradle RAT plugin version upgrade; redundant custom style file is removed"
-   ]
-  },
-  {
-   "template": "<KEY>: Upgrade Gradle from <N> to <N> and fetch the wrapper jar from a pinned commit",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "ticket key in PR link and subject"
-   ],
-   "examples": [
-    "KAFKA-21299: Upgrade Gradle from 9.7.1 to 9.8.1 and fetch the wrapper jar from a pinned commit"
-   ]
-  },
-  {
-   "template": "Java consumer with SubscriptionPattern stops refreshing metadata after an assigned topic is deleted (<N>+)",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "Bug report title and description matching ticket summary"
-   ],
-   "examples": [
-    "Java consumer with SubscriptionPattern stops refreshing metadata after an assigned topic is deleted (4.1+)"
-   ]
-  },
-  {
-   "template": "PR #<N> – MINOR: Fix grammar in Streams DSL documentation",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "PR description mentioning Streams DSL documentation"
-   ],
-   "examples": [
-    "PR #23554 – MINOR: Fix grammar in Streams DSL documentation"
-   ]
-  },
-  {
-   "template": "<KEY>: Making the __remote_log_metadata Topic Compacted",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "Explicit mention of KIP-1266 and its proposal in the subject and body"
-   ],
-   "examples": [
-    "KIP-1266: Making the __remote_log_metadata Topic Compacted"
-   ]
-  },
-  {
-   "template": "<KEY>: Block ZK-to-KRaft migration finalization until brokers re-register (merged)",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Ticket key explicitly mentioned in the thread with context about ZK migration"
-   ],
-   "examples": [
-    "KAFKA-20960: Block ZK-to-KRaft migration finalization until brokers re-register (merged)"
-   ]
-  },
-  {
-   "template": "two potential data loss issues in tiered storage size-based retention and time index truncation",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "explicit mention of 'time index truncation' in release notes"
-   ],
-   "examples": [
-    "two potential data loss issues in tiered storage size-based retention and time index truncation"
-   ]
-  },
-  {
-   "template": "<KEY>: Configurations for KRaft Fetch and FetchSnapshot Byte Size",
-   "count": 1,
-   "where": {
-    "Decision title": 1
-   },
-   "cues": [
-    "Proposal title explicitly mentioning FetchSnapshot"
-   ],
-   "examples": [
-    "KIP-1219: Configurations for KRaft Fetch and FetchSnapshot Byte Size"
-   ]
-  },
-  {
-   "template": "<KEY> (<N>)",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "KIP reference in the description of the issue"
-   ],
-   "examples": [
-    "KIP-768 (3.1.0)"
-   ]
-  },
-  {
-   "template": "Since PR #<N> (github.com/<repo>/pull/<ID>) (<N>, \"MINOR: Fixed metrics decompression\")",
-   "count": 1,
-   "where": {
-    "Ticket text": 1
-   },
-   "cues": [
-    "PR reference with version and description matching the CVE fix"
-   ],
-   "examples": [
-    "Since PR #22327 (https://github.com/apache/kafka/pull/22327) (4.3.1, \"MINOR: Fixed metrics decompression\")"
-   ]
-  },
-  {
-   "template": "<KEY>-<N>: Apache Kafka: Kafka Streams StreamThread hang from integer overflow in stream-time punctuation",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "CVE description matching proposal title about stream-time protection"
-   ],
-   "examples": [
-    "CVE-2026-111496: Apache Kafka: Kafka Streams StreamThread hang from integer overflow in stream-time punctuation"
-   ]
-  },
-  {
-   "template": "Connect admin listener does not apply response.http.headers.config",
-   "count": 1,
-   "where": {
-    "Ticket title": 1
-   },
-   "cues": [
-    "Exact ticket description matching the vulnerability context"
-   ],
-   "examples": [
-    "Connect admin listener does not apply response.http.headers.config"
-   ]
-  },
-  {
-   "template": "RemoteLogInputStream can attempt an unbounded memory allocation when reading a corrupted remote log segment",
-   "count": 1,
-   "where": {
-    "Ticket title": 1
-   },
-   "cues": [
-    "unbounded memory allocation"
-   ],
-   "examples": [
-    "RemoteLogInputStream can attempt an unbounded memory allocation when reading a corrupted remote log segment"
-   ]
-  },
-  {
-   "template": "Retention policy based on record event time",
-   "count": 1,
-   "where": {
-    "Decision title": 1
-   },
-   "cues": [
-    "Mention of retention policy and log segment deletion due to retention time breach"
-   ],
-   "examples": [
-    "Retention policy based on record event time"
-   ]
-  },
-  {
-   "template": "The update to <N> was covered in <KEY>",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit reference to a JIRA ticket (KAFKA-20842) addressing the CVE fix for lz4-java"
-   ],
-   "examples": [
-    "The update to 1.11.1 was covered in KAFKA-20842"
-   ]
-  },
-  {
-   "template": "The CVE was fixed in the scope of <KEY>",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "ticket key explicitly referenced in response"
-   ],
-   "examples": [
-    "The CVE was fixed in the scope of KAFKA-20815"
-   ]
-  },
-  {
-   "template": "zstd: \"<N>-<N>\" is included. However the fix for these <N> vulnerabilities is in Fixed version: <N>-<N> and later.",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Mention of zstd-jni version and CVEs requiring an update to a newer version"
-   ],
-   "examples": [
-    "zstd: \"1.5.6-10\" is included. However the fix for these 3 vulnerabilities is in Fixed version: 1.5.7-14 and later."
-   ]
-  },
-  {
-   "template": "Kafka <N> rc still on jline <N>. Please confirm whether kakfa <N> formal release will have upgrade jline version.",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit mention of jline version upgrade in Kafka release context"
-   ],
-   "examples": [
-    "Kafka 4.4.0 rc still on jline 3.30.16. Please confirm whether kakfa 4.4.0 formal release will have upgrade jline version."
-   ]
-  },
-  {
-   "template": "[<KEY>] Update Jetty to <N>",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "JIRA item reference in email body"
-   ],
-   "examples": [
-    "[KAFKA-21139] Update Jetty to 12.0.39"
-   ]
-  },
-  {
-   "template": "Diskless Topics move Kafka's replication from local disks to object storage",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "explicit mention of 'Diskless Topics' in the subject and body"
-   ],
-   "examples": [
-    "Diskless Topics move Kafka's replication from local disks to object storage"
-   ]
-  },
-  {
-   "template": "KRaft broker startup can fail to restore persisted dynamic broker configs when the local metadata snapshot is missing or",
-   "count": 1,
-   "where": {
-    "Ticket title": 1
-   },
-   "cues": [
-    "KRaft metadata snapshot recovery failure"
-   ],
-   "examples": [
-    "KRaft broker startup can fail to restore persisted dynamic broker configs when the local metadata snapshot is missing or stale"
-   ]
-  },
-  {
-   "template": "The first one (<KEY>) is particularly interesting because it's reducing build time",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit mention of ticket key (KAFKA-20882) in the mail thread"
-   ],
-   "examples": [
-    "The first one (KAFKA-20882) is particularly interesting because it's reducing build time"
-   ]
-  },
-  {
-   "template": "I will revert <KEY> or at least remove its public APIs.",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit mention of reverting public API changes for a KIP before release"
-   ],
-   "examples": [
-    "I will revert KIP-1306 or at least remove its public APIs."
-   ]
-  },
-  {
-   "template": "We have a plan of action to investigate and fix in mind to address early next week, but will revert <KEY> entirely if we",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit mention of a KIP (Kafka Improvement Proposal) identifier in the context of a blocker issue and potential reversion."
-   ],
-   "examples": [
-    "We have a plan of action to investigate and fix in mind to address early next week, but will revert KIP-909 entirely if we have to."
-   ]
-  },
-  {
-   "template": "<KEY> version updates for build and project dependencies; gradle-versions-plugin reference has been moved",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Ticket key and description explicitly mentioned in PR list"
-   ],
-   "examples": [
-    "KAFKA-21126 version updates for build and project dependencies; gradle-versions-plugin reference has been moved"
-   ]
-  },
-  {
-   "template": "unifying configuration validation (<KEY>)",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "explicit reference to KIP-1161 in the context of the contributor's work"
-   ],
-   "examples": [
-    "unifying configuration validation (KIP-1161)"
-   ]
-  },
-  {
-   "template": "<KEY> disables the new DNS resolution behavior by default",
-   "count": 1,
-   "where": {
-    "Ticket text": 1
-   },
-   "cues": [
-    "Explicit mention of ticket KAFKA-20939 and discussion of marking the DNS resolution feature as experimental"
-   ],
-   "examples": [
-    "KAFKA-20939 disables the new DNS resolution behavior by default"
-   ]
-  },
-  {
-   "template": "<KEY>: on current trunk the coordinator load fails <N> runs out of <N> with log.preallocate enabled, and <N> out of <N> ",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit ticket reference (KAFKA-13664) in the mail thread."
-   ],
-   "examples": [
-    "KAFKA-13664: on current trunk the coordinator load fails 4 runs out of 4 with log.preallocate enabled, and 0 out of 4 with the fix."
-   ]
-  },
-  {
-   "template": "Base image for system test dependencies",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "Exact match of proposal/ticket title in subject and body"
-   ],
-   "examples": [
-    "Base image for system test dependencies"
-   ]
-  },
-  {
-   "template": "<KEY>: github.com/<repo>/pull/<ID>",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "Explicit ticket reference in PR link"
-   ],
-   "examples": [
-    "KAFKA-21043: https://github.com/apache/kafka/pull/23393"
-   ]
-  },
-  {
-   "template": "DISCUSS: <KEY>: Allow Consumer Group Renaming in MirrorMaker <N> Checkpoint Connector",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "Explicit subject line referencing the KIP number and title"
-   ],
-   "examples": [
-    "DISCUSS: KIP-1378: Allow Consumer Group Renaming in MirrorMaker 2 Checkpoint Connector"
-   ]
-  },
-  {
-   "template": "[DISCUSS] KIP:<N>: Dead letter queue support for global store/KTable",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "Subject line explicitly references KIP-1295"
-   ],
-   "examples": [
-    "[DISCUSS] KIP:1295: Dead letter queue support for global store/KTable"
-   ]
-  },
-  {
-   "template": "I filed <URL>",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "JIRA ticket URL explicitly mentioned in the thread"
-   ],
-   "examples": [
-    "I filed https://issues.apache.org/jira/browse/KAFKA-21190"
-   ]
-  },
-  {
-   "template": "SASL on the GraalVM-based native image (apache/kafka-native) was previously blocked by two now-resolved issues: - <KEY> ",
-   "count": 1,
-   "where": {
-    "Ticket text": 1
-   },
-   "cues": [
-    "Explicit mention of SASL/PLAIN issue (KAFKA-19584) in the context of native image docker examples and sanity test."
-   ],
-   "examples": [
-    "SASL on the GraalVM-based native image (apache/kafka-native) was previously blocked by two now-resolved issues: - KAFKA-19584 — SASL/PLAIN"
-   ]
-  },
-  {
-   "template": "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)",
-   "count": 1,
-   "where": {
-    "EmailMessage title": 1
-   },
-   "cues": [
-    "PR title matches ticket description and includes CVE references"
-   ],
-   "examples": [
-    "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)"
-   ]
-  },
-  {
-   "template": "<KEY> Gradle RAT plugin version upgrade",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "ticket key in PR description"
-   ],
-   "examples": [
-    "KAFKA-21064 Gradle RAT plugin version upgrade"
-   ]
-  },
-  {
-   "template": "I opened <URL> to update Jackson for the <N> branch.",
-   "count": 1,
-   "where": {
-    "EmailMessage text": 1
-   },
-   "cues": [
-    "JIRA ticket URL explicitly mentioned in the email"
-   ],
-   "examples": [
-    "I opened https://issues.apache.org/jira/browse/KAFKA-21175 to update Jackson for the 4.4 branch."
-   ]
-  }
- ],
- "identity": [
-  {
-   "template": "display name: Manikumar",
-   "count": 1,
-   "where": {
-    "Account text": 1
-   },
-   "cues": [
-    "display name matches first name of candidate"
-   ],
-   "examples": [
-    "display name: Manikumar"
-   ]
-  },
-  {
-   "template": "confluence:lbrutschy (Lucas Brutschy)",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "account name matches display name with full name in parentheses"
-   ],
-   "examples": [
-    "confluence:lbrutschy (Lucas Brutschy)"
-   ]
-  },
-  {
-   "template": "jira:jsancio (José Armando García Sancio)",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "explicit mapping of jira account to full name in candidate's known accounts"
-   ],
-   "examples": [
-    "jira:jsancio (José Armando García Sancio)"
-   ]
-  },
-  {
-   "template": "directory id: cmccabe",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: cmccabe"
-   ]
-  },
-  {
-   "template": "directory id: ijuma",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: ijuma"
-   ]
-  },
-  {
-   "template": "directory id: mimaison",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: mimaison"
-   ]
-  },
-  {
-   "template": "asf:kirktrue (Kirk True)",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id and display name match github account login"
-   ],
-   "examples": [
-    "asf:kirktrue (Kirk True)"
-   ]
-  },
-  {
-   "template": "directory id: frankvicky",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: frankvicky"
-   ]
-  },
-  {
-   "template": "directory id: showuon",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account"
-   ],
-   "examples": [
-    "directory id: showuon"
-   ]
-  },
-  {
-   "template": "directory id: jolshan",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: jolshan"
-   ]
-  },
-  {
-   "template": "directory id: clolov",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: clolov"
-   ]
-  },
-  {
-   "template": "github account junrao",
-   "count": 1,
-   "where": {
-    "Account title": 1
-   },
-   "cues": [
-    "directory id: junrao"
-   ],
-   "examples": [
-    "github account junrao"
-   ]
-  },
-  {
-   "template": "github account jsancio",
-   "count": 1,
-   "where": {
-    "Account title": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "github account jsancio"
-   ]
-  },
-  {
-   "template": "confluence:jjkoshy (Joel Jacob Koshy)",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "exact match of display name and login in accounts already known"
-   ],
-   "examples": [
-    "confluence:jjkoshy (Joel Jacob Koshy)"
-   ]
-  },
-  {
-   "template": "display name: Manikumar Reddy O.",
-   "count": 1,
-   "where": {
-    "Account text": 1
-   },
-   "cues": [
-    "display name matches candidate's full name"
-   ],
-   "examples": [
-    "display name: Manikumar Reddy O."
-   ]
-  },
-  {
-   "template": "confluence:jsancio (José Armando García Sancio)",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "explicit account mapping in candidate's known accounts"
-   ],
-   "examples": [
-    "confluence:jsancio (José Armando García Sancio)"
-   ]
-  }
- ],
- "pr_ticket": [
-  {
-   "template": "branch <KEY>",
-   "count": 1,
-   "where": {
-    "PullRequest title": 1
-   },
-   "cues": [
-    "ticket key in the branch name"
-   ],
-   "examples": [
-    "branch KAFKA-10623"
-   ]
-  },
-  {
-   "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
-   "count": 1,
-   "where": {
-    "Ticket text": 1
-   },
-   "cues": [
-    "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
-   ],
-   "examples": [
-    "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
    ]
   }
  ]
