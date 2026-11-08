@@ -1,0 +1,125 @@
+{
+ "layout": {
+  "done": true,
+  "at": "2026-11-08T09:37:15Z",
+  "dataset": "flink",
+  "repo": "apache/flink",
+  "jira": "FLINK",
+  "prs": 600,
+  "issues": 0,
+  "commits": 69,
+  "mail_lists": [
+   "builds",
+   "commits",
+   "community",
+   "dev",
+   "issues",
+   "news",
+   "user",
+   "user-zh"
+  ]
+ },
+ "inventory": {
+  "done": true,
+  "at": "2026-11-08T09:37:16Z",
+  "not_read": [
+   "github/graphql",
+   "github/users",
+   "jira/referenced",
+   "jira/remotelinks"
+  ]
+ },
+ "parse": {
+  "done": true,
+  "at": "2026-11-08T09:56:20Z",
+  "totals": {
+   "records": 74430,
+   "records_valid": 74430,
+   "links": 179425,
+   "links_valid": 179425,
+   "record_types": 27,
+   "link_types": 41
+  },
+  "adapters": {
+   "people": "ran",
+   "jira": "ran",
+   "github": "ran",
+   "issues": "ran",
+   "git": "ran",
+   "code": "ran",
+   "mail": "ran"
+  }
+ },
+ "llm_run": {
+  "done": false,
+  "calls": {
+   "made": 1,
+   "answered_from_responses": 12
+  },
+  "kinds": {
+   "pr_ticket": {
+    "to_ask": 20,
+    "accepted": 3,
+    "rejected": 17,
+    "error": 0
+   },
+   "commit_pr": {
+    "to_ask": 49,
+    "accepted": 41,
+    "rejected": 8,
+    "error": 0
+   },
+   "ticket_fix": {
+    "to_ask": 9,
+    "accepted": 0,
+    "rejected": 9,
+    "error": 0
+   },
+   "email_topic": {
+    "to_ask": 132,
+    "accepted": 16,
+    "rejected": 116,
+    "error": 0
+   },
+   "identity": {
+    "to_ask": 57,
+    "accepted": 46,
+    "rejected": 11,
+    "error": 0
+   },
+   "decision_status": {
+    "to_ask": 0,
+    "accepted": 0,
+    "rejected": 0,
+    "error": 0
+   },
+   "knowledge": {
+    "to_ask": 314,
+    "accepted": 235,
+    "rejected": 79,
+    "error": 0
+   },
+   "doc_knowledge": {
+    "to_ask": 846,
+    "accepted": 576,
+    "rejected": 269,
+    "error": 1
+   }
+  }
+ },
+ "save": {
+  "done": true,
+  "at": "2026-11-08T10:40:46Z",
+  "size_mb": 256.6,
+  "gzip_mb": 46.2,
+  "records_by_stage": {
+   "adapters": 74430,
+   "llm": 2215
+  },
+  "links_by_stage": {
+   "adapters": 179425,
+   "llm": 3278
+  },
+  "invalid_skipped": {}
+ }
+}

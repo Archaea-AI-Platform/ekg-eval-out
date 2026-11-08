@@ -1,0 +1,414 @@
+{
+ "graph": "/Users/bishwajit/projects/archaea_beta/test_data_sorce_graph/ekg_runs/flink/out",
+ "prompt_version": "fill-v1",
+ "mode": "run",
+ "kinds": {
+  "pr_ticket": {
+   "to_ask": 20,
+   "no_candidate": {
+    "marked as needing no ticket (MINOR / hotfix)": 41,
+    "no candidate ticket": 3,
+    "names a ticket outside the download": 1,
+    "bot PR (no ticket expected)": 35
+   },
+   "prompt_chars_max": 6044,
+   "cached": 20,
+   "rejected": 17,
+   "accepted": 3,
+   "why_not": {
+    "llm": 17
+   }
+  },
+  "commit_pr": {
+   "to_ask": 49,
+   "no_candidate": {},
+   "prompt_chars_max": 6484,
+   "cached": 49,
+   "accepted": 41,
+   "rejected": 8,
+   "why_not": {
+    "llm": 5,
+    "check": 3
+   }
+  },
+  "ticket_fix": {
+   "to_ask": 9,
+   "no_candidate": {
+    "no candidate PR or commit": 1
+   },
+   "prompt_chars_max": 4831,
+   "cached": 9,
+   "rejected": 9,
+   "why_not": {
+    "llm": 9
+   }
+  },
+  "email_topic": {
+   "to_ask": 132,
+   "no_candidate": {
+    "no candidate ticket or proposal": 27
+   },
+   "prompt_chars_max": 7446,
+   "cached": 132,
+   "rejected": 116,
+   "accepted": 16,
+   "why_not": {
+    "llm": 114,
+    "check": 2
+   }
+  },
+  "identity": {
+   "to_ask": 57,
+   "no_candidate": {
+    "jira: no candidate person": 155,
+    "github: no candidate person": 214
+   },
+   "prompt_chars_max": 1572,
+   "cached": 57,
+   "accepted": 46,
+   "rejected": 11,
+   "why_not": {
+    "check": 7,
+    "llm": 4
+   }
+  },
+  "decision_status": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "knowledge": {
+   "to_ask": 314,
+   "no_candidate": {
+    "too short to hold knowledge": 4037
+   },
+   "prompt_chars_max": 13816,
+   "cached": 308,
+   "accepted": 235,
+   "rejected": 79,
+   "asked": 6,
+   "why_not": {
+    "llm": 74,
+    "check": 5,
+    "schema: MADE_IN cannot go Decision -> Review (allowed ['Decision'] -> ['CalendarEvent', 'Comment', 'DocSection', 'Docume": 1
+   }
+  },
+  "doc_knowledge": {
+   "to_ask": 846,
+   "no_candidate": {
+    "too short to hold knowledge": 1
+   },
+   "prompt_chars_max": 10464,
+   "cached": 845,
+   "accepted": 576,
+   "rejected": 269,
+   "asked": 1,
+   "error": 1,
+   "why_not": {
+    "llm": 210,
+    "check": 57,
+    "llm judge": 2,
+    "parse error: Expecting value: line 1 column 1 (char 0)": 1
+   }
+  }
+ },
+ "model": "openrouter mistralai/devstral-2512",
+ "calls": {
+  "made": 1,
+  "answered_from_responses": 12
+ },
+ "written": {
+  "records_new_or_patched": 2215,
+  "links_new": 3278,
+  "people_links": {
+   "DECIDED_BY: linked": 58,
+   "AUTHORED_BY: linked": 319,
+   "ASSIGNED_TO: source has no author": 3,
+   "DECIDED_BY: source has no author": 18,
+   "ASSIGNED_TO: linked": 56,
+   "AUTHORED_BY: source has no author": 1312,
+   "ASKED_BY: linked": 11
+  },
+  "links_by_type": {
+   "IMPLEMENTS": 3,
+   "MERGED_AS": 41,
+   "DISCUSSES": 16,
+   "HAS_ACCOUNT": 46,
+   "EXTRACTED_FROM": 2062,
+   "ABOUT": 519,
+   "MADE_IN": 76,
+   "DECIDED_BY": 58,
+   "AUTHORED_BY": 319,
+   "RAISED_IN": 71,
+   "ASSIGNED_TO": 56,
+   "ASKED_BY": 11
+  },
+  "records_by_type": {
+   "DerivationRun": 6,
+   "Guideline": 270,
+   "Requirement": 164,
+   "Decision": 76,
+   "Knowledge": 1628,
+   "ActionItem": 60,
+   "Question": 11
+  }
+ },
+ "adapter_hints": {
+  "pr_ticket": [
+   {
+    "template": "Pashley/flink <N> release <N> (branch pashley/<KEY>-release-<N>, draft)",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "ticket key in the branch name"
+    ],
+    "examples": [
+     "Pashley/flink 38350 release 1.20 (branch pashley/FLINK-38350-release-1.20, draft)"
+    ]
+   },
+   {
+    "template": "support nanosecond-precision (as described in this PR #<N>)",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "PR description references related PR for nanosecond-precision support"
+    ],
+    "examples": [
+     "support nanosecond-precision (as described in this PR #27770)"
+    ]
+   },
+   {
+    "template": "[JUnit5 Migration] Migrate the JUnit <N> tests not covered by other subtasks",
+    "count": 1,
+    "where": {
+     "Ticket title": 1
+    },
+    "cues": [
+     "PR title and description explicitly mention JUnit 5 migration for RocksDB state backend tests"
+    ],
+    "examples": [
+     "[JUnit5 Migration] Migrate the JUnit 4 tests not covered by other subtasks"
+    ]
+   }
+  ],
+  "commit_pr": [
+   {
+    "template": "This closes #<N>.",
+    "count": 5,
+    "where": {
+     "Commit text": 5
+    },
+    "cues": [
+     "commit message explicitly closes the PR",
+     "commit message explicitly references the pull request number",
+     "commit message explicitly references the PR number"
+    ],
+    "examples": [
+     "This closes #29365.",
+     "This closes #29566.",
+     "This closes #29513."
+    ]
+   },
+   {
+    "template": "This fixes #<N>.",
+    "count": 2,
+    "where": {
+     "Commit text": 2
+    },
+    "cues": [
+     "commit message explicitly references the PR number",
+     "commit message explicitly references the pull request number"
+    ],
+    "examples": [
+     "This fixes #29558.",
+     "This fixes #29578."
+    ]
+   },
+   {
+    "template": "Fixed in #<N>",
+    "count": 2,
+    "where": {
+     "Commit text": 2
+    },
+    "cues": [
+     "commit message explicitly references the PR number",
+     "Fixed in <PR number>"
+    ],
+    "examples": [
+     "Fixed in #29565",
+     "Fixed in #29582"
+    ]
+   },
+   {
+    "template": "Fixed in #<N>.",
+    "count": 2,
+    "where": {
+     "Commit text": 2
+    },
+    "cues": [
+     "Fixed in <PR number>",
+     "Fixed in #<pr-number>"
+    ],
+    "examples": [
+     "Fixed in #29532.",
+     "Fixed in #29474."
+    ]
+   },
+   {
+    "template": "[<KEY>][runtime] Make FORWARD-to-REBALANCE downgrade on parallelism mismatch configurable",
+    "count": 2,
+    "where": {
+     "PullRequest title": 1,
+     "Commit title": 1
+    },
+    "cues": [
+     "ticket key in the commit subject and PR title",
+     "commit message matches PR title and ticket"
+    ],
+    "examples": [
+     "[FLINK-40780][runtime] Make FORWARD-to-REBALANCE downgrade on parallelism mismatch configurable",
+     "[FLINK-40780][runtime] Make FORWARD-to-REBALANCE downgrade on parallelism mismatch configurable"
+    ]
+   }
+  ],
+  "email_topic": [
+   {
+    "template": "[DISCUSS] <KEY>: Add built-in DEDUPLICATE_KEEP_FIRST PTF",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "Subject line and repeated references to FLIP-614 and DEDUPLICATE_KEEP_FIRST PTF"
+    ],
+    "examples": [
+     "[DISCUSS] FLIP-614: Add built-in DEDUPLICATE_KEEP_FIRST PTF"
+    ]
+   },
+   {
+    "template": "<KEY> specifies invalid_op_handling with FAIL | LOG | SKIP",
+    "count": 1,
+    "where": {
+     "EmailMessage text": 1
+    },
+    "cues": [
+     "Explicit reference to FLIP-564 in the context of FROM_CHANGELOG and TO_CHANGELOG built-in PTFs"
+    ],
+    "examples": [
+     "FLIP-564 specifies invalid_op_handling with FAIL | LOG | SKIP"
+    ]
+   },
+   {
+    "template": "[VOTE] <KEY>: Add built-in DEDUPLICATE_KEEP_FIRST PTF",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "Subject line and body explicitly reference FLIP-614 and its discussion/vote"
+    ],
+    "examples": [
+     "[VOTE] FLIP-614: Add built-in DEDUPLICATE_KEEP_FIRST PTF"
+    ]
+   },
+   {
+    "template": "[DISCUSS] <KEY>: Materialized Tables support for Table API",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "Subject line explicitly references FLIP-616 and the thread discusses its implementation and details."
+    ],
+    "examples": [
+     "[DISCUSS] FLIP-616: Materialized Tables support for Table API"
+    ]
+   },
+   {
+    "template": "<KEY>: Blue/Green Deployments for Flink on Kubernetes - Phase <N>",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "FLIP identifier in subject line"
+    ],
+    "examples": [
+     "FLIP-504: Blue/Green Deployments for Flink on Kubernetes - Phase 2"
+    ]
+   }
+  ],
+  "identity": [
+   {
+    "template": "display name: Chanhae Oh",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches candidate name exactly"
+    ],
+    "examples": [
+     "display name: Chanhae Oh"
+    ]
+   },
+   {
+    "template": "display name: Purushottam Sinha",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches candidate name"
+    ],
+    "examples": [
+     "display name: Purushottam Sinha"
+    ]
+   },
+   {
+    "template": "display name: Rion Williams",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches candidate name"
+    ],
+    "examples": [
+     "display name: Rion Williams"
+    ]
+   },
+   {
+    "template": "display name: jiabao.sun",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches directory id and known accounts"
+    ],
+    "examples": [
+     "display name: jiabao.sun"
+    ]
+   },
+   {
+    "template": "display name: Utkarsh Vashishtha",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches candidate name exactly"
+    ],
+    "examples": [
+     "display name: Utkarsh Vashishtha"
+    ]
+   }
+  ]
+ }
+}

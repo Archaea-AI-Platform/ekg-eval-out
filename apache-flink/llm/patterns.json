@@ -1,0 +1,1287 @@
+{
+ "pr_ticket": [
+  {
+   "template": "Pashley/flink <N> release <N> (branch pashley/<KEY>-release-<N>, draft)",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "Pashley/flink 38350 release 1.20 (branch pashley/FLINK-38350-release-1.20, draft)"
+   ]
+  },
+  {
+   "template": "support nanosecond-precision (as described in this PR #<N>)",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "PR description references related PR for nanosecond-precision support"
+   ],
+   "examples": [
+    "support nanosecond-precision (as described in this PR #27770)"
+   ]
+  },
+  {
+   "template": "[JUnit5 Migration] Migrate the JUnit <N> tests not covered by other subtasks",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "PR title and description explicitly mention JUnit 5 migration for RocksDB state backend tests"
+   ],
+   "examples": [
+    "[JUnit5 Migration] Migrate the JUnit 4 tests not covered by other subtasks"
+   ]
+  }
+ ],
+ "commit_pr": [
+  {
+   "template": "This closes #<N>.",
+   "count": 5,
+   "where": {
+    "Commit text": 5
+   },
+   "cues": [
+    "commit message explicitly closes the PR",
+    "commit message explicitly references the pull request number",
+    "commit message explicitly references the PR number"
+   ],
+   "examples": [
+    "This closes #29365.",
+    "This closes #29566.",
+    "This closes #29513."
+   ]
+  },
+  {
+   "template": "This fixes #<N>.",
+   "count": 2,
+   "where": {
+    "Commit text": 2
+   },
+   "cues": [
+    "commit message explicitly references the PR number",
+    "commit message explicitly references the pull request number"
+   ],
+   "examples": [
+    "This fixes #29558.",
+    "This fixes #29578."
+   ]
+  },
+  {
+   "template": "Fixed in #<N>",
+   "count": 2,
+   "where": {
+    "Commit text": 2
+   },
+   "cues": [
+    "commit message explicitly references the PR number",
+    "Fixed in <PR number>"
+   ],
+   "examples": [
+    "Fixed in #29565",
+    "Fixed in #29582"
+   ]
+  },
+  {
+   "template": "Fixed in #<N>.",
+   "count": 2,
+   "where": {
+    "Commit text": 2
+   },
+   "cues": [
+    "Fixed in <PR number>",
+    "Fixed in #<pr-number>"
+   ],
+   "examples": [
+    "Fixed in #29532.",
+    "Fixed in #29474."
+   ]
+  },
+  {
+   "template": "[<KEY>][runtime] Make FORWARD-to-REBALANCE downgrade on parallelism mismatch configurable",
+   "count": 2,
+   "where": {
+    "PullRequest title": 1,
+    "Commit title": 1
+   },
+   "cues": [
+    "ticket key in the commit subject and PR title",
+    "commit message matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-40780][runtime] Make FORWARD-to-REBALANCE downgrade on parallelism mismatch configurable",
+    "[FLINK-40780][runtime] Make FORWARD-to-REBALANCE downgrade on parallelism mismatch configurable"
+   ]
+  },
+  {
+   "template": "[<KEY>][runtime] Detect FORWARD parallelism mismatch with the actual consumer parallelism",
+   "count": 2,
+   "where": {
+    "Commit title": 1,
+    "PullRequest title": 1
+   },
+   "cues": [
+    "commit message matches PR title and ticket",
+    "ticket key in PR title matches commit message"
+   ],
+   "examples": [
+    "[FLINK-40904][runtime] Detect FORWARD parallelism mismatch with the actual consumer parallelism",
+    "[FLINK-40904][runtime] Detect FORWARD parallelism mismatch with the actual consumer parallelism"
+   ]
+  },
+  {
+   "template": "[<KEY>][table] Add VARIANT_GET and TRY_VARIANT_GET",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "ticket key and change description match PR title"
+   ],
+   "examples": [
+    "[FLINK-39049][table] Add VARIANT_GET and TRY_VARIANT_GET"
+   ]
+  },
+  {
+   "template": "[<KEY>][table] Use VariantFieldGetter for v['key'] and CAST to ROW",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message contains the same JIRA key and describes the same change as the PR"
+   ],
+   "examples": [
+    "[FLINK-41241][table] Use VariantFieldGetter for v['key'] and CAST to ROW"
+   ]
+  },
+  {
+   "template": "[<KEY>][core] Add VariantFieldGetter to read an object field by a fixed key",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-41241][core] Add VariantFieldGetter to read an object field by a fixed key"
+   ]
+  },
+  {
+   "template": "[<KEY>][ci] Bump ubuntu to <N> in Azure and GHA",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Exact commit message and ticket match in PR title"
+   ],
+   "examples": [
+    "[FLINK-41117][ci] Bump ubuntu to 26 in Azure and GHA"
+   ]
+  },
+  {
+   "template": "[<KEY>][runtime] Close the operator coordinators of uninitialized vertices on dispose",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit subject matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-41090][runtime] Close the operator coordinators of uninitialized vertices on dispose"
+   ]
+  },
+  {
+   "template": "[<KEY>][table-planner] Enforce require-on-conflict under upsert-materialize FORCE",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit subject matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-40924][table-planner] Enforce require-on-conflict under upsert-materialize FORCE"
+   ]
+  },
+  {
+   "template": "[<KEY>][checkpointing] Disable checkpointing during recovery when aligned-checkpoint-timeout > <N>",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-41193][checkpointing] Disable checkpointing during recovery when aligned-checkpoint-timeout > 0"
+   ]
+  },
+  {
+   "template": "[<KEY>][core] Sort VARIANT object fields by <KEY> bytes",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-41180][core] Sort VARIANT object fields by UTF-8 bytes"
+   ]
+  },
+  {
+   "template": "Cherry-picks of the three #<N> commits, applied without conflicts: - <SHA> [<KEY>][core] Compare <KEY> bytes to find VAR",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "commit SHA listed under cherry-picks in PR description"
+   ],
+   "examples": [
+    "Cherry-picks of the three #29607 commits, applied without conflicts: - 82834bb220b [FLINK-41110][core] Compare UTF-8 bytes to find VARIANT object fields"
+   ]
+  },
+  {
+   "template": "[<KEY>][sql-client] Print the outermost exception that ends with the root cause",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit subject matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-24908][sql-client] Print the outermost exception that ends with the root cause"
+   ]
+  },
+  {
+   "template": "[<KEY>] Add version <N> and update nightly build action",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "ticket key and commit message match PR title"
+   ],
+   "examples": [
+    "[FLINK-41122] Add version 2.5 and update nightly build action"
+   ]
+  },
+  {
+   "template": "[<KEY>][release] Build docs for release-<N> branch",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message and PR title share the same ticket key and description"
+   ],
+   "examples": [
+    "[FLINK-41119][release] Build docs for release-2.4 branch"
+   ]
+  },
+  {
+   "template": "[<KEY>][docs/tests] Upgrade version tag from '<N>-SNAPSHOT' to '<N>-SNAPSHOT' in REST-API related doc files",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Same ticket key and commit message in PR title"
+   ],
+   "examples": [
+    "[FLINK-41178][docs/tests] Upgrade version tag from '2.4-SNAPSHOT' to '2.5-SNAPSHOT' in REST-API related doc files"
+   ]
+  },
+  {
+   "template": "[<KEY>][docs/tests] Upgrade version tag from '<N>-SNAPSHOT' to '<N>-SNAPSHOT'",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in PR title and commit message match, change description aligns"
+   ],
+   "examples": [
+    "[FLINK-41178][docs/tests] Upgrade version tag from '2.4-SNAPSHOT' to '2.5-SNAPSHOT'"
+   ]
+  },
+  {
+   "template": "[<KEY>][table] Keep non-compact decimals with unscaled value fitting in a long as long to avoid BigDecimal on read, add,",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-41056][table] Keep non-compact decimals with unscaled value fitting in a long as long to avoid BigDecimal on read, add, subtract, cast and deserialize"
+   ]
+  },
+  {
+   "template": "[<KEY>][build] Update SLF4J from <N> to <N>",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Commit message and PR title share the same ticket key and change description"
+   ],
+   "examples": [
+    "[FLINK-40574][build] Update SLF4J from 1.7.36 to 2.0.20"
+   ]
+  },
+  {
+   "template": "[<KEY>][yarn] Remove the deprecated configuration keys from the flink-yarn module.",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Exact match of ticket and change description in both commit and PR title"
+   ],
+   "examples": [
+    "[FLINK-40817][yarn] Remove the deprecated configuration keys from the flink-yarn module."
+   ]
+  },
+  {
+   "template": "[<KEY>][ci] Kill each e2e timeout watchdog when its command ends",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit subject matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-41075][ci] Kill each e2e timeout watchdog when its command ends"
+   ]
+  },
+  {
+   "template": "[<KEY>][ci] Make pre-downloaded Maven usable by the only-script Maven wrapper (branch flink41049, merged)",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "merged PR with matching commit message and ticket"
+   ],
+   "examples": [
+    "[FLINK-41049][ci] Make pre-downloaded Maven usable by the only-script Maven wrapper (branch flink41049, merged)"
+   ]
+  },
+  {
+   "template": "Backport of github.com/<repo>/pull/<ID> (<SHA>).",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "commit SHA explicitly referenced in PR description"
+   ],
+   "examples": [
+    "Backport of https://github.com/apache/flink/pull/29533 (f2aa53456cb)."
+   ]
+  },
+  {
+   "template": "[<KEY>][s3] Store the native S3 recoverable writer tail under the target directory",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Commit message and PR title share the same ticket and description"
+   ],
+   "examples": [
+    "[FLINK-40953][s3] Store the native S3 recoverable writer tail under the target directory"
+   ]
+  },
+  {
+   "template": "[hotfix][runtime-web] Restore metric chart height to <N>",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR title and description"
+   ],
+   "examples": [
+    "[hotfix][runtime-web] Restore metric chart height to 150"
+   ]
+  },
+  {
+   "template": "[<KEY>][table-planner] Show the position and the failing line in parse errors",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR title and ticket"
+   ],
+   "examples": [
+    "[FLINK-24908][table-planner] Show the position and the failing line in parse errors"
+   ]
+  },
+  {
+   "template": "[<KEY>][build] Update lz4-java to <N>",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Commit message and PR title share the same ticket and change description"
+   ],
+   "examples": [
+    "[FLINK-41022][build] Update lz4-java to 1.12.0"
+   ]
+  },
+  {
+   "template": "[<KEY>][build] Update commons-beanutils to <N> and jsoup to <N>",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key and version in PR title matching commit message"
+   ],
+   "examples": [
+    "[FLINK-41021][build] Update commons-beanutils to 1.11.0 and jsoup to 1.23.2"
+   ]
+  },
+  {
+   "template": "[<KEY>][build] Update commons-beanutils to <N>",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key and change description match commit message"
+   ],
+   "examples": [
+    "[FLINK-41021][build] Update commons-beanutils to 1.11.0"
+   ]
+  }
+ ],
+ "email_topic": [
+  {
+   "template": "[DISCUSS] <KEY>: Add built-in DEDUPLICATE_KEEP_FIRST PTF",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to FLIP-614 and DEDUPLICATE_KEEP_FIRST PTF"
+   ],
+   "examples": [
+    "[DISCUSS] FLIP-614: Add built-in DEDUPLICATE_KEEP_FIRST PTF"
+   ]
+  },
+  {
+   "template": "<KEY> specifies invalid_op_handling with FAIL | LOG | SKIP",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit reference to FLIP-564 in the context of FROM_CHANGELOG and TO_CHANGELOG built-in PTFs"
+   ],
+   "examples": [
+    "FLIP-564 specifies invalid_op_handling with FAIL | LOG | SKIP"
+   ]
+  },
+  {
+   "template": "[VOTE] <KEY>: Add built-in DEDUPLICATE_KEEP_FIRST PTF",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and body explicitly reference FLIP-614 and its discussion/vote"
+   ],
+   "examples": [
+    "[VOTE] FLIP-614: Add built-in DEDUPLICATE_KEEP_FIRST PTF"
+   ]
+  },
+  {
+   "template": "[DISCUSS] <KEY>: Materialized Tables support for Table API",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references FLIP-616 and the thread discusses its implementation and details."
+   ],
+   "examples": [
+    "[DISCUSS] FLIP-616: Materialized Tables support for Table API"
+   ]
+  },
+  {
+   "template": "<KEY>: Blue/Green Deployments for Flink on Kubernetes - Phase <N>",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "FLIP identifier in subject line"
+   ],
+   "examples": [
+    "FLIP-504: Blue/Green Deployments for Flink on Kubernetes - Phase 2"
+   ]
+  },
+  {
+   "template": "[VOTE] <KEY>: Materialized Tables support for Table API",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of FLIP-616 and its title in the subject and body of the mail thread"
+   ],
+   "examples": [
+    "[VOTE] FLIP-616: Materialized Tables support for Table API"
+   ]
+  },
+  {
+   "template": "[RESULT][VOTE] <KEY>: Materialized Tables support for Table API",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references FLIP-616 and its acceptance/vote"
+   ],
+   "examples": [
+    "[RESULT][VOTE] FLIP-616: Materialized Tables support for Table API"
+   ]
+  },
+  {
+   "template": "[release-<N>] Cross-team testing",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "explicit mention of release-2.4 in the ticket title"
+   ],
+   "examples": [
+    "[release-2.4] Cross-team testing"
+   ]
+  },
+  {
+   "template": "the <N> branch has been cut, and is available on the 'release-<N>' branch",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "branch name in announcement matches ticket title"
+   ],
+   "examples": [
+    "the 2.4 branch has been cut, and is available on the 'release-2.4' branch"
+   ]
+  },
+  {
+   "template": "[PR] [<KEY>][pipeline-connector/oracle] Fix Oracle pipeline table identifiers",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title includes ticket key FLINK-39840"
+   ],
+   "examples": [
+    "[PR] [FLINK-39840][pipeline-connector/oracle] Fix Oracle pipeline table identifiers"
+   ]
+  },
+  {
+   "template": "[<KEY>][cdc-connector] Fix transaction leak during snapshot split read for DB2, Oracle, PostgreSQL, and SQL Server conne",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Ticket key in the PR title and body"
+   ],
+   "examples": [
+    "[FLINK-39403][cdc-connector] Fix transaction leak during snapshot split read for DB2, Oracle, PostgreSQL, and SQL Server connectors"
+   ]
+  },
+  {
+   "template": "[<KEY>][postgres] Debezium publication filtering data lost",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Ticket key in the PR title"
+   ],
+   "examples": [
+    "[FLINK-38907][postgres] Debezium publication filtering data lost"
+   ]
+  },
+  {
+   "template": "Bump org.apache.logging.log4j:log4j-core from <N> to <N>",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Dependency version bump in Dependabot PR description"
+   ],
+   "examples": [
+    "Bump org.apache.logging.log4j:log4j-core from 2.24.3 to 2.25.4"
+   ]
+  },
+  {
+   "template": "Bump org.apache.logging.log4j:log4j-api from <N> to <N>",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Exact dependency version bump mentioned in PR description matches C4's log4j version range"
+   ],
+   "examples": [
+    "Bump org.apache.logging.log4j:log4j-api from 2.24.3 to 2.25.5"
+   ]
+  },
+  {
+   "template": "[PR] Bump com.google.guava:guava from <N>-jre to <N>-jre [flink-connector-jdbc]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title explicitly mentions a dependency bump in flink-connector-jdbc, matching the scope of FLINK-40729"
+   ],
+   "examples": [
+    "[PR] Bump com.google.guava:guava from 33.0.0-jre to 33.7.1-jre [flink-connector-jdbc]"
+   ]
+  },
+  {
+   "template": "Streaming Top-N over an updating ROW_NUMBER input never retracts a replaced row (outer Rank uses AppendFastStrategy)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Exact ticket title match in subject and body"
+   ],
+   "examples": [
+    "Streaming Top-N over an updating ROW_NUMBER input never retracts a replaced row (outer Rank uses AppendFastStrategy)"
+   ]
+  }
+ ],
+ "identity": [
+  {
+   "template": "display name: Chanhae Oh",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Chanhae Oh"
+   ]
+  },
+  {
+   "template": "display name: Purushottam Sinha",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Purushottam Sinha"
+   ]
+  },
+  {
+   "template": "display name: Rion Williams",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Rion Williams"
+   ]
+  },
+  {
+   "template": "display name: jiabao.sun",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches directory id and known accounts"
+   ],
+   "examples": [
+    "display name: jiabao.sun"
+   ]
+  },
+  {
+   "template": "display name: Utkarsh Vashishtha",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Utkarsh Vashishtha"
+   ]
+  },
+  {
+   "template": "display name: sepuri sai krishna",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate's full name"
+   ],
+   "examples": [
+    "display name: sepuri sai krishna"
+   ]
+  },
+  {
+   "template": "jira account dylanhz display name: dylanhz",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "exact match of jira account display name to candidate label"
+   ],
+   "examples": [
+    "jira account dylanhz display name: dylanhz"
+   ]
+  },
+  {
+   "template": "display name: Mate Czagany",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Mate Czagany"
+   ]
+  },
+  {
+   "template": "display name: li yu",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches directory id and known accounts"
+   ],
+   "examples": [
+    "display name: li yu"
+   ]
+  },
+  {
+   "template": "jira account auroflow display name: Liu Liu",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "jira account auroflow display name: Liu Liu"
+   ]
+  },
+  {
+   "template": "display name: Sylwester Lachiewicz",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Sylwester Lachiewicz"
+   ]
+  },
+  {
+   "template": "display name: Vas Shabu",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Vas Shabu"
+   ]
+  },
+  {
+   "template": "display name: Efrat Levitan",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Efrat Levitan"
+   ]
+  },
+  {
+   "template": "display name: Biao Geng",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Biao Geng"
+   ]
+  },
+  {
+   "template": "jira account ykisana display name: Yahya Kisana",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "jira account ykisana display name: Yahya Kisana"
+   ]
+  },
+  {
+   "template": "display name: Sangkyoon Nam",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Sangkyoon Nam"
+   ]
+  },
+  {
+   "template": "display name: Aleksandr Savonin",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Aleksandr Savonin"
+   ]
+  },
+  {
+   "template": "jira account piotrprz display name: Piotr Przybylski",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "jira account piotrprz display name: Piotr Przybylski"
+   ]
+  },
+  {
+   "template": "display name: Jacky Lau",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Jacky Lau"
+   ]
+  },
+  {
+   "template": "display name: Ran Tao",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Ran Tao"
+   ]
+  },
+  {
+   "template": "display name: Moritz Manner",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Moritz Manner"
+   ]
+  },
+  {
+   "template": "github:junmuz",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "matching GitHub username in accounts already known"
+   ],
+   "examples": [
+    "github:junmuz"
+   ]
+  },
+  {
+   "template": "jira account kindkid display name: Chris Johnson",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "jira account kindkid display name: Chris Johnson"
+   ]
+  },
+  {
+   "template": "jira account Zhanghao Chen display name: Zhanghao Chen",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "exact match of display name to candidate name"
+   ],
+   "examples": [
+    "jira account Zhanghao Chen display name: Zhanghao Chen"
+   ]
+  },
+  {
+   "template": "display name: Isaac Montenegro Jimenez",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate full name"
+   ],
+   "examples": [
+    "display name: Isaac Montenegro Jimenez"
+   ]
+  },
+  {
+   "template": "jira account hxbks2ks display name: Huang Xingbo",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate's full name in reverse order"
+   ],
+   "examples": [
+    "jira account hxbks2ks display name: Huang Xingbo"
+   ]
+  },
+  {
+   "template": "jira account chalixar display name: Ahmed Hamdy",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "jira account chalixar display name: Ahmed Hamdy"
+   ]
+  },
+  {
+   "template": "display name: Spoorthi Basu",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name exactly"
+   ],
+   "examples": [
+    "display name: Spoorthi Basu"
+   ]
+  },
+  {
+   "template": "display name: Zhe Wang",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches candidate name"
+   ],
+   "examples": [
+    "display name: Zhe Wang"
+   ]
+  },
+  {
+   "template": "directory id: mxm",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: mxm"
+   ]
+  },
+  {
+   "template": "github account Zakelly",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "github account name matches directory id and known accounts"
+   ],
+   "examples": [
+    "github account Zakelly"
+   ]
+  },
+  {
+   "template": "github account gustavodemorais",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "exact match of github login to directory id and known accounts"
+   ],
+   "examples": [
+    "github account gustavodemorais"
+   ]
+  },
+  {
+   "template": "directory id: gaborgsomogyi",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "matching directory id and github account login"
+   ],
+   "examples": [
+    "directory id: gaborgsomogyi"
+   ]
+  },
+  {
+   "template": "directory id: xccui",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: xccui"
+   ]
+  },
+  {
+   "template": "directory id: klion26",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: klion26"
+   ]
+  },
+  {
+   "template": "github account dianfu",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account name"
+   ],
+   "examples": [
+    "github account dianfu"
+   ]
+  },
+  {
+   "template": "github account fhueske",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "github account fhueske"
+   ]
+  },
+  {
+   "template": "github account xuyangzhong",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "exact match of github login to directory id and known accounts"
+   ],
+   "examples": [
+    "github account xuyangzhong"
+   ]
+  },
+  {
+   "template": "github account bowenli86",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "exact match of github login to candidate label"
+   ],
+   "examples": [
+    "github account bowenli86"
+   ]
+  },
+  {
+   "template": "directory id: lihaosky",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: lihaosky"
+   ]
+  },
+  {
+   "template": "github account sangkyoonnam",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "github account login matches candidate's inferred name"
+   ],
+   "examples": [
+    "github account sangkyoonnam"
+   ]
+  },
+  {
+   "template": "directory id: twalthr",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: twalthr"
+   ]
+  },
+  {
+   "template": "github account rmetzger",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "github account rmetzger"
+   ]
+  },
+  {
+   "template": "github account uvashishtha",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "github account login matches the candidate's inferred name"
+   ],
+   "examples": [
+    "github account uvashishtha"
+   ]
+  },
+  {
+   "template": "directory id: gyfora",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: gyfora"
+   ]
+  },
+  {
+   "template": "directory id: pnowojski",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github login"
+   ],
+   "examples": [
+    "directory id: pnowojski"
+   ]
+  }
+ ]
+}

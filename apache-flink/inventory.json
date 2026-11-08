@@ -1,0 +1,289 @@
+[
+ {
+  "path": "git/branches.txt",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 13994
+ },
+ {
+  "path": "git/branches_skipped.txt",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 2493
+ },
+ {
+  "path": "git/log_all_branches_numstat.txt",
+  "status": "replaced",
+  "read_by": "commits.jsonl is regenerated from codebase/ for the same window (same commits)",
+  "files": 1,
+  "bytes": 266201
+ },
+ {
+  "path": "git/log_numstat.txt",
+  "status": "replaced",
+  "read_by": "commits.jsonl is regenerated from codebase/ for the same window (same commits)",
+  "files": 1,
+  "bytes": 97723
+ },
+ {
+  "path": "git/log_patches.txt",
+  "status": "replaced",
+  "read_by": "commits.jsonl is regenerated from codebase/ for the same window (same commits)",
+  "files": 1,
+  "bytes": 2199326
+ },
+ {
+  "path": "git/manifest.json",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 166
+ },
+ {
+  "path": "github/graphql",
+  "status": "not read",
+  "read_by": "no adapter reads GitHub's commit -> PR answers",
+  "files": 72,
+  "bytes": 851775
+ },
+ {
+  "path": "github/issue_comments",
+  "status": "used",
+  "read_by": "github adapter (PR bundle) and issues adapter (issue comments)",
+  "files": 4,
+  "bytes": 956322
+ },
+ {
+  "path": "github/issues",
+  "status": "used",
+  "read_by": "issues adapter (PRs in the same pages are left to the github adapter)",
+  "files": 5,
+  "bytes": 2671391
+ },
+ {
+  "path": "github/manifest.jsonl",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 406346
+ },
+ {
+  "path": "github/pulls",
+  "status": "used",
+  "read_by": "github adapter (regrouped into one bundle per PR)",
+  "files": 6,
+  "bytes": 11421485
+ },
+ {
+  "path": "github/repo.json",
+  "status": "used",
+  "read_by": "github adapter (repository)",
+  "files": 1,
+  "bytes": 5980
+ },
+ {
+  "path": "github/review_comments",
+  "status": "used",
+  "read_by": "github adapter (in the PR bundle)",
+  "files": 4,
+  "bytes": 1814681
+ },
+ {
+  "path": "github/reviews",
+  "status": "used",
+  "read_by": "github adapter (in the PR bundle)",
+  "files": 406,
+  "bytes": 2397321
+ },
+ {
+  "path": "github/users",
+  "status": "not read",
+  "read_by": "no adapter reads user profiles (names, emails)",
+  "files": 252,
+  "bytes": 317491
+ },
+ {
+  "path": "jira/components.json",
+  "status": "linked",
+  "read_by": "in the layout; the jira adapter does not read components",
+  "files": 1,
+  "bytes": 29794
+ },
+ {
+  "path": "jira/fields.json",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 57892
+ },
+ {
+  "path": "jira/manifest.jsonl",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 203771
+ },
+ {
+  "path": "jira/project.json",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 96770
+ },
+ {
+  "path": "jira/referenced",
+  "status": "not read",
+  "read_by": "issues outside the window that window issues name; no adapter reads them",
+  "files": 8,
+  "bytes": 584376
+ },
+ {
+  "path": "jira/remotelinks",
+  "status": "not read",
+  "read_by": "no adapter reads Jira remote links (full URLs, incl. other repos)",
+  "files": 494,
+  "bytes": 159066
+ },
+ {
+  "path": "jira/search",
+  "status": "used",
+  "read_by": "jira adapter (issues, changelog, comments)",
+  "files": 5,
+  "bytes": 18461964
+ },
+ {
+  "path": "jira/versions.json",
+  "status": "used",
+  "read_by": "jira adapter (releases)",
+  "files": 1,
+  "bytes": 76170
+ },
+ {
+  "path": "mail/builds",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 578147
+ },
+ {
+  "path": "mail/builds",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 8321948
+ },
+ {
+  "path": "mail/commits",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 409570
+ },
+ {
+  "path": "mail/commits",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 24975474
+ },
+ {
+  "path": "mail/community",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 1953
+ },
+ {
+  "path": "mail/community",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 0
+ },
+ {
+  "path": "mail/dev",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 483831
+ },
+ {
+  "path": "mail/dev",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 4470947
+ },
+ {
+  "path": "mail/issues",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 3918043
+ },
+ {
+  "path": "mail/issues",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 37005907
+ },
+ {
+  "path": "mail/manifest.jsonl",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 6595
+ },
+ {
+  "path": "mail/news",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 831
+ },
+ {
+  "path": "mail/news",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 0
+ },
+ {
+  "path": "mail/user",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 14001
+ },
+ {
+  "path": "mail/user",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 416104
+ },
+ {
+  "path": "mail/user-zh",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 3379
+ },
+ {
+  "path": "mail/user-zh",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 158962
+ },
+ {
+  "path": "codebase/",
+  "status": "used",
+  "read_by": "code adapter (tree, docs text, Python symbols)",
+  "files": 27358,
+  "bytes": null
+ }
+]

@@ -1,0 +1,24 @@
+{
+ "project": "flink",
+ "repo": "apache/flink",
+ "tenant": "apache",
+ "fetched_at": "2026-10-29T07:37:55Z",
+ "window": {
+  "since": "2026-10-19",
+  "until": "2026-10-29"
+ },
+ "lists": [
+  "builds",
+  "commits",
+  "community",
+  "dev",
+  "issues",
+  "news",
+  "user",
+  "user-zh"
+ ],
+ "jira": "FLINK",
+ "settings": {
+  "infer_people": true
+ }
+}
