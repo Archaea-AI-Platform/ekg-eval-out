@@ -1,0 +1,18 @@
+{
+ "project": "ossie",
+ "repo": "apache/ossie",
+ "tenant": "apache",
+ "fetched_at": "2026-10-30T09:02:46Z",
+ "window": {
+  "since": "2026-10-20",
+  "until": "2026-10-30"
+ },
+ "lists": [
+  "commits",
+  "dev",
+  "issues"
+ ],
+ "settings": {
+  "infer_people": true
+ }
+}

@@ -1,0 +1,257 @@
+{
+ "pr_ticket": [
+  {
+   "template": "fix(thoughtspot): check a stashed payload's shapes at the one place it is read (branch fix/thoughtspot-stash-payload-sha",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "fix(thoughtspot): check a stashed payload's shapes at the one place it is read (branch fix/thoughtspot-stash-payload-shapes, closed)"
+   ]
+  },
+  {
+   "template": "Update canonical expression examples to use expression.sql for portable SQL, instead of an item in the dialects list",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "PR title and description explicitly reference the change to use `sql` form as primary portable expression, matching the ticket's goal."
+   ],
+   "examples": [
+    "Update canonical expression examples to use expression.sql for portable SQL, instead of an item in the dialects list"
+   ]
+  },
+  {
+   "template": "Implements the initial metric-expression scope of apache/ossie-converters#<N> on top of apache/ossie#<N>.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in implementation description"
+   ],
+   "examples": [
+    "Implements the initial metric-expression scope of apache/ossie-converters#36 on top of apache/ossie#402."
+   ]
+  },
+  {
+   "template": "The orionbelt issue from M1 is mine to open in ossie-converters",
+   "count": 1,
+   "where": {
+    "Review text": 1
+   },
+   "cues": [
+    "ticket key in the description of a related issue"
+   ],
+   "examples": [
+    "The orionbelt issue from M1 is mine to open in ossie-converters"
+   ]
+  },
+  {
+   "template": "Fixes apache/ossie#<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "explicit 'Fixes' reference to ticket in PR description"
+   ],
+   "examples": [
+    "Fixes apache/ossie#606"
+   ]
+  },
+  {
+   "template": "Part of apache/ossie-converters#<N> (Microsoft converter was not listed among the original affected call sites).",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "Part of apache/ossie-converters#32 (Microsoft converter was not listed among the original affected call sites)."
+   ]
+  },
+  {
+   "template": "OSSIE_SQL_2026 is Ossie's portable expression language. All other dialects are treated as passthrough, with their defini",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "PR number in parentheses after a ticket description"
+   ],
+   "examples": [
+    "OSSIE_SQL_2026 is Ossie's portable expression language. All other dialects are treated as passthrough, with their definitions maintained in the extensions/ dire"
+   ]
+  },
+  {
+   "template": "Refs #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket reference in PR title/branch"
+   ],
+   "examples": [
+    "Refs #469"
+   ]
+  },
+  {
+   "template": "fix(orionbelt): name fields by column, quote only when needed, export OSSIE_SQL_2026 (branch fix/orionbelt-field-names-f",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "fix(orionbelt): name fields by column, quote only when needed, export OSSIE_SQL_2026 (branch fix/orionbelt-field-names-flat-ossie-sql, merged)"
+   ]
+  },
+  {
+   "template": "This adds the other two checks #<N> asks for.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the PR description"
+   ],
+   "examples": [
+    "This adds the other two checks #602 asks for."
+   ]
+  }
+ ],
+ "identity": [
+  {
+   "template": "email: akrish1982@gmail.com",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "email address matches github account username"
+   ],
+   "examples": [
+    "email: akrish1982@gmail.com"
+   ]
+  },
+  {
+   "template": "directory id: eisber",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account"
+   ],
+   "examples": [
+    "directory id: eisber"
+   ]
+  },
+  {
+   "template": "github account jochenchrist",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "directory id matches github account name"
+   ],
+   "examples": [
+    "github account jochenchrist"
+   ]
+  },
+  {
+   "template": "github account julianhyde",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "github account login matches candidate's name"
+   ],
+   "examples": [
+    "github account julianhyde"
+   ]
+  },
+  {
+   "template": "directory id: jklahr",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github login"
+   ],
+   "examples": [
+    "directory id: jklahr"
+   ]
+  },
+  {
+   "template": "github account MahmoudHassanen99",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "github login matches email prefix in candidate"
+   ],
+   "examples": [
+    "github account MahmoudHassanen99"
+   ]
+  }
+ ],
+ "ticket_fix": [
+  {
+   "template": "Fixes apache/ossie#<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "explicit 'Fixes' reference to the ticket in the PR description"
+   ],
+   "examples": [
+    "Fixes apache/ossie#606"
+   ]
+  },
+  {
+   "template": "**<N>. A field keeps its name (#<N>).**",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the PR summary"
+   ],
+   "examples": [
+    "**1. A field keeps its name (#601).**"
+   ]
+  }
+ ],
+ "email_topic": [
+  {
+   "template": "You also might want to take a look #<N>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "ticket key in the message body"
+   ],
+   "examples": [
+    "You also might want to take a look #576"
+   ]
+  }
+ ]
+}

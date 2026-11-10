@@ -1,0 +1,177 @@
+[
+ {
+  "path": "git/branches.txt",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 153
+ },
+ {
+  "path": "git/branches_skipped.txt",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 733
+ },
+ {
+  "path": "git/log_all_branches_numstat.txt",
+  "status": "replaced",
+  "read_by": "commits.jsonl is regenerated from codebase/ for the same window (same commits)",
+  "files": 1,
+  "bytes": 125984
+ },
+ {
+  "path": "git/log_numstat.txt",
+  "status": "replaced",
+  "read_by": "commits.jsonl is regenerated from codebase/ for the same window (same commits)",
+  "files": 1,
+  "bytes": 101666
+ },
+ {
+  "path": "git/log_patches.txt",
+  "status": "replaced",
+  "read_by": "commits.jsonl is regenerated from codebase/ for the same window (same commits)",
+  "files": 1,
+  "bytes": 9228563
+ },
+ {
+  "path": "git/manifest.json",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 166
+ },
+ {
+  "path": "github/graphql",
+  "status": "not read",
+  "read_by": "no adapter reads GitHub's commit -> PR answers",
+  "files": 28,
+  "bytes": 284961
+ },
+ {
+  "path": "github/issue_comments",
+  "status": "used",
+  "read_by": "github adapter (PR bundle) and issues adapter (issue comments)",
+  "files": 2,
+  "bytes": 373053
+ },
+ {
+  "path": "github/issues",
+  "status": "used",
+  "read_by": "issues adapter (PRs in the same pages are left to the github adapter)",
+  "files": 2,
+  "bytes": 725402
+ },
+ {
+  "path": "github/manifest.jsonl",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 123295
+ },
+ {
+  "path": "github/pulls",
+  "status": "used",
+  "read_by": "github adapter (regrouped into one bundle per PR)",
+  "files": 2,
+  "bytes": 3995754
+ },
+ {
+  "path": "github/repo.json",
+  "status": "used",
+  "read_by": "github adapter (repository)",
+  "files": 1,
+  "bytes": 6111
+ },
+ {
+  "path": "github/review_comments",
+  "status": "used",
+  "read_by": "github adapter (in the PR bundle)",
+  "files": 2,
+  "bytes": 1067064
+ },
+ {
+  "path": "github/reviews",
+  "status": "used",
+  "read_by": "github adapter (in the PR bundle)",
+  "files": 100,
+  "bytes": 693683
+ },
+ {
+  "path": "github/users",
+  "status": "not read",
+  "read_by": "no adapter reads user profiles (names, emails)",
+  "files": 94,
+  "bytes": 118211
+ },
+ {
+  "path": "jira/NOT_DOWNLOADED.md",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 88
+ },
+ {
+  "path": "mail/commits",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 134679
+ },
+ {
+  "path": "mail/commits",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 14437681
+ },
+ {
+  "path": "mail/dev",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 149912
+ },
+ {
+  "path": "mail/dev",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 3639840
+ },
+ {
+  "path": "mail/issues",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 952679
+ },
+ {
+  "path": "mail/issues",
+  "status": "used",
+  "read_by": "mail adapter (.mbox); stats_*.json are download counters",
+  "files": 1,
+  "bytes": 12382035
+ },
+ {
+  "path": "mail/manifest.jsonl",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 2476
+ },
+ {
+  "path": "slack/NOT_DOWNLOADED.md",
+  "status": "metadata",
+  "read_by": "download bookkeeping",
+  "files": 1,
+  "bytes": 168
+ },
+ {
+  "path": "codebase/",
+  "status": "used",
+  "read_by": "code adapter (tree, docs text, Python symbols)",
+  "files": 103,
+  "bytes": null
+ }
+]

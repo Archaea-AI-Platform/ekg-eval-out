@@ -1,0 +1,319 @@
+{
+ "graph": "/Users/bishwajit/projects/archaea_beta/test_data_sorce_graph/ekg_runs/ossie/out",
+ "prompt_version": "fill-v1",
+ "mode": "run",
+ "kinds": {
+  "pr_ticket": {
+   "to_ask": 115,
+   "no_candidate": {
+    "no candidate ticket": 73,
+    "bot PR (no ticket expected)": 8
+   },
+   "prompt_chars_max": 9376,
+   "asked": 115,
+   "rejected": 105,
+   "accepted": 10,
+   "why_not": {
+    "llm": 105
+   }
+  },
+  "commit_pr": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "ticket_fix": {
+   "to_ask": 4,
+   "no_candidate": {},
+   "prompt_chars_max": 6201,
+   "asked": 4,
+   "accepted": 2,
+   "rejected": 2,
+   "why_not": {
+    "llm": 2
+   }
+  },
+  "email_topic": {
+   "to_ask": 25,
+   "no_candidate": {
+    "no candidate ticket or proposal": 37
+   },
+   "prompt_chars_max": 5154,
+   "asked": 25,
+   "rejected": 24,
+   "accepted": 1,
+   "why_not": {
+    "llm": 24
+   }
+  },
+  "identity": {
+   "to_ask": 12,
+   "no_candidate": {
+    "github: no candidate person": 70
+   },
+   "prompt_chars_max": 1494,
+   "asked": 12,
+   "accepted": 6,
+   "rejected": 6,
+   "why_not": {
+    "llm": 5,
+    "check": 1
+   }
+  },
+  "decision_status": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "knowledge": {
+   "to_ask": 111,
+   "no_candidate": {
+    "too short to hold knowledge": 814
+   },
+   "prompt_chars_max": 13806,
+   "asked": 111,
+   "rejected": 27,
+   "accepted": 84,
+   "accepted, not written": 1,
+   "why_not": {
+    "check": 23,
+    "llm": 4,
+    "schema: MADE_IN cannot go Decision -> Review (allowed ['Decision'] -> ['CalendarEvent', 'Comment', 'DocSection', 'Docume": 1
+   }
+  },
+  "doc_knowledge": {
+   "to_ask": 13,
+   "no_candidate": {},
+   "prompt_chars_max": 10417,
+   "asked": 13,
+   "accepted": 11,
+   "rejected": 2,
+   "why_not": {
+    "check": 1,
+    "llm": 1
+   }
+  }
+ },
+ "model": "openrouter mistralai/devstral-2512",
+ "calls": {
+  "made": 375,
+  "answered_from_responses": 0
+ },
+ "written": {
+  "records_new_or_patched": 278,
+  "links_new": 552,
+  "people_links": {
+   "ASSIGNED_TO: linked": 28,
+   "AUTHORED_BY: linked": 68,
+   "AUTHORED_BY: source has no author": 31,
+   "DECIDED_BY: source has no author": 5,
+   "DECIDED_BY: linked": 37,
+   "ASKED_BY: source has no author": 3,
+   "ASKED_BY: linked": 6,
+   "ASSIGNED_TO: source has no author": 3
+  },
+  "links_by_type": {
+   "IMPLEMENTS": 12,
+   "EXTRACTED_FROM": 190,
+   "RAISED_IN": 40,
+   "ASSIGNED_TO": 28,
+   "AUTHORED_BY": 68,
+   "ABOUT": 122,
+   "MADE_IN": 42,
+   "DECIDED_BY": 37,
+   "HAS_ACCOUNT": 6,
+   "ASKED_BY": 6,
+   "DISCUSSES": 1
+  },
+  "records_by_type": {
+   "DerivationRun": 6,
+   "Guideline": 55,
+   "ActionItem": 31,
+   "Requirement": 36,
+   "Knowledge": 99,
+   "Decision": 42,
+   "Question": 9
+  }
+ },
+ "adapter_hints": {
+  "pr_ticket": [
+   {
+    "template": "fix(thoughtspot): check a stashed payload's shapes at the one place it is read (branch fix/thoughtspot-stash-payload-sha",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "ticket key in the branch name"
+    ],
+    "examples": [
+     "fix(thoughtspot): check a stashed payload's shapes at the one place it is read (branch fix/thoughtspot-stash-payload-shapes, closed)"
+    ]
+   },
+   {
+    "template": "Update canonical expression examples to use expression.sql for portable SQL, instead of an item in the dialects list",
+    "count": 1,
+    "where": {
+     "Ticket title": 1
+    },
+    "cues": [
+     "PR title and description explicitly reference the change to use `sql` form as primary portable expression, matching the ticket's goal."
+    ],
+    "examples": [
+     "Update canonical expression examples to use expression.sql for portable SQL, instead of an item in the dialects list"
+    ]
+   },
+   {
+    "template": "Implements the initial metric-expression scope of apache/ossie-converters#<N> on top of apache/ossie#<N>.",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "ticket key in implementation description"
+    ],
+    "examples": [
+     "Implements the initial metric-expression scope of apache/ossie-converters#36 on top of apache/ossie#402."
+    ]
+   },
+   {
+    "template": "The orionbelt issue from M1 is mine to open in ossie-converters",
+    "count": 1,
+    "where": {
+     "Review text": 1
+    },
+    "cues": [
+     "ticket key in the description of a related issue"
+    ],
+    "examples": [
+     "The orionbelt issue from M1 is mine to open in ossie-converters"
+    ]
+   },
+   {
+    "template": "Fixes apache/ossie#<N>",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "explicit 'Fixes' reference to ticket in PR description"
+    ],
+    "examples": [
+     "Fixes apache/ossie#606"
+    ]
+   }
+  ],
+  "identity": [
+   {
+    "template": "email: akrish1982@gmail.com",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "email address matches github account username"
+    ],
+    "examples": [
+     "email: akrish1982@gmail.com"
+    ]
+   },
+   {
+    "template": "directory id: eisber",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github account"
+    ],
+    "examples": [
+     "directory id: eisber"
+    ]
+   },
+   {
+    "template": "github account jochenchrist",
+    "count": 1,
+    "where": {
+     "Account title": 1
+    },
+    "cues": [
+     "directory id matches github account name"
+    ],
+    "examples": [
+     "github account jochenchrist"
+    ]
+   },
+   {
+    "template": "github account julianhyde",
+    "count": 1,
+    "where": {
+     "Account title": 1
+    },
+    "cues": [
+     "github account login matches candidate's name"
+    ],
+    "examples": [
+     "github account julianhyde"
+    ]
+   },
+   {
+    "template": "directory id: jklahr",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github login"
+    ],
+    "examples": [
+     "directory id: jklahr"
+    ]
+   }
+  ],
+  "ticket_fix": [
+   {
+    "template": "Fixes apache/ossie#<N>",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "explicit 'Fixes' reference to the ticket in the PR description"
+    ],
+    "examples": [
+     "Fixes apache/ossie#606"
+    ]
+   },
+   {
+    "template": "**<N>. A field keeps its name (#<N>).**",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "ticket key in the PR summary"
+    ],
+    "examples": [
+     "**1. A field keeps its name (#601).**"
+    ]
+   }
+  ],
+  "email_topic": [
+   {
+    "template": "You also might want to take a look #<N>",
+    "count": 1,
+    "where": {
+     "EmailMessage text": 1
+    },
+    "cues": [
+     "ticket key in the message body"
+    ],
+    "examples": [
+     "You also might want to take a look #576"
+    ]
+   }
+  ]
+ }
+}
