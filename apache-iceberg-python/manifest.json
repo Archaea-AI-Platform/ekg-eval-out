@@ -1,0 +1,19 @@
+{
+ "project": "iceberg",
+ "repo": "apache/iceberg-python",
+ "tenant": "apache",
+ "fetched_at": "2026-10-30T08:59:59Z",
+ "window": {
+  "since": "2026-10-20",
+  "until": "2026-10-30"
+ },
+ "lists": [
+  "ci-jobs",
+  "commits",
+  "dev",
+  "issues"
+ ],
+ "settings": {
+  "infer_people": true
+ }
+}

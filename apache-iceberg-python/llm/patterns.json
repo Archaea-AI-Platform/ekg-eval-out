@@ -1,0 +1,467 @@
+{
+ "email_topic": [
+  {
+   "template": "Spark <N>: Best-effort ExpireSnapshots when metadata reachable only from expired snapshots is missing [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title explicitly mentions 'ExpireSnapshots'"
+   ],
+   "examples": [
+    "Spark 4.1: Best-effort ExpireSnapshots when metadata reachable only from expired snapshots is missing [iceberg]"
+   ]
+  },
+  {
+   "template": "[I] Remove deleted data files with expire_snapshots [iceberg-python]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line contains ticket title and repository context"
+   ],
+   "examples": [
+    "[I] Remove deleted data files with expire_snapshots [iceberg-python]"
+   ]
+  },
+  {
+   "template": "[PR] AWS: Inject Glue catalog ID via interceptor instead of per-call [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title mentioning AWS and Glue catalog"
+   ],
+   "examples": [
+    "[PR] AWS: Inject Glue catalog ID via interceptor instead of per-call [iceberg]"
+   ]
+  },
+  {
+   "template": "[PR] Core: Disambiguate partition names across evolved specs [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches the described issue in C1 (partition field naming conflict)"
+   ],
+   "examples": [
+    "[PR] Core: Disambiguate partition names across evolved specs [iceberg]"
+   ]
+  },
+  {
+   "template": "feat(writer): apply per-column parquet bloom filter write properties [iceberg-rust]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title explicitly mentions bloom filter write properties"
+   ],
+   "examples": [
+    "feat(writer): apply per-column parquet bloom filter write properties [iceberg-rust]"
+   ]
+  },
+  {
+   "template": "feat(glue): Support AWS STS AssumeRole for Glue catalog authentication [iceberg-rust]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line contains feature description matching C1's proposal"
+   ],
+   "examples": [
+    "feat(glue): Support AWS STS AssumeRole for Glue catalog authentication [iceberg-rust]"
+   ]
+  },
+  {
+   "template": "governed table encryption feature based on Apache Gravitino",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of encryption feature and related design discussions"
+   ],
+   "examples": [
+    "governed table encryption feature based on Apache Gravitino"
+   ]
+  },
+  {
+   "template": "[PR] Core: Expose row lineage in ChangelogScanTask and changelog schema for v3+ tables [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title mentioning row lineage and v3+ tables"
+   ],
+   "examples": [
+    "[PR] Core: Expose row lineage in ChangelogScanTask and changelog schema for v3+ tables [iceberg]"
+   ]
+  },
+  {
+   "template": "[PR] feat(rest): support configurable page sizes [iceberg-rust]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title in subject line matches feature related to REST and page sizes"
+   ],
+   "examples": [
+    "[PR] feat(rest): support configurable page sizes [iceberg-rust]"
+   ]
+  },
+  {
+   "template": "[PR] Core: Fix branch snapshot scans when main is empty [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches the described issue of branch behavior when main is empty"
+   ],
+   "examples": [
+    "[PR] Core: Fix branch snapshot scans when main is empty [iceberg]"
+   ]
+  },
+  {
+   "template": "[PR] Core: Reject partition statistics for encrypted tables [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title referencing partition and table-related changes"
+   ],
+   "examples": [
+    "[PR] Core: Reject partition statistics for encrypted tables [iceberg]"
+   ]
+  },
+  {
+   "template": "[PR] Spark: Reject table statistics for encrypted tables [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description keywords (reject, encrypted tables)"
+   ],
+   "examples": [
+    "[PR] Spark: Reject table statistics for encrypted tables [iceberg]"
+   ]
+  },
+  {
+   "template": "perf(deletes): Implement filtering position delete files by file path [iceberg-rust]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title explicitly mentions position delete files"
+   ],
+   "examples": [
+    "perf(deletes): Implement filtering position delete files by file path [iceberg-rust]"
+   ]
+  },
+  {
+   "template": "github-actions[bot] closed issue #<N>: When pyiceberg loads Iceberg tables containing large JSON data into memory, memor",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "GitHub issue number in subject and body"
+   ],
+   "examples": [
+    "github-actions[bot] closed issue #3168: When pyiceberg loads Iceberg tables containing large JSON data into memory, memory usage explodes in pyarrow"
+   ]
+  },
+  {
+   "template": "[PR] Core, Spark: Clean up uncommitted files when a staged table is aborted [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title in subject line matches the proposal/ticket context"
+   ],
+   "examples": [
+    "[PR] Core, Spark: Clean up uncommitted files when a staged table is aborted [iceberg]"
+   ]
+  },
+  {
+   "template": "Core: Preserve metadata log snapshot details after snapshot expiration",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches the bug description of snapshot expiration behavior"
+   ],
+   "examples": [
+    "Core: Preserve metadata log snapshot details after snapshot expiration"
+   ]
+  },
+  {
+   "template": "multi-statement multi-transaction proposal for Apache REST Catalog",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "proposal title explicitly matches the REST catalog transaction commit feature"
+   ],
+   "examples": [
+    "multi-statement multi-transaction proposal for Apache REST Catalog"
+   ]
+  },
+  {
+   "template": "[PR] Parquet: Add reader and writer without Hadoop dependency [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title in subject line"
+   ],
+   "examples": [
+    "[PR] Parquet: Add reader and writer without Hadoop dependency [iceberg]"
+   ]
+  },
+  {
+   "template": "[DISCUSS] Handling of non-key column stats for equality delete files (PR #<N>)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references equality delete files and PR #18338, matching the feature request for reading equality delete files."
+   ],
+   "examples": [
+    "[DISCUSS] Handling of non-key column stats for equality delete files (PR #18338)"
+   ]
+  },
+  {
+   "template": "[PR] AWS: Optimize Iceberg-to-Glue schema type conversion [iceberg]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title mentioning schema type conversion"
+   ],
+   "examples": [
+    "[PR] AWS: Optimize Iceberg-to-Glue schema type conversion [iceberg]"
+   ]
+  }
+ ],
+ "pr_ticket": [
+  {
+   "template": "Closes #<N>",
+   "count": 7,
+   "where": {
+    "PullRequest text": 7
+   },
+   "cues": [
+    "Closes #<ticket-number>",
+    "ticket key in the branch name and Closes comment",
+    "ticket key in the branch name and explicit 'Closes' reference"
+   ],
+   "examples": [
+    "Closes #3981",
+    "Closes #3931",
+    "Closes #3498"
+   ]
+  },
+  {
+   "template": "Fokko confirmed the issue above",
+   "count": 1,
+   "where": {
+    "Comment text": 1
+   },
+   "cues": [
+    "ticket key in the branch name (fix/strict-not-in-nan-upper-bound) and explicit confirmation of the issue"
+   ],
+   "examples": [
+    "Fokko confirmed the issue above"
+   ]
+  },
+  {
+   "template": "Binding starts-with/not-starts-with with an out-of-range literal leaks the AboveMax/BelowMin sentinel into a bound predi",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "ticket key in the PR description matches the candidate ticket description"
+   ],
+   "examples": [
+    "Binding starts-with/not-starts-with with an out-of-range literal leaks the AboveMax/BelowMin sentinel into a bound predicate"
+   ]
+  },
+  {
+   "template": "This is the enabler #<N> needs to write delete manifests, so it unblocks that work",
+   "count": 1,
+   "where": {
+    "Comment text": 1
+   },
+   "cues": [
+    "explicit reference to enabling/fixing a ticket in the PR description"
+   ],
+   "examples": [
+    "This is the enabler #3925 needs to write delete manifests, so it unblocks that work"
+   ]
+  },
+  {
+   "template": "Implements the manifest-inspection snapshot-selection part of #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the rationale"
+   ],
+   "examples": [
+    "Implements the manifest-inspection snapshot-selection part of #1053"
+   ]
+  },
+  {
+   "template": "Closes github.com/<repo>/issues/<ID>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Closes <ticket URL>"
+   ],
+   "examples": [
+    "Closes https://github.com/apache/iceberg-python/issues/850"
+   ]
+  },
+  {
+   "template": "Build queue entries in parallel (#<N>)",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "ticket checklist item referencing PR number"
+   ],
+   "examples": [
+    "Build queue entries in parallel (#3962)"
+   ]
+  },
+  {
+   "template": "<!-- Closes #<N> -->",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "GitHub auto-close comment referencing the ticket number"
+   ],
+   "examples": [
+    "<!-- Closes #3860 -->"
+   ]
+  },
+  {
+   "template": "Fixes #<N>.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Explicit 'Fixes #<ticket>' in PR description"
+   ],
+   "examples": [
+    "Fixes #3260."
+   ]
+  },
+  {
+   "template": "Follow-up to #<N>, which added `View.metadata_location`.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Follow-up to ticket reference in PR description"
+   ],
+   "examples": [
+    "Follow-up to #4088, which added `View.metadata_location`."
+   ]
+  },
+  {
+   "template": "Closes #${GITHUB_ISSUE_ID}",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "PR description template referencing a GitHub issue ID in a 'Closes' comment"
+   ],
+   "examples": [
+    "Closes #${GITHUB_ISSUE_ID}"
+   ]
+  },
+  {
+   "template": "Related: github.com/<repo>/issues/<ID>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the 'Related' line"
+   ],
+   "examples": [
+    "Related: https://github.com/apache/iceberg-python/issues/271"
+   ]
+  },
+  {
+   "template": "Fixes github.com/<repo>/issues/<ID>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Fixes #<ticket-number>"
+   ],
+   "examples": [
+    "Fixes https://github.com/apache/iceberg-python/issues/3633"
+   ]
+  },
+  {
+   "template": "Closes #<N>.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "explicit 'Closes #<ticket>' in PR description"
+   ],
+   "examples": [
+    "Closes #4104."
+   ]
+  }
+ ],
+ "identity": [
+  {
+   "template": "github account oresttokovenko",
+   "count": 1,
+   "where": {
+    "Account title": 1
+   },
+   "cues": [
+    "exact match of github account name to inferred directory id"
+   ],
+   "examples": [
+    "github account oresttokovenko"
+   ]
+  }
+ ]
+}

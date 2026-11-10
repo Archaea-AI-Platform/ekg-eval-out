@@ -1,0 +1,288 @@
+{
+ "graph": "/Users/bishwajit/projects/archaea_beta/test_data_sorce_graph/ekg_runs/iceberg-python/out",
+ "prompt_version": "fill-v1",
+ "mode": "run",
+ "kinds": {
+  "pr_ticket": {
+   "to_ask": 229,
+   "no_candidate": {
+    "no candidate ticket": 56,
+    "bot PR (no ticket expected)": 83
+   },
+   "prompt_chars_max": 6858,
+   "asked": 229,
+   "rejected": 209,
+   "accepted": 20,
+   "why_not": {
+    "llm": 208,
+    "check": 1
+   }
+  },
+  "commit_pr": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "ticket_fix": {
+   "to_ask": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 6571,
+   "asked": 1,
+   "rejected": 1,
+   "why_not": {
+    "llm": 1
+   }
+  },
+  "email_topic": {
+   "to_ask": 231,
+   "no_candidate": {
+    "no candidate ticket or proposal": 315
+   },
+   "prompt_chars_max": 7526,
+   "asked": 231,
+   "rejected": 211,
+   "accepted": 20,
+   "why_not": {
+    "llm": 211
+   }
+  },
+  "identity": {
+   "to_ask": 4,
+   "no_candidate": {
+    "github: no candidate person": 134
+   },
+   "prompt_chars_max": 1387,
+   "asked": 4,
+   "rejected": 3,
+   "accepted": 1,
+   "why_not": {
+    "check": 2,
+    "llm": 1
+   }
+  },
+  "decision_status": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "knowledge": {
+   "to_ask": 300,
+   "no_candidate": {
+    "too short to hold knowledge": 6089
+   },
+   "prompt_chars_max": 13863,
+   "asked": 300,
+   "accepted": 202,
+   "rejected": 98,
+   "why_not": {
+    "llm": 95,
+    "check": 2,
+    "llm judge": 1
+   }
+  },
+  "doc_knowledge": {
+   "to_ask": 4,
+   "no_candidate": {},
+   "prompt_chars_max": 10421,
+   "asked": 4,
+   "accepted": 4,
+   "why_not": {}
+  }
+ },
+ "model": "openrouter mistralai/devstral-2512",
+ "calls": {
+  "made": 975,
+  "answered_from_responses": 1
+ },
+ "written": {
+  "records_new_or_patched": 499,
+  "links_new": 731,
+  "people_links": {
+   "AUTHORED_BY: source has no author": 192,
+   "ASKED_BY: source has no author": 2,
+   "AUTHORED_BY: linked": 69,
+   "DECIDED_BY: linked": 30,
+   "ASSIGNED_TO: source has no author": 1,
+   "ASSIGNED_TO: linked": 16,
+   "DECIDED_BY: source has no author": 7
+  },
+  "links_by_type": {
+   "EXTRACTED_FROM": 438,
+   "ABOUT": 81,
+   "RAISED_IN": 19,
+   "AUTHORED_BY": 69,
+   "MADE_IN": 37,
+   "DECIDED_BY": 30,
+   "DISCUSSES": 20,
+   "ASSIGNED_TO": 16,
+   "IMPLEMENTS": 20,
+   "HAS_ACCOUNT": 1
+  },
+  "records_by_type": {
+   "Guideline": 159,
+   "DerivationRun": 5,
+   "Knowledge": 261,
+   "Question": 2,
+   "Decision": 37,
+   "Requirement": 18,
+   "ActionItem": 17
+  }
+ },
+ "adapter_hints": {
+  "email_topic": [
+   {
+    "template": "Spark <N>: Best-effort ExpireSnapshots when metadata reachable only from expired snapshots is missing [iceberg]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "PR title explicitly mentions 'ExpireSnapshots'"
+    ],
+    "examples": [
+     "Spark 4.1: Best-effort ExpireSnapshots when metadata reachable only from expired snapshots is missing [iceberg]"
+    ]
+   },
+   {
+    "template": "[I] Remove deleted data files with expire_snapshots [iceberg-python]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "Subject line contains ticket title and repository context"
+    ],
+    "examples": [
+     "[I] Remove deleted data files with expire_snapshots [iceberg-python]"
+    ]
+   },
+   {
+    "template": "[PR] AWS: Inject Glue catalog ID via interceptor instead of per-call [iceberg]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "PR title mentioning AWS and Glue catalog"
+    ],
+    "examples": [
+     "[PR] AWS: Inject Glue catalog ID via interceptor instead of per-call [iceberg]"
+    ]
+   },
+   {
+    "template": "[PR] Core: Disambiguate partition names across evolved specs [iceberg]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "PR title matches the described issue in C1 (partition field naming conflict)"
+    ],
+    "examples": [
+     "[PR] Core: Disambiguate partition names across evolved specs [iceberg]"
+    ]
+   },
+   {
+    "template": "feat(writer): apply per-column parquet bloom filter write properties [iceberg-rust]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "PR title explicitly mentions bloom filter write properties"
+    ],
+    "examples": [
+     "feat(writer): apply per-column parquet bloom filter write properties [iceberg-rust]"
+    ]
+   }
+  ],
+  "pr_ticket": [
+   {
+    "template": "Closes #<N>",
+    "count": 7,
+    "where": {
+     "PullRequest text": 7
+    },
+    "cues": [
+     "Closes #<ticket-number>",
+     "ticket key in the branch name and Closes comment",
+     "ticket key in the branch name and explicit 'Closes' reference"
+    ],
+    "examples": [
+     "Closes #3981",
+     "Closes #3931",
+     "Closes #3498"
+    ]
+   },
+   {
+    "template": "Fokko confirmed the issue above",
+    "count": 1,
+    "where": {
+     "Comment text": 1
+    },
+    "cues": [
+     "ticket key in the branch name (fix/strict-not-in-nan-upper-bound) and explicit confirmation of the issue"
+    ],
+    "examples": [
+     "Fokko confirmed the issue above"
+    ]
+   },
+   {
+    "template": "Binding starts-with/not-starts-with with an out-of-range literal leaks the AboveMax/BelowMin sentinel into a bound predi",
+    "count": 1,
+    "where": {
+     "Ticket title": 1
+    },
+    "cues": [
+     "ticket key in the PR description matches the candidate ticket description"
+    ],
+    "examples": [
+     "Binding starts-with/not-starts-with with an out-of-range literal leaks the AboveMax/BelowMin sentinel into a bound predicate"
+    ]
+   },
+   {
+    "template": "This is the enabler #<N> needs to write delete manifests, so it unblocks that work",
+    "count": 1,
+    "where": {
+     "Comment text": 1
+    },
+    "cues": [
+     "explicit reference to enabling/fixing a ticket in the PR description"
+    ],
+    "examples": [
+     "This is the enabler #3925 needs to write delete manifests, so it unblocks that work"
+    ]
+   },
+   {
+    "template": "Implements the manifest-inspection snapshot-selection part of #<N>",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "ticket key in the rationale"
+    ],
+    "examples": [
+     "Implements the manifest-inspection snapshot-selection part of #1053"
+    ]
+   }
+  ],
+  "identity": [
+   {
+    "template": "github account oresttokovenko",
+    "count": 1,
+    "where": {
+     "Account title": 1
+    },
+    "cues": [
+     "exact match of github account name to inferred directory id"
+    ],
+    "examples": [
+     "github account oresttokovenko"
+    ]
+   }
+  ]
+ }
+}
