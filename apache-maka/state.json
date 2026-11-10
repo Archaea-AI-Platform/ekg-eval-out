@@ -1,0 +1,116 @@
+{
+ "layout": {
+  "done": true,
+  "at": "2026-11-08T09:38:59Z",
+  "dataset": "maka",
+  "repo": "apache/maka",
+  "jira": null,
+  "prs": 500,
+  "issues": 125,
+  "commits": 57,
+  "mail_lists": [
+   "commits",
+   "dev"
+  ]
+ },
+ "inventory": {
+  "done": true,
+  "at": "2026-11-08T09:38:59Z",
+  "not_read": [
+   "github/graphql",
+   "github/users"
+  ]
+ },
+ "parse": {
+  "done": true,
+  "at": "2026-11-08T10:21:31Z",
+  "totals": {
+   "records": 16808,
+   "records_valid": 16808,
+   "links": 55058,
+   "links_valid": 55058,
+   "record_types": 23,
+   "link_types": 30
+  },
+  "adapters": {
+   "people": "ran",
+   "github": "ran",
+   "issues": "ran",
+   "git": "ran",
+   "code": "ran",
+   "mail": "ran"
+  }
+ },
+ "llm_run": {
+  "done": true,
+  "calls": {
+   "made": 1434,
+   "answered_from_responses": 0
+  },
+  "kinds": {
+   "pr_ticket": {
+    "to_ask": 341,
+    "accepted": 61,
+    "rejected": 280,
+    "error": 0
+   },
+   "commit_pr": {
+    "to_ask": 0,
+    "accepted": 0,
+    "rejected": 0,
+    "error": 0
+   },
+   "ticket_fix": {
+    "to_ask": 11,
+    "accepted": 1,
+    "rejected": 10,
+    "error": 0
+   },
+   "email_topic": {
+    "to_ask": 77,
+    "accepted": 14,
+    "rejected": 63,
+    "error": 0
+   },
+   "identity": {
+    "to_ask": 8,
+    "accepted": 8,
+    "rejected": 0,
+    "error": 0
+   },
+   "decision_status": {
+    "to_ask": 0,
+    "accepted": 0,
+    "rejected": 0,
+    "error": 0
+   },
+   "knowledge": {
+    "to_ask": 301,
+    "accepted": 283,
+    "rejected": 18,
+    "error": 0
+   },
+   "doc_knowledge": {
+    "to_ask": 207,
+    "accepted": 205,
+    "rejected": 2,
+    "error": 0
+   }
+  }
+ },
+ "save": {
+  "done": true,
+  "at": "2026-11-08T10:35:47Z",
+  "size_mb": 172.7,
+  "gzip_mb": 37.6,
+  "records_by_stage": {
+   "adapters": 16808,
+   "llm": 1517
+  },
+  "links_by_stage": {
+   "adapters": 55058,
+   "llm": 2533
+  },
+  "invalid_skipped": {}
+ }
+}

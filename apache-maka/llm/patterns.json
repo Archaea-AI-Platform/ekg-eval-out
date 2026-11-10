@@ -1,0 +1,819 @@
+{
+ "email_topic": [
+  {
+   "template": "[PR] Add parameters check for adding Runtime Host. [maka] github-actions[bot] closed pull request #<N>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "PR title and number matching ticket description"
+   ],
+   "examples": [
+    "[PR] Add parameters check for adding Runtime Host. [maka] github-actions[bot] closed pull request #3638"
+   ]
+  },
+  {
+   "template": "feat(computer-use): create platform abstraction layer for cross-platform backends [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "GitHub issue URL and subject line referencing the feature"
+   ],
+   "examples": [
+    "feat(computer-use): create platform abstraction layer for cross-platform backends [maka]"
+   ]
+  },
+  {
+   "template": "fix(cli): dispatch turn cancellation ahead of the queue barrier",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description keywords (cli, turn cancellation, queue barrier)"
+   ],
+   "examples": [
+    "fix(cli): dispatch turn cancellation ahead of the queue barrier"
+   ]
+  },
+  {
+   "template": "[A06] Tool Runtime refactoring discussion and implementation plan [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line containing ticket identifier and runtime-related keywords"
+   ],
+   "examples": [
+    "[A06] Tool Runtime refactoring discussion and implementation plan [maka]"
+   ]
+  },
+  {
+   "template": "bug(desktop): tool rows expand to empty, repeated, or placeholder details [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line contains ticket title and repository name"
+   ],
+   "examples": [
+    "bug(desktop): tool rows expand to empty, repeated, or placeholder details [maka]"
+   ]
+  },
+  {
+   "template": "[I] tracking(runtime): finish provider-native web search [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line containing the ticket's title or key phrase"
+   ],
+   "examples": [
+    "[I] tracking(runtime): finish provider-native web search [maka]"
+   ]
+  },
+  {
+   "template": "[I] Custom relay: no way to see the model catalog while filling in the form that needs it [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "issue title in subject line"
+   ],
+   "examples": [
+    "[I] Custom relay: no way to see the model catalog while filling in the form that needs it [maka]"
+   ]
+  },
+  {
+   "template": "bug(runtime): manual /compact checkpoint is dropped after next-turn tool-result pruning [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Issue title in subject line matches candidate description"
+   ],
+   "examples": [
+    "bug(runtime): manual /compact checkpoint is dropped after next-turn tool-result pruning [maka]"
+   ]
+  },
+  {
+   "template": "[I] Desktop transcript consumers survive Renderer loss and accumulate WebContents listeners [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Issue title in subject line matches candidate ticket description"
+   ],
+   "examples": [
+    "[I] Desktop transcript consumers survive Renderer loss and accumulate WebContents listeners [maka]"
+   ]
+  },
+  {
+   "template": "filter-work-conversations Storybook smoke failed on three unrelated PRs within one night [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line contains 'Storybook' and 'maka' matching ticket C2's description of Storybook preview issues"
+   ],
+   "examples": [
+    "filter-work-conversations Storybook smoke failed on three unrelated PRs within one night [maka]"
+   ]
+  },
+  {
+   "template": "RFC: github.com/<repo>/issues/<ID>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "RFC link in tracking section"
+   ],
+   "examples": [
+    "RFC: https://github.com/apache/maka/issues/6247"
+   ]
+  },
+  {
+   "template": "feat(runtime): restore DeepSeek native WebSearch",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description"
+   ],
+   "examples": [
+    "feat(runtime): restore DeepSeek native WebSearch"
+   ]
+  },
+  {
+   "template": "fix(windows): let Glob skip nested junctions",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description pattern (bug(windows): Glob fails with nested junction)"
+   ],
+   "examples": [
+    "fix(windows): let Glob skip nested junctions"
+   ]
+  },
+  {
+   "template": "feat(desktop): allow Side Conversations to select an independent model [maka]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "GitHub issue title in subject line"
+   ],
+   "examples": [
+    "feat(desktop): allow Side Conversations to select an independent model [maka]"
+   ]
+  }
+ ],
+ "pr_ticket": [
+  {
+   "template": "Fixes #<N>",
+   "count": 14,
+   "where": {
+    "PullRequest text": 14
+   },
+   "cues": [
+    "explicit 'Fixes #<ticket>' in PR description",
+    "Fixes #<ticket-number>",
+    "Fixes #<ticket> in PR description"
+   ],
+   "examples": [
+    "Fixes #5627",
+    "Fixes #5970",
+    "Fixes #5930"
+   ]
+  },
+  {
+   "template": "Refs #<N>",
+   "count": 7,
+   "where": {
+    "PullRequest text": 7
+   },
+   "cues": [
+    "ticket reference in PR summary",
+    "ticket reference in PR description",
+    "ticket reference in PR title/summary"
+   ],
+   "examples": [
+    "Refs #3977",
+    "Refs #6000",
+    "Refs #5745"
+   ]
+  },
+  {
+   "template": "Part of #<N>.",
+   "count": 3,
+   "where": {
+    "PullRequest text": 3
+   },
+   "cues": [
+    "ticket key in the branch name and summary",
+    "explicit reference to ticket in PR description",
+    "explicit ticket reference in PR description"
+   ],
+   "examples": [
+    "Part of #5919.",
+    "Part of #3974.",
+    "Part of #5380."
+   ]
+  },
+  {
+   "template": "Part of #<N>",
+   "count": 2,
+   "where": {
+    "PullRequest text": 2
+   },
+   "cues": [
+    "ticket key in the branch name",
+    "explicit 'Part of <ticket>' declaration in PR description"
+   ],
+   "examples": [
+    "Part of #3284",
+    "Part of #5109"
+   ]
+  },
+  {
+   "template": "Refs #<N>.",
+   "count": 2,
+   "where": {
+    "PullRequest text": 2
+   },
+   "cues": [
+    "ticket key in the branch name and PR title",
+    "ticket reference in PR description"
+   ],
+   "examples": [
+    "Refs #5842.",
+    "Refs #3938."
+   ]
+  },
+  {
+   "template": "fix(runtime): prevent a step-capped turn from completing past a finish-hook veto",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "finish-hook veto in ticket description matches PR's beforeTurnFinish hook"
+   ],
+   "examples": [
+    "fix(runtime): prevent a step-capped turn from completing past a finish-hook veto"
+   ]
+  },
+  {
+   "template": "bug(desktop): composer toolbar wraps at intermediate widths while resizing",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "PR title and description match ticket description of composer layout issues during resizing"
+   ],
+   "examples": [
+    "bug(desktop): composer toolbar wraps at intermediate widths while resizing"
+   ]
+  },
+  {
+   "template": "compatibility prerequisite requested on #<N>: compatibility first, then Korean core enablement",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the summary description"
+   ],
+   "examples": [
+    "compatibility prerequisite requested on #5100: compatibility first, then Korean core enablement"
+   ]
+  },
+  {
+   "template": "fix/<N>-election-loser-wait",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "fix/5843-election-loser-wait"
+   ]
+  },
+  {
+   "template": "Refs [#<N> — PR2: Host observation and condition management]",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "explicit reference to ticket in PR description"
+   ],
+   "examples": [
+    "Refs [#5926 — PR2: Host observation and condition management]"
+   ]
+  },
+  {
+   "template": "fix(desktop): use dedicated directories for projectless tasks (branch fix/<N>-projectless-task-dir, merged)",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "branch name references ticket number"
+   ],
+   "examples": [
+    "fix(desktop): use dedicated directories for projectless tasks (branch fix/5939-projectless-task-dir, merged)"
+   ]
+  },
+  {
+   "template": "#<N>: in a linked Git worktree, approving the read boundary that the managed Bash tool asks for",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket reference in PR summary"
+   ],
+   "examples": [
+    "#4336: in a linked Git worktree, approving the read boundary that the managed Bash tool asks for"
+   ]
+  },
+  {
+   "template": "Extracted from #<N> so the unrelated CI reliability fix can be reviewed independently.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Extracted from <ticket>"
+   ],
+   "examples": [
+    "Extracted from #6091 so the unrelated CI reliability fix can be reviewed independently."
+   ]
+  },
+  {
+   "template": "closed PR #<N>",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "ticket key in the branch name and PR description"
+   ],
+   "examples": [
+    "closed PR #5980"
+   ]
+  },
+  {
+   "template": "Fixes #<N>.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in PR summary line"
+   ],
+   "examples": [
+    "Fixes #6110."
+   ]
+  },
+  {
+   "template": "Pull request #<N>: docs: verify the managed workspace docs against main (#<N>)",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the PR title"
+   ],
+   "examples": [
+    "Pull request #6043: docs: verify the managed workspace docs against main (#3522)"
+   ]
+  },
+  {
+   "template": "feat(cli): add session-based run interaction",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "feat(cli): add session-based run interaction"
+   ]
+  },
+  {
+   "template": "Second verification pass over the Context-and-compaction slice of #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "Second verification pass over the Context-and-compaction slice of #3522"
+   ]
+  },
+  {
+   "template": "branch fix/<N>-judgement-session-tool-boundary",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "branch fix/6412-judgement-session-tool-boundary"
+   ]
+  },
+  {
+   "template": "Capability tracking: #<N>.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "explicit ticket reference in PR summary with 'tracking' or 'capability' context"
+   ],
+   "examples": [
+    "Capability tracking: #6413."
+   ]
+  },
+  {
+   "template": "branch fix/<N>-matter-reply-envelope-budget",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "branch name contains ticket number"
+   ],
+   "examples": [
+    "branch fix/6416-matter-reply-envelope-budget"
+   ]
+  },
+  {
+   "template": "Adds the evaluation asked for in #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in PR summary and branch name"
+   ],
+   "examples": [
+    "Adds the evaluation asked for in #6360"
+   ]
+  },
+  {
+   "template": "feat(desktop): bound long provider model lists with an internal scroll area",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "feat(desktop): bound long provider model lists with an internal scroll area"
+   ]
+  },
+  {
+   "template": "Following the scope agreed in #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "Following the scope agreed in #5235"
+   ]
+  },
+  {
+   "template": "feat(agent): expose resumable status and desktop continuation",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "ticket key in the PR title and description matching the feature"
+   ],
+   "examples": [
+    "feat(agent): expose resumable status and desktop continuation"
+   ]
+  },
+  {
+   "template": "The Computer Use subsystem (packages/computer-use) is entirely macOS-native. selectComputerUseBackend() returns NONE for",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "PR title and description explicitly address the hardcoded platform check and binding table, matching the ticket's problem statement"
+   ],
+   "examples": [
+    "The Computer Use subsystem (packages/computer-use) is entirely macOS-native. selectComputerUseBackend() returns NONE for any non-Darwin platform"
+   ]
+  },
+  {
+   "template": "Implements the nightly trial proposed in #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "ticket key in the PR summary"
+   ],
+   "examples": [
+    "Implements the nightly trial proposed in #4136"
+   ]
+  },
+  {
+   "template": "feat(i18n-ko): native surfaces and E2E fixtures (branch feat/i18n-ko-native-e2e-<N>",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name"
+   ],
+   "examples": [
+    "feat(i18n-ko): native surfaces and E2E fixtures (branch feat/i18n-ko-native-e2e-3980"
+   ]
+  },
+  {
+   "template": "Stacked on #<N> (edit and resend)",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "PR description references a related ticket or PR by number"
+   ],
+   "examples": [
+    "Stacked on #6454 (edit and resend)"
+   ]
+  },
+  {
+   "template": "bug(runtime): kimi-coding-plan anthropic effort tiers are dropped for model ids outside the hardcoded whitelist",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "ticket key in the branch name (fix/kimi-k3-effort-test-fixture-20261020) and PR title align with ticket description"
+   ],
+   "examples": [
+    "bug(runtime): kimi-coding-plan anthropic effort tiers are dropped for model ids outside the hardcoded whitelist"
+   ]
+  },
+  {
+   "template": "Closes #<N>.",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Closes #<ticket-number> in PR title/body"
+   ],
+   "examples": [
+    "Closes #3860."
+   ]
+  },
+  {
+   "template": "ShellRun process crash recovery is intermittently flaky (non-atomic ready.json)",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "test(runtime-host): ShellRun process crash recovery"
+   ],
+   "examples": [
+    "ShellRun process crash recovery is intermittently flaky (non-atomic ready.json)"
+   ]
+  },
+  {
+   "template": "branch fix/<N>-compaction-no-boundary-capacity",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "branch name includes ticket number"
+   ],
+   "examples": [
+    "branch fix/6415-compaction-no-boundary-capacity"
+   ]
+  },
+  {
+   "template": "Implements the [PR4.<N> development plan](github.com/<repo>/issues/<ID>), following the [original discussion](<URL>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "Explicit 'Implements' reference to a ticket in the PR description"
+   ],
+   "examples": [
+    "Implements the [PR4.5 development plan](https://github.com/apache/maka/issues/5926#issuecomment-6398370281), following the [original discussion](https://github."
+   ]
+  },
+  {
+   "template": "tracking(runtime-host): condition-driven Session waits and wake-ups",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "ticket key in the PR title and description matching the tracking issue"
+   ],
+   "examples": [
+    "tracking(runtime-host): condition-driven Session waits and wake-ups"
+   ]
+  },
+  {
+   "template": "branch fix/<N>-kimi-anthropic-effort-whitelist",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "branch name includes ticket number"
+   ],
+   "examples": [
+    "branch fix/6417-kimi-anthropic-effort-whitelist"
+   ]
+  },
+  {
+   "template": "feat(i18n): add Korean (ko) locale",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "ticket key in the PR title and summary matching the feature description"
+   ],
+   "examples": [
+    "feat(i18n): add Korean (ko) locale"
+   ]
+  },
+  {
+   "template": "Design-only draft for Amazon Bedrock with IAM Identity Center, as asked in #<N>",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "PR description explicitly references ticket number in summary"
+   ],
+   "examples": [
+    "Design-only draft for Amazon Bedrock with IAM Identity Center, as asked in #6072"
+   ]
+  }
+ ],
+ "identity": [
+  {
+   "template": "directory id: colafornia email: colafornia@apache.org accounts already known: asf:colafornia (Yilin Wang)",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id and account name match github login"
+   ],
+   "examples": [
+    "directory id: colafornia\nemail: colafornia@apache.org\naccounts already known: asf:colafornia (Yilin Wang)"
+   ]
+  },
+  {
+   "template": "directory id: yayoinanoka",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account name"
+   ],
+   "examples": [
+    "directory id: yayoinanoka"
+   ]
+  },
+  {
+   "template": "directory id: inferred:colaforniaw@gmail.com",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "inferred email matches github account name"
+   ],
+   "examples": [
+    "directory id: inferred:colaforniaw@gmail.com"
+   ]
+  },
+  {
+   "template": "directory id: ggbdpq",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account"
+   ],
+   "examples": [
+    "directory id: ggbdpq"
+   ]
+  },
+  {
+   "template": "directory id: zhiiw",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: zhiiw"
+   ]
+  },
+  {
+   "template": "directory id: chihumyum",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account"
+   ],
+   "examples": [
+    "directory id: chihumyum"
+   ]
+  },
+  {
+   "template": "directory id: are404",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github login"
+   ],
+   "examples": [
+    "directory id: are404"
+   ]
+  },
+  {
+   "template": "directory id: chinawch007",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: chinawch007"
+   ]
+  }
+ ],
+ "ticket_fix": [
+  {
+   "template": "Editing a queued follow-up opened a one-row textarea, so a multiline message showed only its first line until the editor",
+   "count": 1,
+   "where": {
+    "PullRequest text": 1
+   },
+   "cues": [
+    "PR description explicitly addresses the issue described in the ticket"
+   ],
+   "examples": [
+    "Editing a queued follow-up opened a one-row textarea, so a multiline message showed only its first line until the editor was resized by hand."
+   ]
+  }
+ ]
+}

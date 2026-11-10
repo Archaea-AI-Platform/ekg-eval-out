@@ -1,0 +1,365 @@
+{
+ "graph": "/Users/bishwajit/projects/archaea_beta/test_data_sorce_graph/ekg_runs/maka/out",
+ "prompt_version": "fill-v1",
+ "mode": "run",
+ "kinds": {
+  "pr_ticket": {
+   "to_ask": 341,
+   "no_candidate": {
+    "bot PR (no ticket expected)": 60,
+    "no candidate ticket": 3
+   },
+   "prompt_chars_max": 10544,
+   "asked": 341,
+   "rejected": 280,
+   "accepted": 61,
+   "why_not": {
+    "llm": 279,
+    "check": 1
+   }
+  },
+  "commit_pr": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "ticket_fix": {
+   "to_ask": 11,
+   "no_candidate": {},
+   "prompt_chars_max": 5114,
+   "asked": 11,
+   "rejected": 10,
+   "accepted": 1,
+   "why_not": {
+    "llm": 10
+   }
+  },
+  "email_topic": {
+   "to_ask": 77,
+   "no_candidate": {
+    "no candidate ticket or proposal": 17
+   },
+   "prompt_chars_max": 6857,
+   "asked": 77,
+   "rejected": 63,
+   "accepted": 14,
+   "why_not": {
+    "llm": 63
+   }
+  },
+  "identity": {
+   "to_ask": 8,
+   "no_candidate": {
+    "github: no candidate person": 90
+   },
+   "prompt_chars_max": 1479,
+   "asked": 8,
+   "accepted": 8,
+   "why_not": {}
+  },
+  "decision_status": {
+   "to_ask": 0,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "why_not": {}
+  },
+  "knowledge": {
+   "to_ask": 301,
+   "no_candidate": {
+    "too short to hold knowledge": 2698
+   },
+   "prompt_chars_max": 13732,
+   "asked": 301,
+   "accepted": 283,
+   "rejected": 18,
+   "why_not": {
+    "llm": 11,
+    "check": 7
+   }
+  },
+  "doc_knowledge": {
+   "to_ask": 207,
+   "no_candidate": {},
+   "prompt_chars_max": 10530,
+   "asked": 207,
+   "accepted": 205,
+   "rejected": 2,
+   "why_not": {
+    "check": 1,
+    "llm judge": 1
+   }
+  }
+ },
+ "model": "openrouter mistralai/devstral-2512",
+ "calls": {
+  "made": 1434,
+  "answered_from_responses": 0
+ },
+ "written": {
+  "records_new_or_patched": 1517,
+  "links_new": 2533,
+  "people_links": {
+   "DECIDED_BY: source has no author": 55,
+   "AUTHORED_BY: linked": 245,
+   "AUTHORED_BY: source has no author": 530,
+   "DECIDED_BY: linked": 17,
+   "ASSIGNED_TO: linked": 5,
+   "ASSIGNED_TO: source has no author": 1
+  },
+  "links_by_type": {
+   "DISCUSSES": 14,
+   "MADE_IN": 72,
+   "ABOUT": 671,
+   "EXTRACTED_FROM": 1429,
+   "AUTHORED_BY": 245,
+   "DECIDED_BY": 17,
+   "IMPLEMENTS": 62,
+   "RAISED_IN": 10,
+   "HAS_ACCOUNT": 8,
+   "ASSIGNED_TO": 5
+  },
+  "records_by_type": {
+   "DerivationRun": 6,
+   "Decision": 72,
+   "Knowledge": 775,
+   "Requirement": 278,
+   "Guideline": 376,
+   "ActionItem": 10
+  }
+ },
+ "adapter_hints": {
+  "email_topic": [
+   {
+    "template": "[PR] Add parameters check for adding Runtime Host. [maka] github-actions[bot] closed pull request #<N>",
+    "count": 1,
+    "where": {
+     "EmailMessage text": 1
+    },
+    "cues": [
+     "PR title and number matching ticket description"
+    ],
+    "examples": [
+     "[PR] Add parameters check for adding Runtime Host. [maka] github-actions[bot] closed pull request #3638"
+    ]
+   },
+   {
+    "template": "feat(computer-use): create platform abstraction layer for cross-platform backends [maka]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "GitHub issue URL and subject line referencing the feature"
+    ],
+    "examples": [
+     "feat(computer-use): create platform abstraction layer for cross-platform backends [maka]"
+    ]
+   },
+   {
+    "template": "fix(cli): dispatch turn cancellation ahead of the queue barrier",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "PR title matches ticket description keywords (cli, turn cancellation, queue barrier)"
+    ],
+    "examples": [
+     "fix(cli): dispatch turn cancellation ahead of the queue barrier"
+    ]
+   },
+   {
+    "template": "[A06] Tool Runtime refactoring discussion and implementation plan [maka]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "Subject line containing ticket identifier and runtime-related keywords"
+    ],
+    "examples": [
+     "[A06] Tool Runtime refactoring discussion and implementation plan [maka]"
+    ]
+   },
+   {
+    "template": "bug(desktop): tool rows expand to empty, repeated, or placeholder details [maka]",
+    "count": 1,
+    "where": {
+     "EmailMessage title": 1
+    },
+    "cues": [
+     "Subject line contains ticket title and repository name"
+    ],
+    "examples": [
+     "bug(desktop): tool rows expand to empty, repeated, or placeholder details [maka]"
+    ]
+   }
+  ],
+  "pr_ticket": [
+   {
+    "template": "Fixes #<N>",
+    "count": 14,
+    "where": {
+     "PullRequest text": 14
+    },
+    "cues": [
+     "explicit 'Fixes #<ticket>' in PR description",
+     "Fixes #<ticket-number>",
+     "Fixes #<ticket> in PR description"
+    ],
+    "examples": [
+     "Fixes #5627",
+     "Fixes #5970",
+     "Fixes #5930"
+    ]
+   },
+   {
+    "template": "Refs #<N>",
+    "count": 7,
+    "where": {
+     "PullRequest text": 7
+    },
+    "cues": [
+     "ticket reference in PR summary",
+     "ticket reference in PR description",
+     "ticket reference in PR title/summary"
+    ],
+    "examples": [
+     "Refs #3977",
+     "Refs #6000",
+     "Refs #5745"
+    ]
+   },
+   {
+    "template": "Part of #<N>.",
+    "count": 3,
+    "where": {
+     "PullRequest text": 3
+    },
+    "cues": [
+     "ticket key in the branch name and summary",
+     "explicit reference to ticket in PR description",
+     "explicit ticket reference in PR description"
+    ],
+    "examples": [
+     "Part of #5919.",
+     "Part of #3974.",
+     "Part of #5380."
+    ]
+   },
+   {
+    "template": "Part of #<N>",
+    "count": 2,
+    "where": {
+     "PullRequest text": 2
+    },
+    "cues": [
+     "ticket key in the branch name",
+     "explicit 'Part of <ticket>' declaration in PR description"
+    ],
+    "examples": [
+     "Part of #3284",
+     "Part of #5109"
+    ]
+   },
+   {
+    "template": "Refs #<N>.",
+    "count": 2,
+    "where": {
+     "PullRequest text": 2
+    },
+    "cues": [
+     "ticket key in the branch name and PR title",
+     "ticket reference in PR description"
+    ],
+    "examples": [
+     "Refs #5842.",
+     "Refs #3938."
+    ]
+   }
+  ],
+  "identity": [
+   {
+    "template": "directory id: colafornia email: colafornia@apache.org accounts already known: asf:colafornia (Yilin Wang)",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id and account name match github login"
+    ],
+    "examples": [
+     "directory id: colafornia\nemail: colafornia@apache.org\naccounts already known: asf:colafornia (Yilin Wang)"
+    ]
+   },
+   {
+    "template": "directory id: yayoinanoka",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github account name"
+    ],
+    "examples": [
+     "directory id: yayoinanoka"
+    ]
+   },
+   {
+    "template": "directory id: inferred:colaforniaw@gmail.com",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "inferred email matches github account name"
+    ],
+    "examples": [
+     "directory id: inferred:colaforniaw@gmail.com"
+    ]
+   },
+   {
+    "template": "directory id: ggbdpq",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github account"
+    ],
+    "examples": [
+     "directory id: ggbdpq"
+    ]
+   },
+   {
+    "template": "directory id: zhiiw",
+    "count": 1,
+    "where": {
+     "Person text": 1
+    },
+    "cues": [
+     "directory id matches github account login"
+    ],
+    "examples": [
+     "directory id: zhiiw"
+    ]
+   }
+  ],
+  "ticket_fix": [
+   {
+    "template": "Editing a queued follow-up opened a one-row textarea, so a multiline message showed only its first line until the editor",
+    "count": 1,
+    "where": {
+     "PullRequest text": 1
+    },
+    "cues": [
+     "PR description explicitly addresses the issue described in the ticket"
+    ],
+    "examples": [
+     "Editing a queued follow-up opened a one-row textarea, so a multiline message showed only its first line until the editor was resized by hand."
+    ]
+   }
+  ]
+ }
+}

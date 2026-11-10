@@ -1,0 +1,17 @@
+{
+ "project": "maka",
+ "repo": "apache/maka",
+ "tenant": "apache",
+ "fetched_at": "2026-10-30T09:04:14Z",
+ "window": {
+  "since": "2026-10-20",
+  "until": "2026-10-30"
+ },
+ "lists": [
+  "commits",
+  "dev"
+ ],
+ "settings": {
+  "infer_people": true
+ }
+}
