@@ -1,0 +1,4 @@
+. filter=lfs diff=lfs merge=lfs -text
+apache-kafka/*.jsonl filter=lfs diff=lfs merge=lfs -text
+apache-kafka/llm/*.jsonl filter=lfs diff=lfs merge=lfs -text
+*.sqlite.gz filter=lfs diff=lfs merge=lfs -text

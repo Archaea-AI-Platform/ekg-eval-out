@@ -1,6 +1,58 @@
 {
  "pr_ticket": [
   {
+   "template": "[WIp] Fixes consume bench test.py maybe",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "PR title explicitly mentions fixing a test file (consumer_test.py) related to the ticket"
+   ],
+   "examples": [
+    "[WIp] Fixes consume bench test.py maybe"
+   ]
+  },
+  {
+   "template": "Kafka <N> cache offset fetch result",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "PR title contains ticket number and related keywords (offset fetch)"
+   ],
+   "examples": [
+    "Kafka 16637 cache offset fetch result"
+   ]
+  },
+  {
+   "template": "Pull request #<N>: [WIP] Update GroupRebalanceConfig to not require session.timeout.ms",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "PR title matches ticket description about session timeout handling for classic members"
+   ],
+   "examples": [
+    "Pull request #17529: [WIP] Update GroupRebalanceConfig to not require session.timeout.ms"
+   ]
+  },
+  {
+   "template": "Fix IllegalStateException for Transaction Producer",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in the branch name (kraina-fix-IllegalStateException-transaction-producer)"
+   ],
+   "examples": [
+    "Fix IllegalStateException for Transaction Producer"
+   ]
+  },
+  {
    "template": "branch <KEY>",
    "count": 1,
    "where": {
@@ -14,29 +66,498 @@
    ]
   },
   {
+   "template": "Pull request #<N>: (WIP-PoC) <KEY>: Allow to Store Record Headers in State Stores",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "PR title explicitly references KIP-1271, which is tied to ticket KAFKA-20056"
+   ],
+   "examples": [
+    "Pull request #21297: (WIP-PoC) KIP-1271: Allow to Store Record Headers in State Stores"
+   ]
+  },
+  {
    "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
    "count": 1,
    "where": {
     "Ticket text": 1
    },
    "cues": [
-    "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
+    "ticket description explicitly mentions introducing a LogManagerConfig to shorten the constructor"
    ],
    "examples": [
     "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
    ]
   }
  ],
- "email_topic": [
+ "commit_pr": [
   {
-   "template": "<KEY> Support Hierarchical Transactional Acknowledgments for Share Groups",
-   "count": 3,
+   "template": "Revert \"<KEY>: Consumer fetch sessions are evicted too quickly with AsyncKafkaConsumer (#<N>)\"",
+   "count": 1,
    "where": {
-    "EmailMessage title": 3
+    "Commit title": 1
    },
    "cues": [
-    "KIP identifier in subject line and body",
-    "Subject line and repeated references to KIP-1289"
+    "PR number in commit message"
+   ],
+   "examples": [
+    "Revert \"KAFKA-17182: Consumer fetch sessions are evicted too quickly with AsyncKafkaConsumer (#17700)\""
+   ]
+  },
+  {
+   "template": "Pull request #<N>: MINOR: few code cleanups for <KEY>",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "PR title matches commit message subject"
+   ],
+   "examples": [
+    "Pull request #23080: MINOR: few code cleanups for KIP-1071"
+   ]
+  },
+  {
+   "template": "<KEY>: Lift non-public config key strings into public",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "ticket key in PR title matches commit message's implied ticket"
+   ],
+   "examples": [
+    "KAFKA-21368: Lift non-public config key strings into public"
+   ]
+  },
+  {
+   "template": "<KEY> [<N>/N]: Set metadata.log.dir to broker in KRAFT mode in integration test",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "Commit message explicitly references the same ticket (KAFKA-16225) and describes the same change as the PR."
+   ],
+   "examples": [
+    "KAFKA-16225 [1/N]: Set metadata.log.dir to broker in KRAFT mode in integration test"
+   ]
+  },
+  {
+   "template": "<KEY>: Upgrade jetty-server to fix <KEY>-<N>",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "ticket key in commit message matches PR description"
+   ],
+   "examples": [
+    "KAFKA-13209: Upgrade jetty-server to fix CVE-2021-34429"
+   ]
+  },
+  {
+   "template": "Closes #<N> from OmniaGM/<KEY>",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "commit message explicitly references the PR number it closes"
+   ],
+   "examples": [
+    "Closes #10937 from OmniaGM/KAFKA-10587"
+   ]
+  },
+  {
+   "template": "Closes #<N> from dongjinleekr/feature/<KEY>",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <author>/<branch>"
+   ],
+   "examples": [
+    "Closes #10177 from dongjinleekr/feature/KAFKA-12324"
+   ]
+  },
+  {
+   "template": "Closes #<N> from omkreddy/zk-note",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <branch>"
+   ],
+   "examples": [
+    "Closes #7818 from omkreddy/zk-note"
+   ]
+  },
+  {
+   "template": "Pull request #<N>: <KEY>: Dynamic log levels admin API (<KEY>)",
+   "count": 1,
+   "where": {
+    "PullRequest title": 1
+   },
+   "cues": [
+    "PR title matches commit subject and ticket (KAFKA-7800)"
+   ],
+   "examples": [
+    "Pull request #6903: KAFKA-7800: Dynamic log levels admin API (KIP-412)"
+   ]
+  },
+  {
+   "template": "Closes #<N> from wicknicks/connect-integration-test",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <branch>"
+   ],
+   "examples": [
+    "Closes #5516 from wicknicks/connect-integration-test"
+   ]
+  },
+  {
+   "template": "HOTFIX: update Streams security docs",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "commit message matches PR description"
+   ],
+   "examples": [
+    "HOTFIX: update Streams security docs"
+   ]
+  },
+  {
+   "template": "Closes #<N> from mjsax/kafka-<N>-restore-global-consumer-handle-reset",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR-number> from <branch>"
+   ],
+   "examples": [
+    "Closes #4215 from mjsax/kafka-6121-restore-global-consumer-handle-reset"
+   ]
+  },
+  {
+   "template": "Closes #<N> from ConcurrencyPractitioner/trunk",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <branch>"
+   ],
+   "examples": [
+    "Closes #4258 from ConcurrencyPractitioner/trunk"
+   ]
+  },
+  {
+   "template": "Closes #<N> from sjmittal/trunk",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <author>/<branch>"
+   ],
+   "examples": [
+    "Closes #2642 from sjmittal/trunk"
+   ]
+  },
+  {
+   "template": "Closes #<N> from xvrl/lambdas-oh-my",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <branch>"
+   ],
+   "examples": [
+    "Closes #2402 from xvrl/lambdas-oh-my"
+   ]
+  },
+  {
+   "template": "Closes #<N> from mjsax/kafka-<N>-zk-follow-up-system-tests",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <branch>"
+   ],
+   "examples": [
+    "Closes #2391 from mjsax/kafka-4060-zk-follow-up-system-tests"
+   ]
+  },
+  {
+   "template": "Closes #<N> from hachikuji/minor-cleanup-for-kip-<N>",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR> from <branch>"
+   ],
+   "examples": [
+    "Closes #2348 from hachikuji/minor-cleanup-for-kip-102"
+   ]
+  },
+  {
+   "template": "Closes #<N> from gwenshap/fix-doc-version",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR> from <branch>"
+   ],
+   "examples": [
+    "Closes #1107 from gwenshap/fix-doc-version"
+   ]
+  },
+  {
+   "template": "Closes #<N> from allenxwang/<KEY>",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR_ID> from <author>/<ticket>"
+   ],
+   "examples": [
+    "Closes #132 from allenxwang/KAFKA-1215"
+   ]
+  },
+  {
+   "template": "Closes #<N> from gwenshap/minor-consumer-groups",
+   "count": 1,
+   "where": {
+    "Commit text": 1
+   },
+   "cues": [
+    "Closes #<PR> from <branch>"
+   ],
+   "examples": [
+    "Closes #1039 from gwenshap/minor-consumer-groups"
+   ]
+  }
+ ],
+ "ticket_fix": [
+  {
+   "template": "<KEY> move quota config params from KafkaConfig to QuotaConfig (#<N>)",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "ticket key in the commit message"
+   ],
+   "examples": [
+    "KAKFA-17173 move quota config params from KafkaConfig to QuotaConfig (#17505)"
+   ]
+  },
+  {
+   "template": "<KEY> Fix rare producer message corruption, don't reuse buffers on the client in certain error cases",
+   "count": 1,
+   "where": {
+    "Commit title": 1
+   },
+   "cues": [
+    "ticket key in the commit message"
+   ],
+   "examples": [
+    "KAFKA-19012 Fix rare producer message corruption, don't reuse buffers on the client in certain error cases"
+   ]
+  },
+  {
+   "template": "The fix was already backported to <N> in [github.com/<repo>/commit/<ID>]",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "explicit commit SHA linked to the ticket's fix"
+   ],
+   "examples": [
+    "The fix was already backported to 3.9 in [https://github.com/apache/kafka/commit/1c85bc563121b0135e948328f54d939eaae3740b]"
+   ]
+  }
+ ],
+ "email_topic": [
+  {
+   "template": "Build failed in Jenkins: Kafka » Kafka Branch Builder » <N> #<N>",
+   "count": 20,
+   "where": {
+    "EmailMessage title": 20
+   },
+   "cues": [
+    "CI build failure notification in subject line",
+    "CI build failure notification with version and build number",
+    "CI build failure in Jenkins pipeline"
+   ],
+   "examples": [
+    "Build failed in Jenkins: Kafka » Kafka Branch Builder » 3.4 #43",
+    "Build failed in Jenkins: Kafka » Kafka Branch Builder » 3.3 #152",
+    "Build failed in Jenkins: Kafka » Kafka Branch Builder » 3.4 #105"
+   ]
+  },
+  {
+   "template": "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")",
+   "count": 16,
+   "where": {
+    "Ticket title": 16
+   },
+   "cues": [
+    "CI build failure mentioned in subject and body",
+    "CI build failure logs in email subject and body",
+    "CI build failure mentioned in both the mail thread and the ticket description"
+   ],
+   "examples": [
+    "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")",
+    "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")",
+    "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")"
+   ]
+  },
+  {
+   "template": "HOTIFX: fix Kafka versions for system tests (#<N>)",
+   "count": 16,
+   "where": {
+    "EmailMessage text": 16
+   },
+   "cues": [
+    "Commit message referencing version updates"
+   ],
+   "examples": [
+    "HOTIFX: fix Kafka versions for system tests (#14493)",
+    "HOTIFX: fix Kafka versions for system tests (#14493)",
+    "HOTIFX: fix Kafka versions for system tests (#14493)"
+   ]
+  },
+  {
+   "template": "<KEY>: Add Broker-side SCRAM Config API",
+   "count": 14,
+   "where": {
+    "EmailMessage text": 14
+   },
+   "cues": [
+    "KIP reference in code comments",
+    "KIP reference in code comment",
+    "KIP reference in code comments or javadoc"
+   ],
+   "examples": [
+    "KIP-554: Add Broker-side SCRAM Config API",
+    "KIP-554: Add Broker-side SCRAM Config API",
+    "KIP-554: Add Broker-side SCRAM Config API"
+   ]
+  },
+  {
+   "template": "Javadoc task does not explicitly set a locale",
+   "count": 9,
+   "where": {
+    "Ticket text": 9
+   },
+   "cues": [
+    "Javadoc warning in build log referencing locale or language settings",
+    "Javadoc warning messages and locale-related issues in build logs",
+    "Javadoc warning in build log referencing locale"
+   ],
+   "examples": [
+    "Javadoc task does not explicitly set a locale",
+    "Javadoc task does not explicitly set a locale",
+    "Javadoc task does not explicitly set a locale"
+   ]
+  },
+  {
+   "template": "<KEY>",
+   "count": 7,
+   "where": {
+    "EmailMessage text": 7
+   },
+   "cues": [
+    "Explicit reference to a KIP number in the context of future changes",
+    "Explicit mention of proposal identifier in announcement text",
+    "explicit mention of a KIP number in the thread"
+   ],
+   "examples": [
+    "KIP-966",
+    "KIP-848",
+    "KIP-653"
+   ]
+  },
+  {
+   "template": "TableTableJoinIntegrationTest",
+   "count": 6,
+   "where": {
+    "EmailMessage text": 6
+   },
+   "cues": [
+    "test class name in Gradle test run output",
+    "test class name in build log matches flaky test ticket",
+    "test class name in build logs"
+   ],
+   "examples": [
+    "TableTableJoinIntegrationTest",
+    "TableTableJoinIntegrationTest",
+    "TableTableJoinIntegrationTest"
+   ]
+  },
+  {
+   "template": "<KEY>: Simplifying MetadataQuorumCommand by Leveraging Admin API for Controller Management",
+   "count": 6,
+   "where": {
+    "EmailMessage title": 6
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-1141 in the email thread",
+    "Explicit mention of KIP-1141 in subject and body",
+    "Subject line explicitly references KIP-1141 and discusses its content"
+   ],
+   "examples": [
+    "KIP-1141: Simplifying MetadataQuorumCommand by Leveraging Admin API for Controller Management",
+    "KIP-1141: Simplifying MetadataQuorumCommand by Leveraging Admin API for Controller Management",
+    "KIP-1141: Simplifying MetadataQuorumCommand by Leveraging Admin API for Controller Management"
+   ]
+  },
+  {
+   "template": "SmokeTestDriverIntegrationTest",
+   "count": 5,
+   "where": {
+    "Ticket title": 3,
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "test name in build log and candidate description",
+    "test class name in build log matches ticket description",
+    "Test class name in build logs matching ticket description"
+   ],
+   "examples": [
+    "SmokeTestDriverIntegrationTest",
+    "SmokeTestDriverIntegrationTest",
+    "SmokeTestDriverIntegrationTest"
+   ]
+  },
+  {
+   "template": "<KEY> Support Hierarchical Transactional Acknowledgments for Share Groups",
+   "count": 5,
+   "where": {
+    "EmailMessage title": 5
+   },
+   "cues": [
+    "Explicit mention of KIP identifier in subject and body",
+    "Subject and body explicitly reference KIP-1289",
+    "Subject line explicitly references KIP-1289 and discusses transactional acknowledgments for Share Groups"
    ],
    "examples": [
     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
@@ -45,16 +566,2324 @@
    ]
   },
   {
-   "template": "[DISCUSS] KIP:<N>: Dead letter queue support for global store/KTable",
+   "template": "Javadoc output language depends on the build machine's system locale",
+   "count": 3,
+   "where": {
+    "Ticket title": 3
+   },
+   "cues": [
+    "Javadoc task warnings and locale-related issues in build logs"
+   ],
+   "examples": [
+    "Javadoc output language depends on the build machine's system locale",
+    "Javadoc output language depends on the build machine's system locale",
+    "Javadoc output language depends on the build machine's system locale"
+   ]
+  },
+  {
+   "template": "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean) > [<N>] true STARTED",
+   "count": 3,
+   "where": {
+    "EmailMessage text": 3
+   },
+   "cues": [
+    "test class name in build log matches flaky test ticket",
+    "Test class name in build log matches flaky test ticket"
+   ],
+   "examples": [
+    "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean) > [1] true STARTED",
+    "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean) > [1] true STARTED",
+    "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean) > [1] true STARTED"
+   ]
+  },
+  {
+   "template": "build scan failed to be published",
+   "count": 3,
+   "where": {
+    "Ticket title": 3
+   },
+   "cues": [
+    "CI build failure related to Develocity Gradle plugin and build scan publishing",
+    "Mention of Gradle build scan publishing failure in CI context",
+    "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")"
+   ],
+   "examples": [
+    "build scan failed to be published",
+    "build scan failed to be published",
+    "build scan failed to be published"
+   ]
+  },
+  {
+   "template": "<KEY>: Add client-provided option to guard against unintentional replication factor change during partition reassignment",
+   "count": 3,
+   "where": {
+    "EmailMessage title": 3
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-860 in the email thread",
+    "Explicit mention of KIP-860 in subject and body discussing its validation and purpose"
+   ],
+   "examples": [
+    "KIP-860: Add client-provided option to guard against unintentional replication factor change during partition reassignments",
+    "KIP-860: Add client-provided option to guard against unintentional replication factor change during partition reassignments",
+    "KIP-860: Add client-provided option to guard against unintentional replication factor change during partition reassignments"
+   ]
+  },
+  {
+   "template": "org.apache.kafka.streams.integration.utils.IntegrationTestUtils",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "Full class path in stack trace matches candidate's package and class name",
+    "Class path in stack trace matches candidate's package"
+   ],
+   "examples": [
+    "org.apache.kafka.streams.integration.utils.IntegrationTestUtils",
+    "org.apache.kafka.streams.integration.utils.IntegrationTestUtils"
+   ]
+  },
+  {
+   "template": "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean)",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "test class name in build log matches flaky test ticket"
+   ],
+   "examples": [
+    "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean)",
+    "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance(boolean)"
+   ]
+  },
+  {
+   "template": "Deprecated Gradle features were used in this build, making it incompatible with Gradle <N>.",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "Gradle version incompatibility mentioned in build failure",
+    "Gradle version incompatibility and CI build failure mentioned in the thread"
+   ],
+   "examples": [
+    "Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.",
+    "Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0."
+   ]
+  },
+  {
+   "template": "Task :streams:javadoc",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "javadoc task execution in build logs",
+    "Javadoc task in build logs"
+   ],
+   "examples": [
+    "Task :streams:javadoc",
+    "Task :streams:javadoc"
+   ]
+  },
+  {
+   "template": "<KEY>: Deprecate `ForeachProcessor` and move to internal package",
+   "count": 2,
+   "where": {
+    "EmailMessage title": 2
+   },
+   "cues": [
+    "Proposal title explicitly mentioned in subject and body",
+    "Explicit mention of KIP-1077 in subject and body, with discussion and vote initiation."
+   ],
+   "examples": [
+    "KIP-1077: Deprecate `ForeachProcessor` and move to internal package",
+    "KIP-1077: Deprecate `ForeachProcessor` and move to internal package"
+   ]
+  },
+  {
+   "template": "KRaft cluster fails with SCRAM authentication enabled for control-plane",
+   "count": 2,
+   "where": {
+    "Ticket title": 2
+   },
+   "cues": [
+    "SCRAM authentication vulnerability and KRaft cluster context",
+    "Mention of KRaft mode, SCRAM-SHA-512, and authentication failure in FIPS environment"
+   ],
+   "examples": [
+    "KRaft cluster fails with SCRAM authentication enabled for control-plane",
+    "KRaft cluster fails with SCRAM authentication enabled for control-plane"
+   ]
+  },
+  {
+   "template": "KIP drafting, publication, discussion, vote",
+   "count": 2,
+   "where": {
+    "Ticket title": 2
+   },
+   "cues": [
+    "mention of KIP list cleanup and movement of KIPs between discussion and adopted tables",
+    "mention of KIP discussion thread and process"
+   ],
+   "examples": [
+    "KIP drafting, publication, discussion, vote",
+    "KIP drafting, publication, discussion, vote"
+   ]
+  },
+  {
+   "template": "<KEY>: Add configuration to control internal topic creation in Kafka Connect",
+   "count": 2,
+   "where": {
+    "Decision title": 2
+   },
+   "cues": [
+    "POC description references a KIP proposal URL",
+    "Explicit mention of KIP-1209 in subject and body with direct link to its Confluence page"
+   ],
+   "examples": [
+    "KIP-1209: Add configuration to control internal topic creation in Kafka Connect",
+    "KIP-1209: Add configuration to control internal topic creation in Kafka Connect"
+   ]
+  },
+  {
+   "template": "I'm collaborating on <KEY>",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "Explicit mention of KIP identifier in the email body",
+    "Explicit mention of KIP identifier in the mail body"
+   ],
+   "examples": [
+    "I'm collaborating on KIP-1176",
+    "I'm collaborating on KIP-1248"
+   ]
+  },
+  {
+   "template": "<KEY>: Time based cluster metadata snapshots",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "Proposal title in the release candidate announcement",
+    "KIP-<number> in release notes or feature list"
+   ],
+   "examples": [
+    "KIP-876: Time based cluster metadata snapshots",
+    "KIP-876: Time based cluster metadata snapshots"
+   ]
+  },
+  {
+   "template": "<KEY> (Client Metrics and Observability)",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "Explicit mention of KIP-714 in the announcement text"
+   ],
+   "examples": [
+    "KIP-714 (Client Metrics and Observability)",
+    "KIP-714 (Client Metrics and Observability)"
+   ]
+  },
+  {
+   "template": "Commit message: \"HOTIFX: fix Kafka versions for system tests (#<N>)\"",
+   "count": 2,
+   "where": {
+    "EmailMessage text": 2
+   },
+   "cues": [
+    "commit message referencing version updates"
+   ],
+   "examples": [
+    "Commit message: \"HOTIFX: fix Kafka versions for system tests (#14493)\"",
+    "Commit message: \"HOTIFX: fix Kafka versions for system tests (#14493)\""
+   ]
+  },
+  {
+   "template": "I need to perform windowed aggregation for weekly interval, from Monday to Monday, using Tumbling Windows. It does not s",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Discussion of Tumbling Windows offset/anchor and lack of support"
+   ],
+   "examples": [
+    "I need to perform windowed aggregation for weekly interval, from Monday to Monday, using Tumbling Windows. It does not seem to be supported"
+   ]
+  },
+  {
+   "template": "Tag @link: reference not found",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Javadoc warning in build log"
+   ],
+   "examples": [
+    "Tag @link: reference not found"
+   ]
+  },
+  {
+   "template": "Task :connect:api:javadoc",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Javadoc task execution in build logs"
+   ],
+   "examples": [
+    "Task :connect:api:javadoc"
+   ]
+  },
+  {
+   "template": "multiple client (consumer/producer) listening and publishing to different cluster inside same application (Same JVM)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Description of a bug involving multiple clients in the same JVM with SASL authentication"
+   ],
+   "examples": [
+    "multiple client (consumer/producer) listening and publishing to different cluster inside same application (Same JVM)"
+   ]
+  },
+  {
+   "template": "max.poll.records and max.poll.interval.ms are read when a consumer is constructed and neither can be changed afterwards.",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "explicit mention of max.poll.records and its static configuration"
+   ],
+   "examples": [
+    "max.poll.records and max.poll.interval.ms are read when a consumer is constructed and neither can be changed afterwards."
+   ]
+  },
+  {
+   "template": "Failed to clean up log for __consumer_offsets-<N> in dir /opt/kafka/data/topics due to IOException",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "IOException during log segment handling in Kafka"
+   ],
+   "examples": [
+    "Failed to clean up log for __consumer_offsets-4 in dir /opt/kafka/data/topics due to IOException"
+   ]
+  },
+  {
+   "template": "follow up from <URL>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit reference to a JIRA ticket (KAFKA-2967) and discussion of migrating documentation to Markdown/Hugo"
+   ],
+   "examples": [
+    "follow up from https://issues.apache.org/jira/browse/KAFKA-2967"
+   ]
+  },
+  {
+   "template": "add new options for reassign partition to better manager dead brokers",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "explicit mention of reassign partition and related improvements"
+   ],
+   "examples": [
+    "add new options for reassign partition to better manager dead brokers"
+   ]
+  },
+  {
+   "template": "Add support for OAuth jwt-bearer grant type",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Mention of OAuth and JWT in the context of Kafka authentication/authorization"
+   ],
+   "examples": [
+    "Add support for OAuth jwt-bearer grant type"
+   ]
+  },
+  {
+   "template": "warning - Tag @link: reference not found: org.apache.kafka.connect.data",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Javadoc warning in build log"
+   ],
+   "examples": [
+    "warning - Tag @link: reference not found: org.apache.kafka.connect.data"
+   ]
+  },
+  {
+   "template": "<KEY>: Add the traffic metric of the partition dimension",
    "count": 1,
    "where": {
     "EmailMessage title": 1
    },
    "cues": [
-    "Subject line explicitly references the KIP number and title"
+    "Subject line and repeated references to KIP-922 in the email thread"
    ],
    "examples": [
-    "[DISCUSS] KIP:1295: Dead letter queue support for global store/KTable"
+    "KIP-922: Add the traffic metric of the partition dimension"
+   ]
+  },
+  {
+   "template": "StreamsAssignmentScaleTest",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "test class name in the build log matches the scope of the ticket"
+   ],
+   "examples": [
+    "StreamsAssignmentScaleTest"
+   ]
+  },
+  {
+   "template": "kafka-consumer-groups.sh",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Mention of the kafka-consumer-groups.sh tool in the context of checking consumer offsets"
+   ],
+   "examples": [
+    "kafka-consumer-groups.sh"
+   ]
+  },
+  {
+   "template": "Kafka » Kafka Branch Builder » trunk #<N>",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Jenkins build number in subject matches ticket number"
+   ],
+   "examples": [
+    "Kafka » Kafka Branch Builder » trunk #1845"
+   ]
+  },
+  {
+   "template": "migration from zookeeper to kraft",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "explicit mention of migration from ZooKeeper to KRaft in the subject and body"
+   ],
+   "examples": [
+    "migration from zookeeper to kraft"
+   ]
+  },
+  {
+   "template": "[DISCUSS] Cluster Linking / Cross-Cluster Replication - Call for Interest & Co-Authors",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly names the feature and references KIP discussion"
+   ],
+   "examples": [
+    "[DISCUSS] Cluster Linking / Cross-Cluster Replication - Call for Interest & Co-Authors"
+   ]
+  },
+  {
+   "template": "Add javadoc to org.apache.kafka.clients.admin module",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "Javadoc warnings in the clients module referencing missing or malformed documentation"
+   ],
+   "examples": [
+    "Add javadoc to org.apache.kafka.clients.admin module"
+   ]
+  },
+  {
+   "template": "[DISCUSS] Partial CI builds - Reducing flakiness with fewer tests",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references the proposal topic"
+   ],
+   "examples": [
+    "[DISCUSS] Partial CI builds - Reducing flakiness with fewer tests"
+   ]
+  },
+  {
+   "template": "streams upgrade tests (:streams:upgrade-system-tests-<N>:unitTest) are failing",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "test path and failure context matching candidate description"
+   ],
+   "examples": [
+    "streams upgrade tests (:streams:upgrade-system-tests-20:unitTest) are failing"
+   ]
+  },
+  {
+   "template": "I work with power(ppc64le) team and need permissions to contribute to Apache Kafka to enable CI for ppc64le arch.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of ppc64le arch in the context of Apache Kafka"
+   ],
+   "examples": [
+    "I work with power(ppc64le) team and need permissions to contribute to Apache Kafka to enable CI for ppc64le arch."
+   ]
+  },
+  {
+   "template": "enable CI for ppc64le arch",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of ppc64le architecture support"
+   ],
+   "examples": [
+    "enable CI for ppc64le arch"
+   ]
+  },
+  {
+   "template": "The Javadoc task does not explicitly set a locale, so the javadoc tool falls back to the JVM's default locale.",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "Javadoc warnings and locale-related issues in build logs"
+   ],
+   "examples": [
+    "The Javadoc task does not explicitly set a locale, so the javadoc tool falls back to the JVM's default locale."
+   ]
+  },
+  {
+   "template": "Build failed in Jenkins: Kafka » Kafka Branch Builder » trunk #<N>",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Jenkins build number in subject line matching ticket number"
+   ],
+   "examples": [
+    "Build failed in Jenkins: Kafka » Kafka Branch Builder » trunk #1970"
+   ]
+  },
+  {
+   "template": "<KEY>: \"Modernize Connect plugin discovery\"",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of KIP identifier in the announcement text"
+   ],
+   "examples": [
+    "KIP-898: \"Modernize Connect plugin discovery\""
+   ]
+  },
+  {
+   "template": "recent gradle upgrade we merged at github.com/<repo>/pull/<ID>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "PR link referencing a Gradle upgrade"
+   ],
+   "examples": [
+    "recent gradle upgrade we merged at https://github.com/apache/kafka/pull/14032"
+   ]
+  },
+  {
+   "template": "Request METADATA failed on brokers List(kafka1:<N> (id: -<N> rack: null))",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Error message explicitly mentions 'METADATA' and 'failed on brokers'"
+   ],
+   "examples": [
+    "Request METADATA failed on brokers List(kafka1:9092 (id: -1 rack: null))"
+   ]
+  },
+  {
+   "template": "I'll propose custom SSL factory for Kafka Connect REST server [org.apache.kafka.connect.runtime.rest.RestServer].",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of a proposal for custom SSL factory for Kafka Connect REST server"
+   ],
+   "examples": [
+    "I'll propose custom SSL factory for Kafka Connect REST server [org.apache.kafka.connect.runtime.rest.RestServer]."
+   ]
+  },
+  {
+   "template": "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "test class name in build log matches candidate ticket"
+   ],
+   "examples": [
+    "SmokeTestDriverIntegrationTest > shouldWorkWithRebalance"
+   ]
+  },
+  {
+   "template": "Improve AdminClient.listOffsets to return timestamp and offset for the record with the largest timestamp",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "mention of AdminClient.listOffsets and lag calculations"
+   ],
+   "examples": [
+    "Improve AdminClient.listOffsets to return timestamp and offset for the record with the largest timestamp"
+   ]
+  },
+  {
+   "template": "I added <KEY> [<N>] to the list. The KIP has received enough votes to pass",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-959 with discussion on its status and implementation"
+   ],
+   "examples": [
+    "I added KIP-959 [1] to the list. The KIP has received enough votes to pass"
+   ]
+  },
+  {
+   "template": "<KEY>: Cluster-wide dynamic log adjustment for Kafka Connect",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-976 in the thread"
+   ],
+   "examples": [
+    "KIP-976: Cluster-wide dynamic log adjustment for Kafka Connect"
+   ]
+  },
+  {
+   "template": "working on <KEY>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of KIP identifier in the thread"
+   ],
+   "examples": [
+    "working on KIP-966"
+   ]
+  },
+  {
+   "template": "You can check this ticket for more information: <URL>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit ticket reference in reply"
+   ],
+   "examples": [
+    "You can check this ticket for more information: https://issues.apache.org/jira/browse/KAFKA-7025"
+   ]
+  },
+  {
+   "template": "<KEY>: Add more metrics for measuring KRaft performance",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Proposal title explicitly mentioning KRaft performance"
+   ],
+   "examples": [
+    "KIP-938: Add more metrics for measuring KRaft performance"
+   ]
+  },
+  {
+   "template": "<KEY>: Allow DropHeaders SMT to drop headers by wildcard/regexp",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-991 in the thread"
+   ],
+   "examples": [
+    "KIP-991: Allow DropHeaders SMT to drop headers by wildcard/regexp"
+   ]
+  },
+  {
+   "template": "The responsibility for conducting unclean leader elections now resides with the controller. Therefore, we should update ",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "Explicit mention of KRaft mode and unclean leader election documentation gap"
+   ],
+   "examples": [
+    "The responsibility for conducting unclean leader elections now resides with the controller. Therefore, we should update the documentation to inform users that s"
+   ]
+  },
+  {
+   "template": "Task :clients:javadoc",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "javadoc task in build logs"
+   ],
+   "examples": [
+    "Task :clients:javadoc"
+   ]
+  },
+  {
+   "template": "<KEY>: Allow restricting files accessed by File and Directory ConfigProviders",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-993 in subject and body with discussion and vote context"
+   ],
+   "examples": [
+    "KIP-993: Allow restricting files accessed by File and Directory ConfigProviders"
+   ]
+  },
+  {
+   "template": "SASL_PLAINTEXT listener with the PLAIN mechanism",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Mention of SASL PLAIN authentication issue in the context of Kafka"
+   ],
+   "examples": [
+    "SASL_PLAINTEXT listener with the PLAIN mechanism"
+   ]
+  },
+  {
+   "template": "ConsistencyVectorIntegrationTest > shouldHaveSamePositionBoundActiveAndStandBy PASSED",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Exact test method name from the ticket appears in the build log"
+   ],
+   "examples": [
+    "ConsistencyVectorIntegrationTest > shouldHaveSamePositionBoundActiveAndStandBy PASSED"
+   ]
+  },
+  {
+   "template": "There are some falky tests, including the testSingleIP test failure. It failed because of some infra change and we fixed",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of flaky tests and their fixes in the release candidate discussion"
+   ],
+   "examples": [
+    "There are some falky tests, including the testSingleIP test failure. It failed because of some infra change and we fixed it <https://github.com/apache/kafka/pul"
+   ]
+  },
+  {
+   "template": "I’m working one move `ConfigCommand` to tools module.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of moving a command to the tools module"
+   ],
+   "examples": [
+    "I’m working one move `ConfigCommand` to tools module."
+   ]
+  },
+  {
+   "template": "move `ConsumerGroupCommand` to `tools` module",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of moving a CLI tool to the `tools` module"
+   ],
+   "examples": [
+    "move `ConsumerGroupCommand` to `tools` module"
+   ]
+  },
+  {
+   "template": "Build sometimes times out on streams tests",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "Mention of streams tests timing out in build logs"
+   ],
+   "examples": [
+    "Build sometimes times out on streams tests"
+   ]
+  },
+  {
+   "template": "Publishing build scan... <URL>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "URL referencing the old Develocity instance (ge.apache.org)"
+   ],
+   "examples": [
+    "Publishing build scan... https://ge.apache.org/s/bs4zmo3wcuugm"
+   ]
+  },
+  {
+   "template": "Currently Kafka uses SLF4J and reload4j as the logging backend. We had to adopt reload4j in <N> as log4j was end of life",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of SLF4J version and logging backend in the context of Kafka's logging situation."
+   ],
+   "examples": [
+    "Currently Kafka uses SLF4J and reload4j as the logging backend. We had to adopt reload4j in 3.2.0 as log4j was end of life and has a few security issues."
+   ]
+  },
+  {
+   "template": "Logging in Kafka",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "subject line referencing the logging system discussed in the ticket"
+   ],
+   "examples": [
+    "Logging in Kafka"
+   ]
+  },
+  {
+   "template": "[REVIEW REQUEST] Move StorageTool to tools",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description"
+   ],
+   "examples": [
+    "[REVIEW REQUEST] Move StorageTool to tools"
+   ]
+  },
+  {
+   "template": "dynamically update keystore and truststore",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of dynamic keystore/truststore updates in KRaft mode"
+   ],
+   "examples": [
+    "dynamically update keystore and truststore"
+   ]
+  },
+  {
+   "template": "document the behavioral differences between ZooKeeper and KRaft",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "discussion of ZooKeeper vs KRaft behavioral differences in latency and metadata operations"
+   ],
+   "examples": [
+    "document the behavioral differences between ZooKeeper and KRaft"
+   ]
+  },
+  {
+   "template": "Modifying certain dynamic configurations on the standalone KRaft controller",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Exact phrase match with the ticket description and documentation reference"
+   ],
+   "examples": [
+    "Modifying certain dynamic configurations on the standalone KRaft controller"
+   ]
+  },
+  {
+   "template": "Github's Merge Queue feature",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of GitHub Merge Queue in the subject and body"
+   ],
+   "examples": [
+    "Github's Merge Queue feature"
+   ]
+  },
+  {
+   "template": "Improve flaky test reporting (<KEY>)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Ticket key in the email subject line"
+   ],
+   "examples": [
+    "Improve flaky test reporting (KAFKA-12216)"
+   ]
+  },
+  {
+   "template": "This code is duplicated in org.apache.kafka.common.security.scram.internals.ScramMechanism.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of code duplication in a specific class"
+   ],
+   "examples": [
+    "This code is duplicated in org.apache.kafka.common.security.scram.internals.ScramMechanism."
+   ]
+  },
+  {
+   "template": "since <KEY>: Full support for distributed mode in dedicated MirrorMaker <N> clusters",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit reference to KIP-710 in the subject and body, with discussion of its behavior and configuration."
+   ],
+   "examples": [
+    "since KIP-710: Full support for distributed mode in dedicated MirrorMaker 2.0 clusters"
+   ]
+  },
+  {
+   "template": "MirrorMaker2 (MM2) for data synchronization",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of MirrorMaker2 (MM2) configuration and behavior"
+   ],
+   "examples": [
+    "MirrorMaker2 (MM2) for data synchronization"
+   ]
+  },
+  {
+   "template": "I would like to propose a KIP to improve Kafka Streams error and exception handling.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of a KIP related to Kafka Streams error and exception handling"
+   ],
+   "examples": [
+    "I would like to propose a KIP to improve Kafka Streams error and exception handling."
+   ]
+  },
+  {
+   "template": "upgrade from gradle <N> to <N> in github.com/<repo>/pull/<ID>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit reference to a GitHub pull request related to Gradle version upgrade"
+   ],
+   "examples": [
+    "upgrade from gradle 8.5 to 8.6 in https://github.com/apache/kafka/pull/15404"
+   ]
+  },
+  {
+   "template": "Move CLI tools from `core` to `tools` module",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "PR description explicitly mentions moving a command to the `tools` module"
+   ],
+   "examples": [
+    "Move CLI tools from `core` to `tools` module"
+   ]
+  },
+  {
+   "template": "I have encountered an error when upgrading from version <N> to <N> in Kraft mode.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KRaft mode upgrade issue"
+   ],
+   "examples": [
+    "I have encountered an error when upgrading from version 3.4.0 to 3.7.0 in Kraft mode."
+   ]
+  },
+  {
+   "template": "improving Kafka's JBOD support in KRaft mode",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of JBOD and KRaft mode in the context of contributions"
+   ],
+   "examples": [
+    "improving Kafka's JBOD support in KRaft mode"
+   ]
+  },
+  {
+   "template": "[DISCUSS] Apache Kafka <N> release",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "release process discussion in subject line"
+   ],
+   "examples": [
+    "[DISCUSS] Apache Kafka 3.7.1 release"
+   ]
+  },
+  {
+   "template": "The java producer can delay a record that already exceeds batch.size because its buffer still has a few unused bytes.",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "mention of batch.size and buffer space usage in producer"
+   ],
+   "examples": [
+    "The java producer can delay a record that already exceeds batch.size because its buffer still has a few unused bytes."
+   ]
+  },
+  {
+   "template": "I am following the [Getting Started guide for writing KIPs]",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "reference to KIP process documentation"
+   ],
+   "examples": [
+    "I am following the [Getting Started guide for writing KIPs]"
+   ]
+  },
+  {
+   "template": "[VOTE] KIP <N> - Introduce new org.apache.kafka.tools.api.Decoder to replace kafka.serializer.Decoder",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1047 in subject and body, with vote and discussion links"
+   ],
+   "examples": [
+    "[VOTE] KIP 1047 - Introduce new org.apache.kafka.tools.api.Decoder to replace kafka.serializer.Decoder"
+   ]
+  },
+  {
+   "template": "I am currently writing a KIP. However, I am experiencing some issues with creating a discussion thread on Apache Pony ma",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of KIP drafting and discussion process"
+   ],
+   "examples": [
+    "I am currently writing a KIP. However, I am experiencing some issues with creating a discussion thread on Apache Pony mail."
+   ]
+  },
+  {
+   "template": "I changed the assignee of <KEY> to you.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "ticket key explicitly mentioned in the thread"
+   ],
+   "examples": [
+    "I changed the assignee of KAFKA-16916 to you."
+   ]
+  },
+  {
+   "template": "[DISCUSS] RemoteLogSegmentMetadataRecord Schema Evolution",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references schema evolution for RemoteLogSegmentMetadataRecord"
+   ],
+   "examples": [
+    "[DISCUSS] RemoteLogSegmentMetadataRecord Schema Evolution"
+   ]
+  },
+  {
+   "template": "Duplicate connector/task create requests lead to incorrect FAILED status",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "mention of duplicate connector/task creation and FAILED status"
+   ],
+   "examples": [
+    "Duplicate connector/task create requests lead to incorrect FAILED status"
+   ]
+  },
+  {
+   "template": "<KEY> <URL>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1033 with its full title and URL in the discussion thread"
+   ],
+   "examples": [
+    "KIP-1033 https://cwiki.apache.org/confluence/display/KAFKA/KIP-1033%3A+Add+Kafka+Streams+exception+handler+for+exceptions+occurring+during+processing"
+   ]
+  },
+  {
+   "template": "[DISCUSS] KIP <N> - Add @FunctionalInterface annotation to Kafka Streams SAM methods",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-1072 in the thread"
+   ],
+   "examples": [
+    "[DISCUSS] KIP 1072 - Add @FunctionalInterface annotation to Kafka Streams SAM methods"
+   ]
+  },
+  {
+   "template": "Kafka PR16802: Custom produce request parsers",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title and description explicitly mention custom produce request parsers"
+   ],
+   "examples": [
+    "Kafka PR16802: Custom produce request parsers"
+   ]
+  },
+  {
+   "template": "Streams sets infinite retention on the repartition topic",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of Streams repartition topic retention behavior"
+   ],
+   "examples": [
+    "Streams sets infinite retention on the repartition topic"
+   ]
+  },
+  {
+   "template": "Authorizer interface",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of Authorizer interface and authorization logic"
+   ],
+   "examples": [
+    "Authorizer interface"
+   ]
+  },
+  {
+   "template": "Handling load distribution evenly, with ordering",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly mentions load distribution and ordering, matching the proposal's focus on fair message consumption across partitions."
+   ],
+   "examples": [
+    "Handling load distribution evenly, with ordering"
+   ]
+  },
+  {
+   "template": "ExpiringCredentialRefreshingLogin causing admin close to block forever",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Matching stack trace and blocking behavior description"
+   ],
+   "examples": [
+    "ExpiringCredentialRefreshingLogin causing admin close to block forever"
+   ]
+  },
+  {
+   "template": "Implementation of a GLOB Pattern type for ACL pattern matching",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "ACL pattern matching and ResourcePatternFilter discussion"
+   ],
+   "examples": [
+    "Implementation of a GLOB Pattern type for ACL pattern matching"
+   ]
+  },
+  {
+   "template": "broker-level unclean.leader.election.enable is useless",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "explicit mention of broker-level config ineffectiveness in KRaft"
+   ],
+   "examples": [
+    "broker-level unclean.leader.election.enable is useless"
+   ]
+  },
+  {
+   "template": "significant contributions to the next generation of the consumer rebalance protocol (<KEY>)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of KIP-848 in the context of contributions"
+   ],
+   "examples": [
+    "significant contributions to the next generation of the consumer rebalance protocol (KIP-848)"
+   ]
+  },
+  {
+   "template": "Support for Prefixed ACLs",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Discussion of ACL behavior with PREFIXED and LITERAL entries"
+   ],
+   "examples": [
+    "Support for Prefixed ACLs"
+   ]
+  },
+  {
+   "template": "<KEY> (accepted) proposes implementing a new public method `ConsumerRecords.nextOffsets`",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit reference to KIP-320 and discussion of implementing `ConsumerRecords.nextOffsets`"
+   ],
+   "examples": [
+    "KIP-320 (accepted) proposes implementing a new public method `ConsumerRecords.nextOffsets`"
+   ]
+  },
+  {
+   "template": "Kafka MirrorMaker2 not replicating consumer group offset",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly mentions MirrorMaker2 and consumer group offset replication issue"
+   ],
+   "examples": [
+    "Kafka MirrorMaker2 not replicating consumer group offset"
+   ]
+  },
+  {
+   "template": "CommitFailedException during rebalance of cooperative-sticky consumer, message is not retried",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Mentions cooperative rebalance and CommitFailedException"
+   ],
+   "examples": [
+    "CommitFailedException during rebalance of cooperative-sticky consumer, message is not retried"
+   ]
+  },
+  {
+   "template": "see <KEY> for some plans on flaky tests",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "reference to a KIP (Kafka Improvement Proposal) number in the context of flaky tests and CI/build issues"
+   ],
+   "examples": [
+    "see KIP-1090 for some plans on flaky tests"
+   ]
+  },
+  {
+   "template": "contributions to the tiered storage feature (<KEY>)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-405 in the context of tiered storage contributions"
+   ],
+   "examples": [
+    "contributions to the tiered storage feature (KIP-405)"
+   ]
+  },
+  {
+   "template": "SLF4J error when running Kafka in IDEA",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Mention of SLF4J in the subject and body"
+   ],
+   "examples": [
+    "SLF4J error when running Kafka in IDEA"
+   ]
+  },
+  {
+   "template": "Gradle Test Run :core:test > Gradle Test Executor <N> > JsonTest > testParseTo() PASSED",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "JUnit test parsing mentioned in the build log"
+   ],
+   "examples": [
+    "Gradle Test Run :core:test > Gradle Test Executor 99 > JsonTest > testParseTo() PASSED"
+   ]
+  },
+  {
+   "template": "<KEY>: Add consumer metrics to observe user poll behavior",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Proposal title explicitly mentioning consumer poll behavior"
+   ],
+   "examples": [
+    "KIP-517: Add consumer metrics to observe user poll behavior"
+   ]
+  },
+  {
+   "template": "Make SSL context/engine configuration extensible",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "PR description mentions SSL engine construction and keystore alias property"
+   ],
+   "examples": [
+    "Make SSL context/engine configuration extensible"
+   ]
+  },
+  {
+   "template": "add a `hostname.resolver` optional configuration property specifying a class to use as the HostResolver implementation",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "proposal text explicitly describes HostResolver injection and its purpose"
+   ],
+   "examples": [
+    "add a `hostname.resolver` optional configuration property specifying a class to use as the HostResolver implementation"
+   ]
+  },
+  {
+   "template": "<KEY>: Upgrade Zookeeper to <N>",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "explicit reference to KIP-902 in the compatibility matrix link"
+   ],
+   "examples": [
+    "KIP-902: Upgrade Zookeeper to 3.8.2"
+   ]
+  },
+  {
+   "template": "<KEY>, the next-generation rebalance protocol",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-848 as the subject of discussion"
+   ],
+   "examples": [
+    "KIP-848, the next-generation rebalance protocol"
+   ]
+  },
+  {
+   "template": "(SASL/OAUTHBEARER) multiple applications in one JVM process, only the first started app can consume messages",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "Mention of SASL/OAUTHBEARER and OAuth2 server interaction in the mail thread"
+   ],
+   "examples": [
+    "(SASL/OAUTHBEARER) multiple applications in one JVM process, only the first started app can consume messages"
+   ]
+  },
+  {
+   "template": "<KEY>: Remove Invalid 'numberOfOpenFiles' Metric from RocksDB State Store",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP identifier and title in subject and body"
+   ],
+   "examples": [
+    "KIP-1125: Remove Invalid 'numberOfOpenFiles' Metric from RocksDB State Store"
+   ]
+  },
+  {
+   "template": "Proposal for converting Apache Kafka Documentation and Website source to Markdown",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated proposal description"
+   ],
+   "examples": [
+    "Proposal for converting Apache Kafka Documentation and Website source to Markdown"
+   ]
+  },
+  {
+   "template": "reviving <KEY>: Add socket.tcp.no.delay property to Kafka Config",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of proposal title in subject and body"
+   ],
+   "examples": [
+    "reviving KIP-723: Add socket.tcp.no.delay property to Kafka Config"
+   ]
+  },
+  {
+   "template": "MemberToRemove class is using a static value \"JoinGroupRequest.UNKNOWN_MEMBER_ID\" for the memberId field that is being u",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Discussion of removeMembersFromConsumerGroup implementation issue and PR reference"
+   ],
+   "examples": [
+    "MemberToRemove class is using a static value \"JoinGroupRequest.UNKNOWN_MEMBER_ID\" for the memberId field that is being used in the member deletion logic"
+   ]
+  },
+  {
+   "template": "According to the <KEY> documentation",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit reference to KIP-541 in the discussion"
+   ],
+   "examples": [
+    "According to the KIP-541 documentation"
+   ]
+  },
+  {
+   "template": "MetadataResponsePartition",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Discussion of MetadataResponse and partition metadata optimization"
+   ],
+   "examples": [
+    "MetadataResponsePartition"
+   ]
+  },
+  {
+   "template": "<KEY>: Support keystore with multiple alias entries",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP proposal in subject and body"
+   ],
+   "examples": [
+    "KIP-1117: Support keystore with multiple alias entries"
+   ]
+  },
+  {
+   "template": "create a KIP for adding a Helm chart to the project",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of KIP purpose in the email body"
+   ],
+   "examples": [
+    "create a KIP for adding a Helm chart to the project"
+   ]
+  },
+  {
+   "template": "[DISCUSS] Git commits and metadata",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references Git commits and metadata discussion"
+   ],
+   "examples": [
+    "[DISCUSS] Git commits and metadata"
+   ]
+  },
+  {
+   "template": "<KEY>: Metadata Version Downgrades [DISCUSS]",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-1155 in the thread"
+   ],
+   "examples": [
+    "KIP-1155: Metadata Version Downgrades [DISCUSS]"
+   ]
+  },
+  {
+   "template": "Producer scalability for exactly once semantics",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Proposal title matching the thread's topic on cross-cluster exactly-once transactions"
+   ],
+   "examples": [
+    "Producer scalability for exactly once semantics"
+   ]
+  },
+  {
+   "template": "Connect Rest Extension Plugin",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Mention of REST extension for authentication in Kafka Connect"
+   ],
+   "examples": [
+    "Connect Rest Extension Plugin"
+   ]
+  },
+  {
+   "template": "implement a custom REST extension for Kafka Connect that allows a token to be used for authentication",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of REST extension for Kafka Connect with token authentication"
+   ],
+   "examples": [
+    "implement a custom REST extension for Kafka Connect that allows a token to be used for authentication"
+   ]
+  },
+  {
+   "template": "<KEY> Quality of Service (QoS) for Apache Kafka",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1182 in subject and body"
+   ],
+   "examples": [
+    "KIP-1182 Quality of Service (QoS) for Apache Kafka"
+   ]
+  },
+  {
+   "template": "Re: <KEY> Quality of Service (QoS) for Apache Kafka",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-1182 in email thread"
+   ],
+   "examples": [
+    "Re: KIP-1182 Quality of Service (QoS) for Apache Kafka"
+   ]
+  },
+  {
+   "template": "Kafka setup with OAuth2 for client-broker and PLAINTEXT for inter-broker",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Matching topology description (OAuth2 client-broker, PLAINTEXT inter-broker) and startup failure with OAuth/JWKS configuration"
+   ],
+   "examples": [
+    "Kafka setup with OAuth2 for client-broker and PLAINTEXT for inter-broker"
+   ]
+  },
+  {
+   "template": "I would like to implement a ConfigDef.ConfigKey builder. The goal is to have a fluent builder that will build the config",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of ConfigDef.ConfigKey builder and its purpose"
+   ],
+   "examples": [
+    "I would like to implement a ConfigDef.ConfigKey builder. The goal is to have a fluent builder that will build the configKey and provide the same defaults that t"
+   ]
+  },
+  {
+   "template": "MirrorMaker <N>",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of MirrorMaker in the subject and body"
+   ],
+   "examples": [
+    "MirrorMaker 2"
+   ]
+  },
+  {
+   "template": "<KEY>: Kafka Consumer Incremental Rebalance Protocol",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Direct reference to KIP-429 in the subject and body of the email thread"
+   ],
+   "examples": [
+    "KIP-429: Kafka Consumer Incremental Rebalance Protocol"
+   ]
+  },
+  {
+   "template": "AI usage in code contribution",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and body explicitly discuss AI-generated code in contributions"
+   ],
+   "examples": [
+    "AI usage in code contribution"
+   ]
+  },
+  {
+   "template": "FileSystemException Errors on Kafka Log Cleanup in Windows (KRaft and Zookeeper Modes)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Issue description explicitly mentions Windows and log cleanup/file system errors"
+   ],
+   "examples": [
+    "FileSystemException Errors on Kafka Log Cleanup in Windows (KRaft and Zookeeper Modes)"
+   ]
+  },
+  {
+   "template": "Incremental Cooperative Rebalancing",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of the proposal name in the context of SinkTask behavior"
+   ],
+   "examples": [
+    "Incremental Cooperative Rebalancing"
+   ]
+  },
+  {
+   "template": "<KEY>: Deprecate MX4j support",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Proposal title in subject line and vote call"
+   ],
+   "examples": [
+    "KIP-1193: Deprecate MX4j support"
+   ]
+  },
+  {
+   "template": "Add comprehensive test files for existing examples including PipeDemo, PageViewTypedDemo, and others",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of missing test coverage for Kafka Streams examples and proposed solution"
+   ],
+   "examples": [
+    "Add comprehensive test files for existing examples including PipeDemo, PageViewTypedDemo, and others"
+   ]
+  },
+  {
+   "template": "I'm planning to contribute a KIP related to adding max record count limit to FetchRequest.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of a KIP related to a specific feature (max record count limit to FetchRequest)."
+   ],
+   "examples": [
+    "I'm planning to contribute a KIP related to adding max record count limit to FetchRequest."
+   ]
+  },
+  {
+   "template": "[DISCUSS] KIP-XXXX: Add max record count limit to FetchRequest",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and body explicitly reference the KIP proposal title and discussion"
+   ],
+   "examples": [
+    "[DISCUSS] KIP-XXXX: Add max record count limit to FetchRequest"
+   ]
+  },
+  {
+   "template": "migrated the kafka broker and controller authentication mechanisms as follows: Broker: from sasl.mechanism.inter.broker.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of SASL SCRAM mechanism in the context of authentication changes"
+   ],
+   "examples": [
+    "migrated the kafka broker and controller authentication mechanisms as follows: Broker: from sasl.mechanism.inter.broker.protocol=\"PLAIN\" to \"SCRAM-SHA-512\""
+   ]
+  },
+  {
+   "template": "[Gradle <N> --> <N> upgrade] GitHub Actions build issues: JUnit tests parsing fails",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "PR link and subject explicitly mention Gradle version upgrade (8 --> 9)"
+   ],
+   "examples": [
+    "[Gradle 8 --> 9 upgrade] GitHub Actions build issues: JUnit tests parsing fails"
+   ]
+  },
+  {
+   "template": "Kafka <N> Queue Semantics",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of 'Queue Semantics' in the subject and body"
+   ],
+   "examples": [
+    "Kafka 4.1 Queue Semantics"
+   ]
+  },
+  {
+   "template": "migrating to <N> and the new plugin discovery isn't documented well enough",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of plugin discovery in Kafka 4.0.0"
+   ],
+   "examples": [
+    "migrating to 4.0 and the new plugin discovery isn't documented well enough"
+   ]
+  },
+  {
+   "template": "<KEY> (Rack aware partitioning for Kafka Producer)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1123 in the context of the discussion"
+   ],
+   "examples": [
+    "KIP-1123 (Rack aware partitioning for Kafka Producer)"
+   ]
+  },
+  {
+   "template": "[DISCUSS] <KEY> Graceful stop on Kafka Streams exceptions processing handlers",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP proposal in subject and body"
+   ],
+   "examples": [
+    "[DISCUSS] KIP-1215 Graceful stop on Kafka Streams exceptions processing handlers"
+   ]
+  },
+  {
+   "template": "<KEY>: Align broker and controller \"advertised.listeners\" and \"listeners\" behaviour",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "explicit mention of proposal ID and title in subject and body"
+   ],
+   "examples": [
+    "KIP-1202: Align broker and controller \"advertised.listeners\" and \"listeners\" behaviour"
+   ]
+  },
+  {
+   "template": "advertised.listeners in a KRaft-backed cluster are now only a static configuration",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of advertised.listeners and KRaft configuration behavior"
+   ],
+   "examples": [
+    "advertised.listeners in a KRaft-backed cluster are now only a static configuration"
+   ]
+  },
+  {
+   "template": "This behavior is described in JIRA <KEY>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit reference to a JIRA ticket (KAFKA-17182) linked to the discussed design behavior"
+   ],
+   "examples": [
+    "This behavior is described in JIRA KAFKA-17182"
+   ]
+  },
+  {
+   "template": "decoupling this from Apache Kafka",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "discussion about the future of streams-scala module and its decoupling"
+   ],
+   "examples": [
+    "decoupling this from Apache Kafka"
+   ]
+  },
+  {
+   "template": "Add support for configurable target field in TimestampConverter SMT",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Proposal title in subject line and body matches KIP description"
+   ],
+   "examples": [
+    "Add support for configurable target field in TimestampConverter SMT"
+   ]
+  },
+  {
+   "template": "[<KEY>] Is this issue solved with kraft clusters ?",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "JIRA ticket key in subject line"
+   ],
+   "examples": [
+    "[KAFKA-5200] Is this issue solved with kraft clusters ?"
+   ]
+  },
+  {
+   "template": "More advanced broker side consumer group management",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and discussion explicitly about broker-side consumer group management and offset reset"
+   ],
+   "examples": [
+    "More advanced broker side consumer group management"
+   ]
+  },
+  {
+   "template": "OFFSET_OUT_OF_RANGE errors from Admin.deleteRecords calls",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Mention of Admin.deleteRecords and OffsetOutOfRangeException in the context of debugging"
+   ],
+   "examples": [
+    "OFFSET_OUT_OF_RANGE errors from Admin.deleteRecords calls"
+   ]
+  },
+  {
+   "template": "<KEY> (Expose rack ID in member description)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "KIP number and description matching ticket title"
+   ],
+   "examples": [
+    "KIP-1227 (Expose rack ID in member description)"
+   ]
+  },
+  {
+   "template": "Add Kafka Streams exception handler for exceptions occurring during processing",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Proposal title explicitly matching the thread's feature request for cross-cutting exception handling"
+   ],
+   "examples": [
+    "Add Kafka Streams exception handler for exceptions occurring during processing"
+   ]
+  },
+  {
+   "template": "<KEY>: Follower fetch from tiered offset",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1023 in subject and body"
+   ],
+   "examples": [
+    "KIP-1023: Follower fetch from tiered offset"
+   ]
+  },
+  {
+   "template": "MINOR: Scala, Scalafmt and Scalac SCoverage plugin version updates",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "PR title explicitly mentions version updates for Scala-related plugins"
+   ],
+   "examples": [
+    "MINOR: Scala, Scalafmt and Scalac SCoverage plugin version updates"
+   ]
+  },
+  {
+   "template": "[DISCUSS/VOTE] (mini)<KEY>: AlterConfigPolicy compatibility in legacy Zookeeper mode (<N> release)",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit proposal title in subject and body"
+   ],
+   "examples": [
+    "[DISCUSS/VOTE] (mini)KIP-1252: AlterConfigPolicy compatibility in legacy Zookeeper mode (3.9.2 release)"
+   ]
+  },
+  {
+   "template": "[VOTE]: KIP <N> - Cut over to markdown based AK Website",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1133 in subject and body with discussion and vote"
+   ],
+   "examples": [
+    "[VOTE]: KIP 1133 - Cut over to markdown based AK Website"
+   ]
+  },
+  {
+   "template": "Many public classes/methods from the public APIs don't have javadoc.",
+   "count": 1,
+   "where": {
+    "Ticket text": 1
+   },
+   "cues": [
+    "Discussion explicitly references the lack of javadoc for public APIs and the need to address it."
+   ],
+   "examples": [
+    "Many public classes/methods from the public APIs don't have javadoc."
+   ]
+  },
+  {
+   "template": "[DISCUSS] Missing dynamic SSL reconfiguration support for KafkaRaftClient",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Exact ticket title match in subject line"
+   ],
+   "examples": [
+    "[DISCUSS] Missing dynamic SSL reconfiguration support for KafkaRaftClient"
+   ]
+  },
+  {
+   "template": "MINOR: buildscript and project dependencies version updates",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "PR title matches ticket description for version updates"
+   ],
+   "examples": [
+    "MINOR: buildscript and project dependencies version updates"
+   ]
+  },
+  {
+   "template": "<KEY> to align AlterConfigPolicy behavior between ZK and Kraft",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "KIP-<number> mentioned in release notes"
+   ],
+   "examples": [
+    "KIP-1252 to align AlterConfigPolicy behavior between ZK and Kraft"
+   ]
+  },
+  {
+   "template": "Strategic Alignment: Unifying <KEY> and the Cloud-Native Roadmap",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1267 in subject and body with detailed discussion of its metrics and relation to other KIPs."
+   ],
+   "examples": [
+    "Strategic Alignment: Unifying KIP-1267 and the Cloud-Native Roadmap"
+   ]
+  },
+  {
+   "template": "stage-docs writes documentation to the pre-Hugo flat layout instead of the <KEY> Hugo layout",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "Discussion of documentation generation and site structure in the context of a release candidate (RC2) and a GitHub PR for kafka-site."
+   ],
+   "examples": [
+    "stage-docs writes documentation to the pre-Hugo flat layout instead of the KIP-1133 Hugo layout"
+   ]
+  },
+  {
+   "template": "introduce a new KIP regarding a configurable retry mechanism for KafkaStatusBackingStore in Kafka connect",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of a new KIP proposal with a specific topic"
+   ],
+   "examples": [
+    "introduce a new KIP regarding a configurable retry mechanism for KafkaStatusBackingStore in Kafka connect"
+   ]
+  },
+  {
+   "template": "soft and strict enforcements of quantity of fetched records",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "release notes mentioning feature aligned with proposal title"
+   ],
+   "examples": [
+    "soft and strict enforcements of quantity of fetched records"
+   ]
+  },
+  {
+   "template": "PR #<N>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "GitHub PR reference in the discussion"
+   ],
+   "examples": [
+    "PR #21507"
+   ]
+  },
+  {
+   "template": "Notably, this release includes <KEY>, which addresses inconsistent AlterConfigPolicy behavior between ZooKeeper and KRaf",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1252 in the release announcement"
+   ],
+   "examples": [
+    "Notably, this release includes KIP-1252, which addresses inconsistent AlterConfigPolicy behavior between ZooKeeper and KRaft modes."
+   ]
+  },
+  {
+   "template": "The failed test may be a flaky, and I will dig into the flaky later",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of flaky test in build context"
+   ],
+   "examples": [
+    "The failed test may be a flaky, and I will dig into the flaky later"
+   ]
+  },
+  {
+   "template": "[VOTE] <N> RC1",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly mentions a release candidate vote"
+   ],
+   "examples": [
+    "[VOTE] 4.1.2 RC1"
+   ]
+  },
+  {
+   "template": "PR: \"MINOR: version updates for build and test dependencies\"",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "PR title matches ticket description for version updates"
+   ],
+   "examples": [
+    "PR: \"MINOR: version updates for build and test dependencies\""
+   ]
+  },
+  {
+   "template": "<KEY>:Dead letter queue support for global store/KTable",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1295 in subject and body"
+   ],
+   "examples": [
+    "KIP-1295:Dead letter queue support for global store/KTable"
+   ]
+  },
+  {
+   "template": "[DISCUSS} <KEY>: New MirrorMaker2 Connector for syncing consumer group offsets",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1292 in subject and body with discussion intent"
+   ],
+   "examples": [
+    "[DISCUSS} KIP-1292: New MirrorMaker2 Connector for syncing consumer group offsets"
+   ]
+  },
+  {
+   "template": "I came across the “SSL hot reload support” ticket and started working on a KIP for it.",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "explicit mention of the ticket/proposal name in the thread"
+   ],
+   "examples": [
+    "I came across the “SSL hot reload support” ticket and started working on a KIP for it."
+   ]
+  },
+  {
+   "template": "<URL>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "URL referencing develocity.apache.org in the context of build scans"
+   ],
+   "examples": [
+    "https://develocity.apache.org/scans/tests?search.relativeStartTime=P90D&search.rootProjectNames=kafka"
+   ]
+  },
+  {
+   "template": "<KEY>: General Transaction Session",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-1310 in the subject and body"
+   ],
+   "examples": [
+    "KIP-1310: General Transaction Session"
+   ]
+  },
+  {
+   "template": "<KEY>-<N>: Apache Kafka: Missing JWT token validation in OAUTHBEARER authentication",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "CVE reference and description of missing JWT validation in OAUTHBEARER"
+   ],
+   "examples": [
+    "CVE-2026-33557: Apache Kafka: Missing JWT token validation in OAUTHBEARER authentication"
+   ]
+  },
+  {
+   "template": "ZooKeeper to KRaft Migration",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "explicit mention of migration process and KRaft"
+   ],
+   "examples": [
+    "ZooKeeper to KRaft Migration"
+   ]
+  },
+  {
+   "template": "the site-docs.tgz lacks a LICENSE and NOTICE file",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of missing LICENSE/NOTICE in site-docs related to release process"
+   ],
+   "examples": [
+    "the site-docs.tgz lacks a LICENSE and NOTICE file"
    ]
   },
   {
@@ -64,7 +2893,7 @@
     "EmailMessage title": 1
    },
    "cues": [
-    "PR title matches ticket description and rationale"
+    "PR title and description explicitly mention version updates for build and project dependencies, matching the ticket's scope."
    ],
    "examples": [
     "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)"
@@ -84,29 +2913,16 @@
    ]
   },
   {
-   "template": "unifying configuration validation (<KEY>)",
+   "template": "<KEY> behavior on the clients by default",
    "count": 1,
    "where": {
     "EmailMessage text": 1
    },
    "cues": [
-    "explicit reference to KIP-1161 in the context of the contributor's work"
+    "KIP-909 mentioned alongside experimental feature discussion"
    ],
    "examples": [
-    "unifying configuration validation (KIP-1161)"
-   ]
-  },
-  {
-   "template": "<KEY> disables the new DNS resolution behavior by default",
-   "count": 1,
-   "where": {
-    "Ticket text": 1
-   },
-   "cues": [
-    "ticket key in the text (KAFKA-20939) and discussion about marking DNS resolution as experimental"
-   ],
-   "examples": [
-    "KAFKA-20939 disables the new DNS resolution behavior by default"
+    "KIP-909 behavior on the clients by default"
    ]
   },
   {
@@ -207,7 +3023,7 @@
     "EmailMessage title": 1
    },
    "cues": [
-    "CVE description matching proposal title's focus on stream-time protection from future record poisoning"
+    "CVE description explicitly references stream-time punctuation overflow and mitigation via configuration bounds"
    ],
    "examples": [
     "CVE-2026-111496: Apache Kafka: Kafka Streams StreamThread hang from integer overflow in stream-time punctuation"
@@ -220,7 +3036,7 @@
     "Ticket title": 1
    },
    "cues": [
-    "Exact ticket description matching the vulnerability context (admin listener misconfiguration)"
+    "Ticket key and description matching admin listener configuration issue"
    ],
    "examples": [
     "Connect admin listener does not apply response.http.headers.config"
@@ -237,6 +3053,71 @@
    ],
    "examples": [
     "RemoteLogInputStream can attempt an unbounded memory allocation when reading a corrupted remote log segment"
+   ]
+  },
+  {
+   "template": "[jira] [Created] (<KEY>) Switching to a subscription regex that matches no topic doesn't trigger rebalance",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "JIRA ticket key in subject line"
+   ],
+   "examples": [
+    "[jira] [Created] (KAFKA-21409) Switching to a subscription regex that matches no topic doesn't trigger rebalance"
+   ]
+  },
+  {
+   "template": "<KEY>: Add a tokenless login callback handler for SASL/OAUTHBEARER",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "KIP reference in subject and body"
+   ],
+   "examples": [
+    "KIP-1390: Add a tokenless login callback handler for SASL/OAUTHBEARER"
+   ]
+  },
+  {
+   "template": "Proper instructions for using SSL PEM files in server.properties",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of SSL PEM files and configuration struggles"
+   ],
+   "examples": [
+    "Proper instructions for using SSL PEM files in server.properties"
+   ]
+  },
+  {
+   "template": "Shadow Jetty dependencies to decouple from SLF4J version conflict",
+   "count": 1,
+   "where": {
+    "Decision title": 1
+   },
+   "cues": [
+    "Proposal title explicitly mentioning Jetty dependencies"
+   ],
+   "examples": [
+    "Shadow Jetty dependencies to decouple from SLF4J version conflict"
+   ]
+  },
+  {
+   "template": "unstable.api.versions.enable=true",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "mention of deprecated/unstable API versions in Kafka 4.0.0 vs. 4.1.0"
+   ],
+   "examples": [
+    "unstable.api.versions.enable=true"
    ]
   },
   {
@@ -266,16 +3147,16 @@
    ]
   },
   {
-   "template": "Upgrade jline from <N> to <N>",
+   "template": "jline related vulnerabilities which are fixed in jline version <N>",
    "count": 1,
    "where": {
-    "Ticket title": 1
+    "EmailMessage text": 1
    },
    "cues": [
-    "explicit mention of jline version upgrade and vulnerabilities"
+    "mention of jline vulnerabilities and their GitHub security advisories"
    ],
    "examples": [
-    "Upgrade jline from 3.30.16 to 4.2.1"
+    "jline related vulnerabilities which are fixed in jline version 3.30.17"
    ]
   },
   {
@@ -285,27 +3166,170 @@
     "EmailMessage text": 1
    },
    "cues": [
-    "explicit mention of 'Diskless Topics' in the subject and body"
+    "explicit mention of Diskless Topics and object storage"
    ],
    "examples": [
     "Diskless Topics move Kafka's replication from local disks to object storage"
    ]
+  },
+  {
+   "template": "KRaft broker startup can fail to restore persisted dynamic broker configs when the local metadata snapshot is missing or",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "KRaft metadata recovery failure with AccessDeniedException during snapshot handling"
+   ],
+   "examples": [
+    "KRaft broker startup can fail to restore persisted dynamic broker configs when the local metadata snapshot is missing or stale"
+   ]
+  },
+  {
+   "template": "[DISCUSS] Add \"Security Implications\" section to KIP template",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly references KIP drafting/discussion"
+   ],
+   "examples": [
+    "[DISCUSS] Add \"Security Implications\" section to KIP template"
+   ]
+  },
+  {
+   "template": "[ANNOUNCE] New PMC chair: Mickael Maison",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line explicitly mentions the new PMC chair appointment"
+   ],
+   "examples": [
+    "[ANNOUNCE] New PMC chair: Mickael Maison"
+   ]
+  },
+  {
+   "template": "SourceRecord.java:<N>: warning - Tag @link: reference not found: org.apache.kafka.connect.data",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "Javadoc warning in build log"
+   ],
+   "examples": [
+    "SourceRecord.java:44: warning - Tag @link: reference not found: org.apache.kafka.connect.data"
+   ]
+  },
+  {
+   "template": "ShareCoordinatorServiceTest …",
+   "count": 1,
+   "where": {
+    "Ticket title": 1
+   },
+   "cues": [
+    "test class name in build log"
+   ],
+   "examples": [
+    "ShareCoordinatorServiceTest …"
+   ]
+  },
+  {
+   "template": "<KEY>: Improve handling of nullable values in InsertField/ExtractField transformations",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and repeated references to KIP-1040 in the thread"
+   ],
+   "examples": [
+    "KIP-1040: Improve handling of nullable values in InsertField/ExtractField transformations"
+   ]
+  },
+  {
+   "template": "[DISCUSS] OpenJDK CRaC support",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and explicit mention of OpenJDK CRaC support in the thread"
+   ],
+   "examples": [
+    "[DISCUSS] OpenJDK CRaC support"
+   ]
+  },
+  {
+   "template": "<KEY> and the client upgrade path",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Explicit mention of KIP-896 and discussion on client upgrade path"
+   ],
+   "examples": [
+    "KIP-896 and the client upgrade path"
+   ]
+  },
+  {
+   "template": "The vote for <N> RC1 has now passed",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "release process discussion and vote"
+   ],
+   "examples": [
+    "The vote for 4.1.2 RC1 has now passed"
+   ]
+  },
+  {
+   "template": "<KEY>: Add Time-Shift Parameter to Kafka Streams Punctuation Scheduling",
+   "count": 1,
+   "where": {
+    "EmailMessage title": 1
+   },
+   "cues": [
+    "Subject line and body explicitly reference the KIP and its relation to KAFKA-13678"
+   ],
+   "examples": [
+    "KIP-1293: Add Time-Shift Parameter to Kafka Streams Punctuation Scheduling"
+   ]
+  },
+  {
+   "template": "<KEY> that we want to include in <N>",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "KIP-<number> mentioned in release discussion"
+   ],
+   "examples": [
+    "KIP-1332 that we want to include in 4.4"
+   ]
+  },
+  {
+   "template": "unifying configuration validation (<KEY>)",
+   "count": 1,
+   "where": {
+    "EmailMessage text": 1
+   },
+   "cues": [
+    "KIP- prefix in parentheses"
+   ],
+   "examples": [
+    "unifying configuration validation (KIP-1161)"
+   ]
   }
  ],
  "identity": [
-  {
-   "template": "display name: Manikumar",
-   "count": 1,
-   "where": {
-    "Account text": 1
-   },
-   "cues": [
-    "display name matches first name of candidate"
-   ],
-   "examples": [
-    "display name: Manikumar"
-   ]
-  },
   {
    "template": "confluence:lbrutschy (Lucas Brutschy)",
    "count": 1,
@@ -317,6 +3341,19 @@
    ],
    "examples": [
     "confluence:lbrutschy (Lucas Brutschy)"
+   ]
+  },
+  {
+   "template": "display name: Manikumar",
+   "count": 1,
+   "where": {
+    "Account text": 1
+   },
+   "cues": [
+    "display name matches first name of candidate"
+   ],
+   "examples": [
+    "display name: Manikumar"
    ]
   },
   {
@@ -346,59 +3383,7 @@
    ]
   },
   {
-   "template": "directory id: ijuma",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: ijuma"
-   ]
-  },
-  {
-   "template": "directory id: mimaison",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github login"
-   ],
-   "examples": [
-    "directory id: mimaison"
-   ]
-  },
-  {
-   "template": "github account kirktrue",
-   "count": 1,
-   "where": {
-    "Account title": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "github account kirktrue"
-   ]
-  },
-  {
-   "template": "directory id: frankvicky",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account login"
-   ],
-   "examples": [
-    "directory id: frankvicky"
-   ]
-  },
-  {
-   "template": "directory id: showuon",
+   "template": "directory id: clolov",
    "count": 1,
    "where": {
     "Person text": 1
@@ -407,7 +3392,7 @@
     "directory id matches github account name"
    ],
    "examples": [
-    "directory id: showuon"
+    "directory id: clolov"
    ]
   },
   {
@@ -421,19 +3406,6 @@
    ],
    "examples": [
     "directory id: jolshan"
-   ]
-  },
-  {
-   "template": "directory id: clolov",
-   "count": 1,
-   "where": {
-    "Person text": 1
-   },
-   "cues": [
-    "directory id matches github account name"
-   ],
-   "examples": [
-    "directory id: clolov"
    ]
   },
   {
@@ -460,6 +3432,32 @@
    ],
    "examples": [
     "github account jsancio"
+   ]
+  },
+  {
+   "template": "directory id: stanislavkozlovski",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: stanislavkozlovski"
+   ]
+  },
+  {
+   "template": "directory id: gwenshap",
+   "count": 1,
+   "where": {
+    "Person text": 1
+   },
+   "cues": [
+    "directory id matches github account login"
+   ],
+   "examples": [
+    "directory id: gwenshap"
    ]
   },
   {
@@ -510,8 +3508,7 @@
     "Document text": 6
    },
    "cues": [
-    "Current state: \"...\"",
-    "Current state: "
+    "Current state: \"...\""
    ],
    "examples": [
     "Current state: \"Accepted\"",
@@ -541,7 +3538,7 @@
     "Document text": 3
    },
    "cues": [
-    "Current state: [...]"
+    "Current state: [Accepted]"
    ],
    "examples": [
     "Current state: [Accepted]",
@@ -557,7 +3554,7 @@
    },
    "cues": [
     "Current state: [...]",
-    "Current state: [\"...\"],"
+    "Current state: [\"...\" ]"
    ],
    "examples": [
     "Current state: [\"Under Discussion\"]",
@@ -587,8 +3584,8 @@
     "Document text": 2
    },
    "cues": [
-    "Current state: <status>",
-    "Current state: ..."
+    "Current state: \"...\"",
+    "Current state: \"<status>\""
    ],
    "examples": [
     "Current state: \"accepted\"",
@@ -721,7 +3718,7 @@
     "Document text": 1
    },
    "cues": [
-    "Current state: <status>"
+    "Current state: Merged"
    ],
    "examples": [
     "Current state: Merged (target: 1.2"
@@ -747,7 +3744,7 @@
     "Document text": 1
    },
    "cues": [
-    "Current state: <status>"
+    "Current state: Superseeded by"
    ],
    "examples": [
     "Current state: Superseeded by KIP-699"
@@ -760,7 +3757,7 @@
     "Document text": 1
    },
    "cues": [
-    "Current state: <status>"
+    "Current state: Subsumed by"
    ],
    "examples": [
     "Current state: Subsumed by KIP-365"
@@ -864,7 +3861,7 @@
     "Document text": 1
    },
    "cues": [
-    "Current state: <status>"
+    "Current state:"
    ],
    "examples": [
     "Current state:Merged"
@@ -936,19 +3933,6 @@
    ]
   },
   {
-   "template": "Current state: [Discussion]",
-   "count": 1,
-   "where": {
-    "Document text": 1
-   },
-   "cues": [
-    "Current state: [...]"
-   ],
-   "examples": [
-    "Current state: [Discussion]"
-   ]
-  },
-  {
    "template": "Current state: Proposed",
    "count": 1,
    "where": {
@@ -968,7 +3952,7 @@
     "Document text": 1
    },
    "cues": [
-    "Current state: [\"...\" ]"
+    "Current state: [...]"
    ],
    "examples": [
     "Current state: [\"accpect\"]"
@@ -1020,7 +4004,7 @@
     "Document text": 1
    },
    "cues": [
-    "Current state: "
+    "Current state: ..."
    ],
    "examples": [
     "Current state: “Under Discussion\""

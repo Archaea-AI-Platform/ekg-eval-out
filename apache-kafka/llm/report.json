@@ -4,67 +4,74 @@
  "mode": "run",
  "kinds": {
   "pr_ticket": {
-   "to_ask": 12,
+   "to_ask": 27,
    "no_candidate": {
-    "marked as needing no ticket (MINOR / hotfix)": 50,
-    "names a ticket outside the download": 1,
-    "no candidate ticket": 3
+    "marked as needing no ticket (MINOR / hotfix)": 184,
+    "no candidate ticket": 6,
+    "names a ticket outside the download": 1
    },
-   "prompt_chars_max": 4951,
-   "cached": 12,
-   "rejected": 10,
-   "accepted": 2,
+   "prompt_chars_max": 5223,
+   "cached": 26,
+   "rejected": 20,
+   "accepted": 7,
+   "asked": 1,
    "why_not": {
-    "llm": 10
+    "llm": 20
    }
   },
   "commit_pr": {
-   "to_ask": 0,
+   "to_ask": 2129,
    "no_candidate": {
-    "no candidate PR": 3
+    "not a default-branch commit (a PR's own commit, or another branch)": 3802,
+    "no candidate PR": 2939
    },
-   "prompt_chars_max": 0,
-   "why_not": {}
+   "prompt_chars_max": 5053,
+   "cached": 2129,
+   "rejected": 2109,
+   "accepted": 20,
+   "why_not": {
+    "llm": 2109
+   }
   },
   "ticket_fix": {
-   "to_ask": 5,
-   "no_candidate": {
-    "no candidate PR or commit": 3
-   },
-   "prompt_chars_max": 4552,
-   "cached": 5,
-   "rejected": 5,
+   "to_ask": 20,
+   "no_candidate": {},
+   "prompt_chars_max": 4993,
+   "cached": 20,
+   "rejected": 17,
+   "accepted": 3,
    "why_not": {
-    "llm": 5
+    "llm": 17
    }
   },
   "email_topic": {
-   "to_ask": 107,
+   "to_ask": 3472,
    "no_candidate": {
-    "no candidate ticket or proposal": 16
+    "no candidate ticket or proposal": 190
    },
-   "prompt_chars_max": 6483,
-   "cached": 107,
-   "accepted": 22,
-   "rejected": 85,
+   "prompt_chars_max": 7338,
+   "cached": 3339,
+   "rejected": 3138,
+   "accepted": 334,
+   "asked": 133,
    "why_not": {
-    "llm": 81,
-    "check": 4
+    "llm": 3114,
+    "check": 24
    }
   },
   "identity": {
-   "to_ask": 20,
+   "to_ask": 18,
    "no_candidate": {
-    "jira: no candidate person": 549,
-    "github: no candidate person": 157,
+    "jira: no candidate person": 587,
+    "github: no candidate person": 452,
     "confluence: no candidate person": 447
    },
    "prompt_chars_max": 1727,
-   "cached": 20,
-   "accepted": 16,
-   "rejected": 4,
+   "cached": 18,
+   "accepted": 13,
+   "rejected": 5,
    "why_not": {
-    "llm": 4
+    "llm": 5
    }
   },
   "decision_status": {
@@ -72,85 +79,145 @@
    "no_candidate": {
     "no page text": 1
    },
-   "prompt_chars_max": 4124,
+   "prompt_chars_max": 4127,
    "cached": 84,
-   "accepted": 57,
-   "rejected": 27,
+   "accepted": 56,
+   "rejected": 28,
    "why_not": {
-    "llm": 26,
-    "check": 1
+    "llm": 28
    }
   },
   "knowledge": {
-   "to_ask": 502,
+   "to_ask": 2427,
    "no_candidate": {
-    "too short to hold knowledge": 2059
+    "too short to hold knowledge": 13204
    },
-   "prompt_chars_max": 13840,
-   "cached": 498,
-   "accepted": 485,
-   "rejected": 17,
-   "asked": 4,
+   "prompt_chars_max": 13866,
+   "cached": 2228,
+   "rejected": 169,
+   "accepted": 2258,
+   "asked": 199,
    "why_not": {
-    "check": 8,
-    "llm": 8,
-    "llm judge": 1
+    "llm": 119,
+    "check": 43,
+    "already linked by an adapter": 11,
+    "llm judge": 7,
+    "already linked by an adapter; already linked by an adapter": 3
    }
   },
   "doc_knowledge": {
-   "to_ask": 86,
+   "to_ask": 220,
    "no_candidate": {
     "wiki page not edited recently": 1584,
-    "too short to hold knowledge": 1
+    "too short to hold knowledge": 2
    },
-   "prompt_chars_max": 10615,
-   "cached": 86,
-   "accepted": 86,
-   "why_not": {}
+   "prompt_chars_max": 10618,
+   "cached": 93,
+   "accepted": 173,
+   "asked": 127,
+   "rejected": 47,
+   "why_not": {
+    "llm": 43,
+    "check": 4
+   }
   }
  },
  "model": "openrouter mistralai/devstral-2512",
  "calls": {
-  "made": 0,
-  "answered_from_responses": 8
+  "made": 506,
+  "answered_from_responses": 228
  },
  "written": {
-  "records_new_or_patched": 1759,
-  "links_new": 3964,
+  "records_new_or_patched": 6366,
+  "links_new": 12842,
   "people_links": {
-   "AUTHORED_BY: source has no author": 65,
-   "AUTHORED_BY: linked": 833,
-   "ASKED_BY: linked": 33,
-   "ASSIGNED_TO: linked": 152,
-   "ASSIGNED_TO: source has no author": 9,
-   "ASKED_BY: source has no author": 5,
-   "DECIDED_BY: linked": 199
+   "AUTHORED_BY: linked": 3158,
+   "ASSIGNED_TO: linked": 534,
+   "DECIDED_BY: linked": 469,
+   "ASKED_BY: linked": 142,
+   "AUTHORED_BY: source has no author": 378,
+   "ASSIGNED_TO: source has no author": 20,
+   "DECIDED_BY: source has no author": 11,
+   "ASKED_BY: source has no author": 25
   },
   "links_by_type": {
-   "IMPLEMENTS": 2,
-   "MADE_IN": 245,
-   "DISCUSSES": 9,
-   "HAS_ACCOUNT": 16,
-   "EXTRACTED_FROM": 1297,
-   "AUTHORED_BY": 833,
-   "RAISED_IN": 200,
-   "ASKED_BY": 33,
-   "ASSIGNED_TO": 152,
-   "ABOUT": 978,
-   "DECIDED_BY": 199
+   "IMPLEMENTS": 10,
+   "MERGED_AS": 20,
+   "DISCUSSES": 192,
+   "MADE_IN": 1183,
+   "HAS_ACCOUNT": 13,
+   "EXTRACTED_FROM": 5096,
+   "AUTHORED_BY": 3157,
+   "RAISED_IN": 726,
+   "ASSIGNED_TO": 534,
+   "DECIDED_BY": 469,
+   "ASKED_BY": 142,
+   "ABOUT": 1300
   },
   "records_by_type": {
-   "Decision": 256,
-   "DerivationRun": 6,
-   "Guideline": 179,
-   "Knowledge": 898,
-   "Question": 38,
-   "Requirement": 220,
-   "ActionItem": 162
+   "Decision": 536,
+   "DerivationRun": 8,
+   "Knowledge": 3535,
+   "Requirement": 768,
+   "ActionItem": 559,
+   "Guideline": 793,
+   "Question": 167
   }
  },
  "adapter_hints": {
   "pr_ticket": [
+   {
+    "template": "[WIp] Fixes consume bench test.py maybe",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "PR title explicitly mentions fixing a test file (consumer_test.py) related to the ticket"
+    ],
+    "examples": [
+     "[WIp] Fixes consume bench test.py maybe"
+    ]
+   },
+   {
+    "template": "Kafka <N> cache offset fetch result",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "PR title contains ticket number and related keywords (offset fetch)"
+    ],
+    "examples": [
+     "Kafka 16637 cache offset fetch result"
+    ]
+   },
+   {
+    "template": "Pull request #<N>: [WIP] Update GroupRebalanceConfig to not require session.timeout.ms",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "PR title matches ticket description about session timeout handling for classic members"
+    ],
+    "examples": [
+     "Pull request #17529: [WIP] Update GroupRebalanceConfig to not require session.timeout.ms"
+    ]
+   },
+   {
+    "template": "Fix IllegalStateException for Transaction Producer",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "ticket key in the branch name (kraina-fix-IllegalStateException-transaction-producer)"
+    ],
+    "examples": [
+     "Fix IllegalStateException for Transaction Producer"
+    ]
+   },
    {
     "template": "branch <KEY>",
     "count": 1,
@@ -163,105 +230,202 @@
     "examples": [
      "branch KAFKA-10623"
     ]
+   }
+  ],
+  "commit_pr": [
+   {
+    "template": "Revert \"<KEY>: Consumer fetch sessions are evicted too quickly with AsyncKafkaConsumer (#<N>)\"",
+    "count": 1,
+    "where": {
+     "Commit title": 1
+    },
+    "cues": [
+     "PR number in commit message"
+    ],
+    "examples": [
+     "Revert \"KAFKA-17182: Consumer fetch sessions are evicted too quickly with AsyncKafkaConsumer (#17700)\""
+    ]
    },
    {
-    "template": "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constru",
+    "template": "Pull request #<N>: MINOR: few code cleanups for <KEY>",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "PR title matches commit message subject"
+    ],
+    "examples": [
+     "Pull request #23080: MINOR: few code cleanups for KIP-1071"
+    ]
+   },
+   {
+    "template": "<KEY>: Lift non-public config key strings into public",
+    "count": 1,
+    "where": {
+     "PullRequest title": 1
+    },
+    "cues": [
+     "ticket key in PR title matches commit message's implied ticket"
+    ],
+    "examples": [
+     "KAFKA-21368: Lift non-public config key strings into public"
+    ]
+   },
+   {
+    "template": "<KEY> [<N>/N]: Set metadata.log.dir to broker in KRAFT mode in integration test",
+    "count": 1,
+    "where": {
+     "Commit title": 1
+    },
+    "cues": [
+     "Commit message explicitly references the same ticket (KAFKA-16225) and describes the same change as the PR."
+    ],
+    "examples": [
+     "KAFKA-16225 [1/N]: Set metadata.log.dir to broker in KRAFT mode in integration test"
+    ]
+   },
+   {
+    "template": "<KEY>: Upgrade jetty-server to fix <KEY>-<N>",
+    "count": 1,
+    "where": {
+     "Commit title": 1
+    },
+    "cues": [
+     "ticket key in commit message matches PR description"
+    ],
+    "examples": [
+     "KAFKA-13209: Upgrade jetty-server to fix CVE-2021-34429"
+    ]
+   }
+  ],
+  "ticket_fix": [
+   {
+    "template": "<KEY> move quota config params from KafkaConfig to QuotaConfig (#<N>)",
+    "count": 1,
+    "where": {
+     "Commit title": 1
+    },
+    "cues": [
+     "ticket key in the commit message"
+    ],
+    "examples": [
+     "KAKFA-17173 move quota config params from KafkaConfig to QuotaConfig (#17505)"
+    ]
+   },
+   {
+    "template": "<KEY> Fix rare producer message corruption, don't reuse buffers on the client in certain error cases",
+    "count": 1,
+    "where": {
+     "Commit title": 1
+    },
+    "cues": [
+     "ticket key in the commit message"
+    ],
+    "examples": [
+     "KAFKA-19012 Fix rare producer message corruption, don't reuse buffers on the client in certain error cases"
+    ]
+   },
+   {
+    "template": "The fix was already backported to <N> in [github.com/<repo>/commit/<ID>]",
     "count": 1,
     "where": {
      "Ticket text": 1
     },
     "cues": [
-     "ticket description explicitly mentions consolidating LogManager config items to shorten constructor"
+     "explicit commit SHA linked to the ticket's fix"
     ],
     "examples": [
-     "Probably we can introduce a LogManagerConfig to consolidate those separate config items, which also shortens the constructor"
+     "The fix was already backported to 3.9 in [https://github.com/apache/kafka/commit/1c85bc563121b0135e948328f54d939eaae3740b]"
     ]
    }
   ],
   "email_topic": [
    {
-    "template": "<KEY> Support Hierarchical Transactional Acknowledgments for Share Groups",
-    "count": 3,
+    "template": "Build failed in Jenkins: Kafka » Kafka Branch Builder » <N> #<N>",
+    "count": 20,
     "where": {
-     "EmailMessage title": 3
+     "EmailMessage title": 20
     },
     "cues": [
-     "KIP identifier in subject line and body",
-     "Subject line and repeated references to KIP-1289"
+     "CI build failure notification in subject line",
+     "CI build failure notification with version and build number",
+     "CI build failure in Jenkins pipeline"
     ],
     "examples": [
-     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
-     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups",
-     "KIP-1289 Support Hierarchical Transactional Acknowledgments for Share Groups"
+     "Build failed in Jenkins: Kafka » Kafka Branch Builder » 3.4 #43",
+     "Build failed in Jenkins: Kafka » Kafka Branch Builder » 3.3 #152",
+     "Build failed in Jenkins: Kafka » Kafka Branch Builder » 3.4 #105"
     ]
    },
    {
-    "template": "[DISCUSS] KIP:<N>: Dead letter queue support for global store/KTable",
-    "count": 1,
+    "template": "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")",
+    "count": 16,
     "where": {
-     "EmailMessage title": 1
+     "Ticket title": 16
     },
     "cues": [
-     "Subject line explicitly references the KIP number and title"
+     "CI build failure mentioned in subject and body",
+     "CI build failure logs in email subject and body",
+     "CI build failure mentioned in both the mail thread and the ticket description"
     ],
     "examples": [
-     "[DISCUSS] KIP:1295: Dead letter queue support for global store/KTable"
+     "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")",
+     "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")",
+     "Develocity Gradle plugin version can't be upgraded (CI build fails with error: \"build scan failed to be published\")"
     ]
    },
    {
-    "template": "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)",
-    "count": 1,
+    "template": "HOTIFX: fix Kafka versions for system tests (#<N>)",
+    "count": 16,
     "where": {
-     "EmailMessage title": 1
+     "EmailMessage text": 16
     },
     "cues": [
-     "PR title matches ticket description and rationale"
+     "Commit message referencing version updates"
     ],
     "examples": [
-     "MINOR: version updates for build and project dependencies (multiple CVEs are addressed)"
+     "HOTIFX: fix Kafka versions for system tests (#14493)",
+     "HOTIFX: fix Kafka versions for system tests (#14493)",
+     "HOTIFX: fix Kafka versions for system tests (#14493)"
     ]
    },
    {
-    "template": "revert <KEY> entirely if we have to",
-    "count": 1,
+    "template": "<KEY>: Add Broker-side SCRAM Config API",
+    "count": 14,
     "where": {
-     "EmailMessage text": 1
+     "EmailMessage text": 14
     },
     "cues": [
-     "explicit mention of a KIP identifier in the context of a potential revert"
+     "KIP reference in code comments",
+     "KIP reference in code comment",
+     "KIP reference in code comments or javadoc"
     ],
     "examples": [
-     "revert KIP-909 entirely if we have to"
+     "KIP-554: Add Broker-side SCRAM Config API",
+     "KIP-554: Add Broker-side SCRAM Config API",
+     "KIP-554: Add Broker-side SCRAM Config API"
     ]
    },
    {
-    "template": "unifying configuration validation (<KEY>)",
-    "count": 1,
+    "template": "Javadoc task does not explicitly set a locale",
+    "count": 9,
     "where": {
-     "EmailMessage text": 1
+     "Ticket text": 9
     },
     "cues": [
-     "explicit reference to KIP-1161 in the context of the contributor's work"
+     "Javadoc warning in build log referencing locale or language settings",
+     "Javadoc warning messages and locale-related issues in build logs",
+     "Javadoc warning in build log referencing locale"
     ],
     "examples": [
-     "unifying configuration validation (KIP-1161)"
+     "Javadoc task does not explicitly set a locale",
+     "Javadoc task does not explicitly set a locale",
+     "Javadoc task does not explicitly set a locale"
     ]
    }
   ],
   "identity": [
-   {
-    "template": "display name: Manikumar",
-    "count": 1,
-    "where": {
-     "Account text": 1
-    },
-    "cues": [
-     "display name matches first name of candidate"
-    ],
-    "examples": [
-     "display name: Manikumar"
-    ]
-   },
    {
     "template": "confluence:lbrutschy (Lucas Brutschy)",
     "count": 1,
@@ -273,6 +437,19 @@
     ],
     "examples": [
      "confluence:lbrutschy (Lucas Brutschy)"
+    ]
+   },
+   {
+    "template": "display name: Manikumar",
+    "count": 1,
+    "where": {
+     "Account text": 1
+    },
+    "cues": [
+     "display name matches first name of candidate"
+    ],
+    "examples": [
+     "display name: Manikumar"
     ]
    },
    {
@@ -302,16 +479,16 @@
     ]
    },
    {
-    "template": "directory id: ijuma",
+    "template": "directory id: clolov",
     "count": 1,
     "where": {
      "Person text": 1
     },
     "cues": [
-     "directory id matches github account login"
+     "directory id matches github account name"
     ],
     "examples": [
-     "directory id: ijuma"
+     "directory id: clolov"
     ]
    }
   ],
@@ -323,8 +500,7 @@
      "Document text": 6
     },
     "cues": [
-     "Current state: \"...\"",
-     "Current state: "
+     "Current state: \"...\""
     ],
     "examples": [
      "Current state: \"Accepted\"",
@@ -354,7 +530,7 @@
      "Document text": 3
     },
     "cues": [
-     "Current state: [...]"
+     "Current state: [Accepted]"
     ],
     "examples": [
      "Current state: [Accepted]",
@@ -370,7 +546,7 @@
     },
     "cues": [
      "Current state: [...]",
-     "Current state: [\"...\"],"
+     "Current state: [\"...\" ]"
     ],
     "examples": [
      "Current state: [\"Under Discussion\"]",
