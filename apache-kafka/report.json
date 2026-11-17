@@ -1,26 +1,41 @@
 {
- "data": "ekg-eval-raw\\apache-kafka",
+ "data": "ekg-eval-raw/apache-kafka",
  "window": {
   "since": "2026-07-31",
   "until": "2026-10-29"
  },
  "project": "kafka",
  "tenant": "apache",
- "out": "C:\\Users\\Kanthamai 4\\Desktop\\Archaea Beta mamata local\\ekg-eval-out\\apache-kafka",
+ "out": "/work/ekg-eval-out/apache-kafka",
  "settings": {
   "default_branch": "trunk",
+  "release_branches": "\\d+\\.\\d+",
+  "release_branch_since": "2024-01-01",
   "decision_prefix": "KIP",
   "mail_lists": {},
   "notifiers": {
-   "jira@apache.org": "jira",
-   "git@apache.org": "github",
-   "notifications@github.com": "github",
+   "notifications@github.com": "code_host",
+   "jira@apache.org": "tracker",
+   "git@apache.org": "code_host",
    "builds@apache.org": "ci"
   },
+  "tracker_notice_subject": "^\\[jira\\] \\[\\w+\\] \\(([A-Z][A-Z0-9]+-\\d+)\\)",
   "ci_subject": "^\\[(GH|CI|BUILD)\\]|workflow run|build (failed|fixed|is back)|\\bjenkins\\b",
+  "announce_subject": "^\\s*\\[(ANNOUNCE|ANNOUNCEMENT|ANN)\\]",
   "issue_tracker": null,
   "infer_people": "auto",
-  "public": true
+  "public": true,
+  "vote_threads": true,
+  "withdrawal_phrases": null,
+  "directory_tool": "asf",
+  "directory_name": "apache",
+  "directory_link_method": null,
+  "directory_email_domain": "apache.org",
+  "directory_login_tools": [
+   "jira",
+   "confluence"
+  ],
+  "owned_email_domains": null
  },
  "adapters": {
   "people": {
@@ -62,12 +77,12 @@
   "wiki"
  ],
  "totals": {
-  "records": 193682,
-  "records_valid": 193678,
-  "links": 604679,
-  "links_valid": 604679,
-  "record_types": 37,
-  "link_types": 54
+  "records": 298156,
+  "records_valid": 298152,
+  "links": 943281,
+  "links_valid": 943281,
+  "record_types": 42,
+  "link_types": 65
  },
  "raw": null,
  "records": {
@@ -84,14 +99,14 @@
    "top_errors": {}
   },
   "Account (confluence)": {
-   "checked": 520,
-   "valid": 520,
+   "checked": 565,
+   "valid": 565,
    "stubs": 0,
    "top_errors": {}
   },
   "Account (github)": {
-   "checked": 486,
-   "valid": 486,
+   "checked": 496,
+   "valid": 496,
    "stubs": 0,
    "top_errors": {}
   },
@@ -108,8 +123,26 @@
    "top_errors": {}
   },
   "Alias (email)": {
-   "checked": 10,
-   "valid": 10,
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Alias (github)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "App (github)": {
+   "checked": 2,
+   "valid": 2,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Attachment (confluence)": {
+   "checked": 435,
+   "valid": 435,
    "stubs": 0,
    "top_errors": {}
   },
@@ -128,6 +161,12 @@
   "Check (github)": {
    "checked": 83,
    "valid": 83,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "CodeSymbol (git)": {
+   "checked": 5534,
+   "valid": 5534,
    "stubs": 0,
    "top_errors": {}
   },
@@ -191,6 +230,18 @@
    "stubs": 0,
    "top_errors": {}
   },
+  "DocSection (confluence)": {
+   "checked": 18501,
+   "valid": 18501,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "DocSection (git)": {
+   "checked": 909,
+   "valid": 909,
+   "stubs": 0,
+   "top_errors": {}
+  },
   "Document (asf)": {
    "checked": 1,
    "valid": 1,
@@ -203,9 +254,15 @@
    "stubs": 0,
    "top_errors": {}
   },
+  "Domain (ekg)": {
+   "checked": 17,
+   "valid": 17,
+   "stubs": 0,
+   "top_errors": {}
+  },
   "EmailAddress (email)": {
-   "checked": 2727,
-   "valid": 2727,
+   "checked": 2729,
+   "valid": 2729,
    "stubs": 0,
    "top_errors": {}
   },
@@ -218,8 +275,8 @@
    }
   },
   "EmailThread (mail)": {
-   "checked": 13365,
-   "valid": 13365,
+   "checked": 10621,
+   "valid": 10621,
    "stubs": 0,
    "top_errors": {}
   },
@@ -230,8 +287,8 @@
    "top_errors": {}
   },
   "File (git)": {
-   "checked": 12710,
-   "valid": 12710,
+   "checked": 12720,
+   "valid": 12720,
    "stubs": 0,
    "top_errors": {}
   },
@@ -242,8 +299,8 @@
    "top_errors": {}
   },
   "Folder (git)": {
-   "checked": 1884,
-   "valid": 1884,
+   "checked": 2963,
+   "valid": 2963,
    "stubs": 0,
    "top_errors": {}
   },
@@ -296,8 +353,14 @@
    "top_errors": {}
   },
   "Piece (confluence)": {
-   "checked": 18229,
-   "valid": 18229,
+   "checked": 97720,
+   "valid": 97720,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Piece (git)": {
+   "checked": 1183,
+   "valid": 1183,
    "stubs": 0,
    "top_errors": {}
   },
@@ -368,9 +431,9 @@
    "top_errors": {}
   },
   "Ticket (jira)": {
-   "checked": 13115,
-   "valid": 13115,
-   "stubs": 11741,
+   "checked": 13122,
+   "valid": 13122,
+   "stubs": 11748,
    "top_errors": {}
   },
   "TicketState (jira)": {
@@ -378,23 +441,30 @@
    "valid": 6,
    "stubs": 0,
    "top_errors": {}
+  },
+  "Workspace (github)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
   }
  },
  "links": {
   "ABOUT": {
-   "checked": 1418,
-   "valid": 1418,
+   "checked": 1417,
+   "valid": 1417,
    "methods": {
-    "text_rule": 1418
+    "field": 3,
+    "text_rule": 1414
    },
    "top_errors": {},
    "warnings": {}
   },
   "ACTED_BY": {
-   "checked": 21179,
-   "valid": 21179,
+   "checked": 22130,
+   "valid": 22130,
    "methods": {
-    "field": 21179
+    "field": 22130
    },
    "top_errors": {},
    "warnings": {}
@@ -418,10 +488,29 @@
    "top_errors": {},
    "warnings": {}
   },
-  "ANNOUNCES": {
-   "checked": 11655,
-   "valid": 11655,
+  "AFFECTS": {
+   "checked": 2,
+   "valid": 2,
    "methods": {
+    "field": 2
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ALIAS_OF": {
+   "checked": 1,
+   "valid": 1,
+   "methods": {
+    "field": 1
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "ANNOUNCES": {
+   "checked": 11685,
+   "valid": 11685,
+   "methods": {
+    "text_rule": 30,
     "integration": 11655
    },
    "top_errors": {},
@@ -437,22 +526,26 @@
    "warnings": {}
   },
   "ASSIGNED_TO": {
-   "checked": 1671,
-   "valid": 1671,
+   "checked": 1688,
+   "valid": 1688,
    "methods": {
-    "field": 1671
+    "field": 1688
    },
    "top_errors": {},
    "warnings": {}
   },
   "AUTHORED_BY": {
-   "checked": 38042,
-   "valid": 38042,
+   "checked": 53566,
+   "valid": 53566,
    "methods": {
-    "field": 38042
+    "field": 53566
    },
    "top_errors": {},
-   "warnings": {}
+   "warnings": {
+    "AUTHORED_BY.first_at: not a field of AUTHORED_BY in the registry": 1860,
+    "AUTHORED_BY.last_at: not a field of AUTHORED_BY in the registry": 1860,
+    "AUTHORED_BY.count: not a field of AUTHORED_BY in the registry": 1860
+   }
   },
   "BASE": {
    "checked": 307,
@@ -464,10 +557,29 @@
    "warnings": {}
   },
   "BLOCKS": {
-   "checked": 49,
-   "valid": 49,
+   "checked": 61,
+   "valid": 61,
    "methods": {
-    "field": 49
+    "field": 61
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "BOT_OF": {
+   "checked": 2,
+   "valid": 2,
+   "methods": {
+    "field": 1,
+    "convention": 1
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "CALLS": {
+   "checked": 2037,
+   "valid": 2037,
+   "methods": {
+    "inferred": 2037
    },
    "top_errors": {},
    "warnings": {}
@@ -482,10 +594,10 @@
    "warnings": {}
   },
   "CHANGES": {
-   "checked": 132785,
-   "valid": 132785,
+   "checked": 145203,
+   "valid": 145203,
    "methods": {
-    "field": 132785
+    "field": 145203
    },
    "top_errors": {},
    "warnings": {}
@@ -535,6 +647,15 @@
    "top_errors": {},
    "warnings": {}
   },
+  "DEFINED_IN": {
+   "checked": 5534,
+   "valid": 5534,
+   "methods": {
+    "field": 5534
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
   "DISCUSSES": {
    "checked": 142,
    "valid": 142,
@@ -545,10 +666,19 @@
    "warnings": {}
   },
   "DUPLICATE_OF": {
-   "checked": 38,
-   "valid": 38,
+   "checked": 44,
+   "valid": 44,
    "methods": {
-    "field": 38
+    "field": 44
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "EDITED_BY": {
+   "checked": 2662,
+   "valid": 2662,
+   "methods": {
+    "field": 2662
    },
    "top_errors": {},
    "warnings": {}
@@ -562,11 +692,30 @@
    "top_errors": {},
    "warnings": {}
   },
-  "FROM": {
-   "checked": 30487,
-   "valid": 30487,
+  "EQUIVALENT_TO": {
+   "checked": 858,
+   "valid": 858,
    "methods": {
-    "field": 30487
+    "inferred": 858
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "EXTENDS": {
+   "checked": 127,
+   "valid": 127,
+   "methods": {
+    "field": 127
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "FROM": {
+   "checked": 31221,
+   "valid": 31221,
+   "methods": {
+    "field": 30487,
+    "inferred": 734
    },
    "top_errors": {},
    "warnings": {}
@@ -581,11 +730,11 @@
    "warnings": {}
   },
   "HAS_ACCOUNT": {
-   "checked": 233,
-   "valid": 233,
+   "checked": 236,
+   "valid": 236,
    "methods": {
     "snapshot": 73,
-    "inferred": 160
+    "inferred": 163
    },
    "top_errors": {},
    "warnings": {}
@@ -601,19 +750,19 @@
    "warnings": {}
   },
   "HAS_ATTACHMENT": {
-   "checked": 167,
-   "valid": 167,
+   "checked": 602,
+   "valid": 602,
    "methods": {
-    "field": 167
+    "field": 602
    },
    "top_errors": {},
    "warnings": {}
   },
   "HAS_LABEL": {
-   "checked": 4481,
-   "valid": 4481,
+   "checked": 4850,
+   "valid": 4850,
    "methods": {
-    "field": 3016,
+    "field": 3385,
     "snapshot": 1465
    },
    "top_errors": {},
@@ -647,11 +796,20 @@
    "top_errors": {},
    "warnings": {}
   },
-  "IN": {
-   "checked": 112869,
-   "valid": 112869,
+  "IMPORTS": {
+   "checked": 300,
+   "valid": 300,
    "methods": {
-    "field": 112869
+    "field": 300
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "IN": {
+   "checked": 119060,
+   "valid": 119060,
+   "methods": {
+    "field": 119060
    },
    "top_errors": {},
    "warnings": {}
@@ -693,39 +851,42 @@
    "warnings": {}
   },
   "LINKS_TO": {
-   "checked": 2658,
-   "valid": 2658,
+   "checked": 12877,
+   "valid": 12877,
    "methods": {
-    "integration": 1637,
-    "field": 1021
+    "field": 11240,
+    "integration": 1637
    },
    "top_errors": {},
    "warnings": {}
   },
   "MADE_IN": {
-   "checked": 2798,
-   "valid": 2798,
+   "checked": 2563,
+   "valid": 2563,
    "methods": {
     "field": 2,
-    "text_rule": 2796
+    "text_rule": 2561
    },
    "top_errors": {},
    "warnings": {}
   },
   "MEMBER_OF": {
-   "checked": 117,
-   "valid": 117,
+   "checked": 278,
+   "valid": 278,
    "methods": {
-    "snapshot": 117
+    "snapshot": 117,
+    "field": 161
    },
    "top_errors": {},
    "warnings": {}
   },
   "MENTIONS": {
-   "checked": 1253,
-   "valid": 1253,
+   "checked": 4465,
+   "valid": 4465,
    "methods": {
-    "text_rule": 1253
+    "field": 426,
+    "text_rule": 2615,
+    "integration": 1424
    },
    "top_errors": {},
    "warnings": {}
@@ -749,19 +910,19 @@
    "warnings": {}
   },
   "NEXT": {
-   "checked": 2760,
-   "valid": 2760,
+   "checked": 98028,
+   "valid": 98028,
    "methods": {
-    "field": 2760
+    "field": 98028
    },
    "top_errors": {},
    "warnings": {}
   },
   "OF_VERSION": {
-   "checked": 18229,
-   "valid": 18229,
+   "checked": 98903,
+   "valid": 98903,
    "methods": {
-    "field": 18229
+    "field": 98903
    },
    "top_errors": {},
    "warnings": {}
@@ -785,19 +946,20 @@
    "warnings": {}
   },
   "PARTICIPATED_IN": {
-   "checked": 30410,
-   "valid": 30410,
+   "checked": 31144,
+   "valid": 31144,
    "methods": {
-    "field": 30410
+    "field": 30410,
+    "inferred": 734
    },
    "top_errors": {},
    "warnings": {}
   },
   "PART_OF": {
-   "checked": 42140,
-   "valid": 42140,
+   "checked": 132877,
+   "valid": 132877,
    "methods": {
-    "field": 42140
+    "field": 132877
    },
    "top_errors": {},
    "warnings": {}
@@ -812,10 +974,10 @@
    "warnings": {}
   },
   "RELATED_TO": {
-   "checked": 303,
-   "valid": 303,
+   "checked": 332,
+   "valid": 332,
    "methods": {
-    "field": 303
+    "field": 332
    },
    "top_errors": {},
    "warnings": {}
@@ -849,11 +1011,29 @@
    "top_errors": {},
    "warnings": {}
   },
+  "SECTION_OF": {
+   "checked": 9390,
+   "valid": 9390,
+   "methods": {
+    "field": 9390
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
   "SENT_TO": {
    "checked": 33372,
    "valid": 33372,
    "methods": {
     "field": 33372
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "SUBSCRIBED": {
+   "checked": 201,
+   "valid": 201,
+   "methods": {
+    "field": 201
    },
    "top_errors": {},
    "warnings": {}
@@ -878,27 +1058,30 @@
   }
  },
  "cross_pillar": {
-  "Conversations ↔ People": 62799,
-  "Code ↔ People": 30492,
-  "Code ↔ Tickets": 15710,
-  "Conversations ↔ Tickets": 12972,
-  "Conversations ↔ Knowledge": 1434,
-  "Knowledge ↔ Tickets": 1432,
+  "Conversations ↔ People": 64602,
+  "Code ↔ People": 42893,
+  "Code ↔ Tickets": 15840,
+  "Conversations ↔ Tickets": 13003,
+  "Documents ↔ Tickets": 3158,
+  "Knowledge ↔ Tickets": 1414,
   "Documents ↔ Knowledge": 1362,
-  "Knowledge ↔ People": 1260,
+  "Knowledge ↔ People": 1274,
+  "Conversations ↔ Knowledge": 1199,
   "Code ↔ Knowledge": 962,
   "Code ↔ Conversations": 709,
-  "Documents ↔ People": 69,
+  "Code ↔ Documents": 655,
+  "Access ↔ People": 161,
+  "Documents ↔ People": 93,
   "People ↔ Tickets": 66,
   "Access ↔ Code": 1
  },
  "linker": {
   "resolved": {
-   "Ticket → Ticket: DUPLICATE_OF (field)": 38,
-   "Ticket → Ticket: RELATED_TO (field)": 303,
+   "Ticket → Ticket: DUPLICATE_OF (field)": 44,
+   "Ticket → Ticket: RELATED_TO (field)": 332,
    "Ticket → PullRequest: LINKS_TO (integration)": 14197,
-   "Decision → Ticket: ABOUT (text_rule)": 1476,
-   "Ticket → Ticket: BLOCKS (field)": 49,
+   "Decision → Ticket: ABOUT (text_rule)": 1472,
+   "Ticket → Ticket: BLOCKS (field)": 61,
    "Ticket → Ticket: CHILD_OF (field)": 302,
    "Comment → PullRequest: LINKS_TO (field)": 390,
    "PullRequest → Decision: ENACTS (convention)": 40,
@@ -909,29 +1092,58 @@
    "PullRequest → Commit: MERGED_AS (convention)": 13476,
    "Commit → Ticket: IMPLEMENTS (convention)": 12997,
    "Commit → Decision: ENACTS (convention)": 922,
-   "Decision → EmailMessage: MADE_IN (text_rule)": 1432,
-   "Decision → EmailAddress: DECIDED_BY (text_rule)": 1258,
+   "Piece → File: LINKS_TO (field)": 43,
+   "Piece → Document: LINKS_TO (field)": 4651,
+   "File → Document: LINKS_TO (field)": 281,
+   "Piece → EmailAddress: MENTIONS (text_rule)": 25,
+   "Piece → Ticket: LINKS_TO (field)": 872,
+   "Piece → Ticket: MENTIONS (text_rule)": 1002,
+   "Decision → EmailAddress: DECIDED_BY (text_rule)": 1311,
    "EmailMessage → Ticket: ANNOUNCES (integration)": 11577,
-   "EmailMessage → Ticket: MENTIONS (text_rule)": 1253,
+   "EmailMessage → Ticket: MENTIONS (text_rule)": 1254,
    "EmailMessage → PullRequest: LINKS_TO (field)": 631,
+   "Decision → EmailMessage: MADE_IN (text_rule)": 1303,
    "EmailMessage → PullRequest: ANNOUNCES (integration)": 78,
    "EmailMessage → Ticket: DISCUSSES (text_rule)": 142,
-   "Decision → Account: DECIDED_BY (text_rule)": 43,
-   "Decision → Alias: DECIDED_BY (text_rule)": 11,
-   "Decision → Decision: REVERSES (text_rule)": 2
+   "Decision → Alias: DECIDED_BY (text_rule)": 1,
+   "Decision → Decision: REVERSES (text_rule)": 2,
+   "Document → Document: LINKS_TO (field)": 4280,
+   "Piece → Ticket: MENTIONS (integration)": 1425,
+   "Piece → Commit: LINKS_TO (field)": 22,
+   "Piece → PullRequest: LINKS_TO (field)": 131,
+   "Piece → Account: MENTIONS (field)": 230,
+   "Document → Attachment: HAS_ATTACHMENT (field)": 3
   },
   "unresolved": {
    "PullRequest → Ticket: IMPLEMENTS (convention)": 2,
    "Commit → Decision: ENACTS (convention)": 3,
+   "Piece → File: LINKS_TO (field)": 535,
+   "Piece → Ticket: MENTIONS (text_rule)": 450,
+   "Piece → EmailAddress: MENTIONS (text_rule)": 121,
    "EmailMessage → PullRequest: LINKS_TO (field)": 249,
-   "EmailMessage → Ticket: MENTIONS (text_rule)": 80,
+   "EmailMessage → Ticket: MENTIONS (text_rule)": 79,
    "EmailMessage → Ticket: DISCUSSES (text_rule)": 28,
    "Decision → EmailMessage: MADE_IN (text_rule)": 3,
-   "Decision → Ticket: ABOUT (text_rule)": 481
+   "Piece → Ticket: MENTIONS (integration)": 276,
+   "Piece → Document: LINKS_TO (field)": 28,
+   "Decision → Ticket: ABOUT (text_rule)": 480,
+   "Piece → Account: MENTIONS (field)": 2
   },
   "stubbed_targets": {
-   "Ticket": 11741,
+   "Ticket": 11748,
    "PullRequest": 13594
+  },
+  "outside_addresses": {
+   "Piece (git)": 336,
+   "Piece (confluence)": 5217
+  },
+  "wiki_page_addresses": {
+   "page_id: resolved": 180,
+   "page_id: unresolved": 7,
+   "tiny: resolved": 320,
+   "tiny: unresolved": 2,
+   "title: resolved": 1727,
+   "title: unresolved": 57
   }
  },
  "identity": {
@@ -942,10 +1154,10 @@
    "jira: same login as the directory": 45,
    "jira: unique display name": 21,
    "jira: unresolved (no directory match)": 595,
-   "confluence: same login as the directory": 46,
-   "confluence: unresolved (no directory match)": 451,
-   "confluence: unique display name": 23,
-   "github: unresolved (no person match)": 459
+   "confluence: same login as the directory": 48,
+   "confluence: unresolved (no directory match)": 493,
+   "confluence: unique display name": 24,
+   "github: unresolved (no person match)": 467
   },
   "persons": 73,
   "persons_by_tool_count": {
@@ -957,12 +1169,12 @@
    "6 tools": 25
   },
   "persons_in_tool": {
-   "mail": 48,
    "confluence": 64,
    "jira": 58,
    "github": 25,
-   "directory": 73,
-   "git": 65
+   "git": 65,
+   "mail": 48,
+   "directory": 73
   }
  },
  "coverage": {
@@ -990,35 +1202,150 @@
    "of": 22346,
    "linked": 12876
   },
-  "KIP decisions linked to a discussion email": {
+  "decision proposals linked to a discussion email": {
    "of": 1352,
    "linked": 489
   },
-  "KIP decisions linked to a ticket": {
+  "decision proposals linked to a ticket": {
    "of": 1352,
-   "linked": 981
+   "linked": 979
   },
-  "KIP decisions enacted by a PR or commit": {
+  "decision proposals enacted by a PR or commit": {
    "of": 1352,
    "linked": 416
   },
   "emails linked to a ticket or decision": {
    "of": 31350,
-   "linked": 13965
+   "linked": 13741
   }
  },
  "stubs": {
-  "Ticket": 11741,
+  "Ticket": 11748,
   "PullRequest": 13594
  },
+ "documents": {
+  "documents": 1812,
+  "by_source": {
+   "confluence (confluence)": {
+    "documents": 1671,
+    "text_chars": 16191930,
+    "source_chars": 13345368,
+    "kept_chars": 13345368,
+    "tables": 1070,
+    "images": 452
+   },
+   "git (html)": {
+    "documents": 3,
+    "text_chars": 1287,
+    "source_chars": 1080,
+    "kept_chars": 1080
+   },
+   "git (markdown)": {
+    "documents": 134,
+    "text_chars": 1690901,
+    "source_chars": 1457694,
+    "kept_chars": 1457694,
+    "tables": 9
+   },
+   "git (text)": {
+    "documents": 4,
+    "text_chars": 13758,
+    "source_chars": 10682,
+    "kept_chars": 10682
+   }
+  },
+  "kept_ratio": {
+   "1.0": 1812
+  },
+  "confidence_rule": "text-rule links from a document's pieces: confidence x max(0.5, kept ratio)",
+  "piece_chars": 4000,
+  "counts": {
+   "git versions read into pieces": 141,
+   "git pieces": 1183,
+   "images at an outside address (no record, not linked)": 67,
+   "confluence versions read into pieces": 3503,
+   "confluence pieces": 97720,
+   "references in older versions' pieces not turned into links (current version only)": 268005,
+   "wiki: page editors written as AUTHORED_BY role editor (EDITED_BY cannot start at a Document)": 1860,
+   "wiki: version list cut at 200 by the downloader": 3
+  },
+  "not_understood": {
+   "macro style (plain body kept as code)": 1
+  },
+  "left_out_on_purpose": {
+   "macro parameter": 8033,
+   "macro toc": 1406,
+   "layout table read as flow": 266,
+   "jira query macro (a live list, not page content)": 203,
+   "macro anchor": 45,
+   "macro jiraissues": 8,
+   "template placeholder": 6,
+   "macro create-from-template": 2,
+   "macro children": 2,
+   "macro detailssummary": 1,
+   "macro tasks-report-macro": 1,
+   "macro loremipsum": 1,
+   "macro display-footnotes": 1
+  },
+  "worst": [
+   {
+    "name": "My Page",
+    "source": "confluence",
+    "format": "confluence",
+    "kept_ratio": 1.0,
+    "reasons": [
+     "not understood: macro style (plain body kept as code) x1"
+    ]
+   }
+  ]
+ },
  "notes": {
+  "code: calls resolved to a symbol of the repository": 2037,
+  "code: calls through an expression (no type inference, not linked)": 3396,
+  "code: calls to something outside the repository or not settled by name (not linked)": 12404,
+  "code: calls with several candidates, e.g. overloads (not linked)": 307,
   "code: files in the tree": 7642,
+  "code: files no longer in the snapshot, put IN their folder": 5053,
+  "code: files parsed, java": 375,
+  "code: files parsed, python": 12,
+  "code: files parsed, scala": 7,
   "code: files with text from the local repository": 746,
+  "code: folders and files carrying a label by the labeler config": 369,
   "code: folders in the tree": 1884,
+  "code: folders only history names (no longer in the snapshot)": 1079,
+  "code: imports of something outside the repository, a package, or an ambiguous name (not linked)": 4274,
+  "code: imports resolved to a symbol of the repository": 322,
+  "code: source files parsed for symbols": 394,
+  "code: supertypes outside the repository or ambiguous (not linked)": 105,
+  "code: supertypes resolved to a symbol of the repository": 127,
+  "code: symbols, class": 500,
+  "code: symbols, constructor": 386,
+  "code: symbols, enum": 24,
+  "code: symbols, file": 382,
+  "code: symbols, function": 131,
+  "code: symbols, interface": 26,
+  "code: symbols, method": 4064,
+  "code: symbols, module": 12,
+  "code: symbols, object": 5,
+  "code: symbols, record": 2,
+  "code: symbols, trait": 2,
+  "documents: confluence pieces": 97720,
+  "documents: confluence versions read into pieces": 3503,
+  "documents: git pieces": 1183,
+  "documents: git versions read into pieces": 141,
+  "documents: images at an outside address (no record, not linked)": 67,
+  "documents: references in older versions' pieces not turned into links (current version only)": 268005,
+  "domains: Domain records": 17,
+  "domains: addresses on an owned domain (MEMBER_OF its Domain)": 161,
+  "domains: list addresses given their EmailAddress (for the Domain link)": 1,
+  "git: EQUIVALENT_TO links carrying git's patch id (both commits' patch id stated)": 0,
+  "git: EQUIVALENT_TO links with no patch_id (git's patch id needs both versions' file contents, which the clone lacks; equivalence is identical per-file blob changes, kind identical_change)": 858,
+  "git: commits EQUIVALENT_TO an earlier commit with the identical change": 858,
   "git: commits release tags point to, off the default branch": 243,
+  "git: commits whose file list was read from repo.git's trees": 2465,
   "git: commits with the first tag that contains them": 20266,
-  "git: committed by GitHub's web merge (merger comes from the PR's merged_by)": 12398,
-  "git: release-branch commits linked to their trunk original (same PR)": 1632,
+  "git: committed by GitHub's web merge (committer is the code host's automation address)": 12398,
+  "git: release-branch commits linked to their default-branch original (same PR)": 1632,
   "git: release-branch commits not on the default branch": 2268,
   "github: CI jobs (Check records)": 83,
   "github: CI runs without job detail": 461,
@@ -1028,48 +1355,60 @@
   "jira: components defined by the project": 41,
   "jira: done as 'canceled' by resolution (state type stays completed)": 18,
   "jira: done as 'duplicate' by resolution (state type stays completed)": 54,
+  "jira: links known only from the inward side (the other issue is outside the download)": 47,
   "jira: reporter differs from creator (CREATED_BY role reporter; AUTHORED_BY does not allow Ticket)": 4,
-  "knowledge: KIP discussion link to an email outside the window": 376,
-  "knowledge: KIP discussion links without a Message-ID (lists.apache.org/thread/…)": 1195,
-  "knowledge: KIP status -> accepted": 715,
-  "knowledge: KIP status -> proposed": 484,
+  "jira: resolved Duplicate with no duplicate link naming the original (no DUPLICATE_OF)": 24,
+  "knowledge: KIP discussion link to an email outside the window": 366,
+  "knowledge: KIP discussion links without a Message-ID (lists.apache.org/thread/…)": 983,
+  "knowledge: KIP status -> accepted": 732,
+  "knowledge: KIP status -> proposed": 490,
   "knowledge: KIP status -> rejected": 12,
   "knowledge: KIP status -> superseded": 3,
   "knowledge: KIP status -> unmapped": 33,
-  "knowledge: KIP status -> unparsed": 61,
+  "knowledge: KIP status -> unparsed": 38,
   "knowledge: KIP status -> withdrawn": 54,
   "mail: From header with no parseable address": 108,
-  "mail: KIP vote tallies read from a vote thread": 173,
-  "mail: KIP votes cast in a vote thread (DECIDED_BY role voter)": 1312,
+  "mail: announcements naming no known release version": 38,
+  "mail: announcements of a release (ANNOUNCES the Release)": 30,
   "mail: code-host notifications (ANNOUNCES their PR or issue)": 78,
   "mail: code-host notifications for another repo, not linked": 1750,
   "mail: cross-posted copy merged into one message": 120,
   "mail: duplicate copy in the same list, kept once": 22,
+  "mail: messages naming a group (MENTIONS the Group)": 335,
   "mail: no Date header (archive receive time used, precision approximate)": 1,
   "mail: no Message-ID (stable id generated)": 1,
   "mail: proposal acceptances withdrawn in the vote thread (Decision REVERSES)": 2,
+  "mail: proposal vote tallies read from a vote thread": 173,
+  "mail: proposal votes cast in a vote thread (DECIDED_BY role voter)": 1312,
+  "mail: relayed sender not recovered (no preserved header names the sender; sender_name kept, no FROM link)": 21,
+  "mail: relayed sender recovered (Cc/Reply-To address under the same display name; FROM method inferred)": 734,
   "mail: reply whose parent is outside the window": 12114,
-  "mail: sender rewritten to the list address (sender_name kept, no FROM link)": 755,
+  "mail: thread records merged away by that join": 2744,
+  "mail: threads": 10621,
+  "mail: threads joined across a cut References chain": 584,
   "mail: tracker notifications (ANNOUNCES their ticket)": 11577,
-  "mail: voter kept as a display-name alias": 41,
-  "mail: voter matched to an account by display name": 121,
+  "mail: vote result messages (MADE_IN their Decision)": 173,
+  "mail: voter kept as a display-name alias": 3,
   "people: chair resolutions read from the board minutes": 2,
   "people: persons with no title, manager or employer in the source": 73,
-  "wiki: version list cut at 200 by the downloader": 3,
-  "wiki: versions kept as metadata only (body not fetched)": 4
+  "wiki: page editors written as AUTHORED_BY role editor (EDITED_BY cannot start at a Document)": 1860,
+  "wiki: version list cut at 200 by the downloader": 3
  },
  "timings_s": {
-  "people adapter": 0.1,
-  "jira adapter": 10.1,
-  "github adapter": 7.0,
-  "git adapter": 57.0,
-  "code tree adapter": 5.7,
-  "mail adapter": 89.7,
-  "wiki adapter + decisions": 58.2,
-  "cross-source linker": 6.2,
+  "people adapter": 1.2,
+  "jira adapter": 31.2,
+  "github adapter": 45.1,
+  "git adapter": 190.2,
+  "code tree adapter": 77.2,
+  "mail adapter": 112.8,
+  "wiki adapter + decisions": 109.0,
+  "group names in mail": 0.9,
+  "cross-source linker": 3.6,
   "identity resolution": 3.0,
-  "validation": 133.6,
-  "write graph": 29.1,
-  "total": 403.0
+  "email domains": 0.2,
+  "document owners": 0.0,
+  "validation": 74.9,
+  "write graph": 46.5,
+  "total": 704.0
  }
 }

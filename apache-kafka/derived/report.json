@@ -1,0 +1,15 @@
+{
+ "knowledge_read": 46086,
+ "files": 12730,
+ "links": 1381,
+ "notes": {
+  "EXPLAINS -> CodeSymbol": 254,
+  "EXPLAINS -> File": 1127,
+  "code names in knowledge: ambiguous": 131,
+  "code names in knowledge: member": 309,
+  "code names in knowledge: type of an unparsed member": 208,
+  "code names in knowledge: unknown": 2033,
+  "file names in knowledge: ambiguous": 248,
+  "file names in knowledge: path": 1125
+ }
+}
