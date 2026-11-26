@@ -1,0 +1,45 @@
+{
+ "grant_level": [
+  {
+   "template": "Team product planning and PRD access; no automatic production write.",
+   "count": 2,
+   "where": {
+    "value text": 2
+   },
+   "cues": [
+    "Group entry lists 'PRD access' as the granted capability",
+    "Group entry lists 'PRD access' for pm-orders"
+   ],
+   "examples": [
+    "Team product planning and PRD access; no automatic production write.",
+    "Team product planning and PRD access; no automatic production write."
+   ]
+  },
+  {
+   "template": "Payment engineering source write and reviews; financial data access is separate.",
+   "count": 1,
+   "where": {
+    "value text": 1
+   },
+   "cues": [
+    "scope/access column contains 'source write' indicating write permission"
+   ],
+   "examples": [
+    "Payment engineering source write and reviews; financial data access is separate."
+   ]
+  },
+  {
+   "template": "Infrastructure and deployment operations; does not imply finance-ledger access.",
+   "count": 1,
+   "where": {
+    "value text": 1
+   },
+   "cues": [
+    "deployment operations mentioned for prod-deploy scope"
+   ],
+   "examples": [
+    "Infrastructure and deployment operations; does not imply finance-ledger access."
+   ]
+  }
+ ]
+}

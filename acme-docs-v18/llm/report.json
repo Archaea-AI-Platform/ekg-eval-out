@@ -1,0 +1,1743 @@
+{
+ "graph": "..\\..\\ekg\\ekg-eval-out\\acme-docs-v18",
+ "prompt_version": "fill-v7",
+ "mode": "run",
+ "kinds": {
+  "table_map": {
+   "to_ask": 41,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 19085,
+   "prompt_chars_total": 738549,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 246184,
+    "typical (4.0 chars/token)": 184638
+   },
+   "documents": 8,
+   "table_rows": 299,
+   "mappings_from_cache": 0,
+   "mappings_asked_again_for_a_new_schema": 0,
+   "earlier_mappings_kept_new_read_less": 0,
+   "acceptance": [
+    {
+     "table": "Table in ACME GitHub Engineering Activity: GitHub engineering activity > Repository directory",
+     "rows": 4,
+     "status": "accepted, also read as text",
+     "row_type": "Repository",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2",
+       "c3"
+      ],
+      "schema_gap": "c2 Product area and c3 Includes state a product area association and included features respectively, but no Repository field or link for product area or includes exists in the schema."
+     },
+     "reason": "Each row describes one repository with its product area and includes. c1 is the Repository name key and c2 and c3 describe product area and includes with no matching Repository field or link.",
+     "completion_tokens": 3931,
+     "prompt_chars": {
+      "ekg_table_shape": 17720,
+      "ekg_table_map": 5623
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     }
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: GitHub engineering activity > Module and file reference",
+     "rows": 13,
+     "status": "accepted",
+     "row_type": "Service",
+     "links": [
+      "OWNS_PATH",
+      "PART_OF"
+     ],
+     "reason": "The table lists a Service Module with its Repository and its Primary file, which is read as a Service OWNS_PATH Repository link and a File PART_OF Service link.",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: Module contribution summary > Contributions by code area",
+     "rows": 13,
+     "status": "accepted",
+     "row_type": "Service",
+     "links": [
+      "ABOUT",
+      "CONTRIBUTED_TO"
+     ],
+     "reason": "c1 is the Service name, c2.1/c3.1 name Persons who contributed with counts in c2.2/c3.2 and rank fixed by header, and c4 names a PullRequest about the Service.",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: Pull requests and approvals > PR activity ledger",
+     "rows": 20,
+     "status": "accepted, also read as text",
+     "row_type": "PullRequest",
+     "links": [
+      "ABOUT",
+      "APPROVED_BY",
+      "AUTHORED_BY"
+     ],
+     "also_text": {
+      "unread_columns": [],
+      "schema_gap": "Column c5 Change contains a free-text change description with no matching PullRequest field or link."
+     },
+     "reason": "The ledger lists merged pull requests with merge date, module, author, approvers and title. Mapped merged date, PR number, service about link, author and approvers from the ledger columns.",
+     "completion_tokens": 8893,
+     "prompt_chars": {
+      "ekg_table_shape": 18882,
+      "ekg_table_map": 18307
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     }
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: Selected Git commit log > Commit records",
+     "rows": 20,
+     "status": "accepted",
+     "row_type": "Commit",
+     "links": [
+      "AUTHORED_BY",
+      "CHANGES",
+      "CONTAINS"
+     ],
+     "reason": "The table is a commit log where each row is a Commit identified by SHA with author account, pull request and changed file. Date mapped to committed_at and SHA to sha for Commit records; Author links v",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: Ownership and event references > Current review routing",
+     "rows": 12,
+     "status": "accepted, also read as text",
+     "row_type": "File",
+     "links": [
+      "APPROVER_FOR",
+      "PART_OF"
+     ],
+     "also_text": {
+      "unread_columns": [
+       "c3.1",
+       "c3.2"
+      ]
+     },
+     "reason": "Each row names a file or folder path scope within a repository and lists the requested reviewer accounts, matching a File record with Repository and Account references. The table lists a File per row ",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: Ownership and event references > Current review routing > Dated ownership changes",
+     "rows": 3,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "check: mapping names no column for the row's name, key or statement",
+     "completion_tokens": 12516,
+     "prompt_chars": {
+      "ekg_table_shape": 17802
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     },
+     "retried_after": "check: mapping names no column for the row's name, key or statement"
+    },
+    {
+     "table": "Table in ACME GitHub Engineering Activity: Ownership and event references > Current review routing > Shared integration touchpoints",
+     "rows": 6,
+     "status": "accepted, also read as text",
+     "row_type": "Service",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2",
+       "c3"
+      ],
+      "schema_gap": "Columns Relevant event / field and Downstream concern state per Service a relevant event/field reference and a downstream concern, but no listed Service field or link can hold event/field references or downstream concerns."
+     },
+     "reason": "Component is the Service row identifier and the other two columns describe event references and downstream concerns that are not represented by the listed Service fields or links.",
+     "completion_tokens": 2154,
+     "prompt_chars": {
+      "ekg_table_shape": 17808,
+      "ekg_table_map": 5827
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     }
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: Employee directory — LDAP > Engineering directory",
+     "rows": 17,
+     "status": "accepted",
+     "row_type": "Person",
+     "links": [
+      "HAS_ACCOUNT",
+      "MEMBER_OF",
+      "REPORTS_TO"
+     ],
+     "reason": "Table lists engineering employees with ID, name, role, team, manager and contact details. Mapping follows the stated column splits and the record-naming hints, using Person fields where no listed link",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: Product, finance and business directory > Product managers and business contacts",
+     "rows": 10,
+     "status": "accepted, also read as text",
+     "row_type": "Person",
+     "links": [
+      "HAS_ALIAS",
+      "MEMBER_OF",
+      "REPORTS_TO"
+     ],
+     "also_text": {
+      "unread_columns": [],
+      "schema_gap": "Column c1.3 contains a role/code identifier such as pm-orders with no matching Person field or listed link."
+     },
+     "reason": "Table lists employees with ID, name, handle, responsibility, manager and email. Column meanings are taken from the table heading, header and sample rows, with c1 split into id/name/code and c3/c4 nami",
+     "completion_tokens": 10612,
+     "prompt_chars": {
+      "ekg_table_shape": 18195,
+      "ekg_table_map": 10191
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     },
+     "columns_from_other_tables": [
+      "c1.3 MEMBER_OF Group, as \"Table in ACME LDAP Employee Directory: Employee directory — LDAP > Engineering directory\" reads column \"ID / employee\""
+     ],
+     "mapping_from": "cache: the earlier mapping, kept: the one asked for the new schema reads less of the table"
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: Product, finance and business directory > Product managers and business contacts > Team and escalation structure",
+     "rows": 8,
+     "status": "accepted, also read as text",
+     "row_type": "Topic",
+     "links": [
+      "HAS_ALIAS",
+      "KNOWS_ABOUT"
+     ],
+     "also_text": {
+      "unread_columns": [],
+      "schema_gap": "c3 mixes Person·EmailAddress rows with Person/Person for condition rows and uses both '/' and ';' separators for multiple persons, so HAS_ALIAS for engineering contacts and a consistent KNOWS_ABOUT condition cannot be reliably mapped from c3.1/c3.2."
+     },
+     "reason": "Product contact clearly maps to KNOWS_ABOUT point_of_contact with HAS_ALIAS email, while engineering contact format is inconsistent.",
+     "completion_tokens": 81768,
+     "prompt_chars": {
+      "ekg_table_shape": 7753,
+      "ekg_table_map": 8518
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     },
+     "refused_by_the_guard": [
+      "ekg_table_shape (full): the reply took 13,274 tokens, over the 12,288 a mapping may take",
+      "ekg_table_shape (short): the reply took 16,369 tokens, over the 12,288 a mapping may take",
+      "ekg_table_map (full): the reply took 15,446 tokens, over the 12,288 a mapping may take",
+      "ekg_table_map (short): the reply took 17,941 tokens, over the 12,288 a mapping may take"
+     ],
+     "mapping_from": "cache: the earlier mapping, kept: the one asked for the new schema reads less of the table"
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: Service stewardship and history > Current component steward register",
+     "rows": 13,
+     "status": "accepted",
+     "row_type": "Service",
+     "links": [
+      "HAS_ACCOUNT",
+      "OWNED_BY",
+      "REPORTS_TO"
+     ],
+     "reason": "The table lists modules with their current steward, manager and effective date, so each row is a Service named by Module. The table lists a Service by name with its steward Person and Account and the ",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: Service stewardship and history > Current component steward register > Change history",
+     "rows": 5,
+     "status": "accepted",
+     "row_type": "Person",
+     "links": [
+      "OWNED_BY"
+     ],
+     "reason": "Table lists stewardship assignments with period, person and service module per row. The change history lists a person and a service per row with a period and a stewardship description, which maps to S",
+     "completion_tokens": 13649,
+     "prompt_chars": {
+      "ekg_table_shape": 7350,
+      "ekg_table_map": 10674
+     },
+     "tier": {
+      "ekg_table_shape": "short",
+      "ekg_table_map": "full"
+     },
+     "refused_by_the_guard": [
+      "ekg_table_shape (full): the reply ran into the limit (reply ran away: no answer after 307 seconds)"
+     ]
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: LDAP groups and identity matching > Directory groups",
+     "rows": 9,
+     "status": "accepted, also read as text",
+     "row_type": "Group",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2"
+      ],
+      "schema_gap": "c2 'Scope / access' contains free-text descriptions of access and permissions that are not mapped to any Group field or link."
+     },
+     "reason": "The table lists directory groups with a scope/access description per row. c1 is the group's handle identifying the record and c2 is descriptive scope text with no matching Group field.",
+     "completion_tokens": 8448,
+     "prompt_chars": {
+      "ekg_table_shape": 7652,
+      "ekg_table_map": 6229
+     },
+     "tier": {
+      "ekg_table_shape": "short",
+      "ekg_table_map": "full"
+     },
+     "refused_by_the_guard": [
+      "ekg_table_shape (full): the reply ran into the limit (reply ran away: no answer after 307 seconds)"
+     ]
+    },
+    {
+     "table": "Table in ACME LDAP Employee Directory: LDAP groups and identity matching > Directory groups > Identity fields used to join systems",
+     "rows": 7,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists LDAP attribute names with their meanings/typical values and contains no columns that name records of the listed types.)",
+     "completion_tokens": 778,
+     "prompt_chars": {
+      "ekg_table_shape": 17803
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Analytics & Reporting | ACME Commerce: Analytics & Reporting > When our team is involved",
+     "rows": 5,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists triggers, required context and team actions as descriptive text and no column names records of a listed type.)",
+     "completion_tokens": 541,
+     "prompt_chars": {
+      "ekg_table_shape": 18048
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Analytics & Reporting | ACME Commerce: Analytics & Reporting > Signals we publish",
+     "rows": 4,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table presents signal terms with their required meaning as a terms-and-meanings layout and no column names a listed record type.)",
+     "completion_tokens": 1279,
+     "prompt_chars": {
+      "ekg_table_shape": 17689
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Customer Communications | ACME Commerce: Customer Communications > When our team is involved",
+     "rows": 5,
+     "status": "accepted, also read as text",
+     "row_type": "Guideline",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c3"
+      ],
+      "schema_gap": "Column c3 describes what the team does with no matching Guideline field or link; a statement/description field is missing."
+     },
+     "reason": "Each row defines a communication rule for a trigger with required context and team action, matching a Guideline record named by its trigger title. Trigger maps to applies_to and context maps to a chec",
+     "completion_tokens": 4223,
+     "prompt_chars": {
+      "ekg_table_shape": 18125
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     },
+     "mapping_from": "cache: the earlier mapping, kept: the one asked for the new schema reads less of the table"
+    },
+    {
+     "table": "Table in Customer Communications | ACME Commerce: Customer Communications > Signals we publish",
+     "rows": 4,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists signal terms with required meaning descriptions and contains no columns naming records of listed types.)",
+     "completion_tokens": 1241,
+     "prompt_chars": {
+      "ekg_table_shape": 17630
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Inventory & Availability | ACME Commerce: Inventory & Availability > When our team is involved",
+     "rows": 5,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (No column names a record type from the listed types, so the table is read as ordinary descriptive text.)",
+     "completion_tokens": 598,
+     "prompt_chars": {
+      "ekg_table_shape": 18047
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Inventory & Availability | ACME Commerce: Inventory & Availability > Signals we publish",
+     "rows": 4,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists signal terms with their required meaning information and does not name records of the listed types.)",
+     "completion_tokens": 561,
+     "prompt_chars": {
+      "ekg_table_shape": 17666
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Order Management | ACME Commerce: Order Management > When our team is involved",
+     "rows": 5,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists triggers, required context and team actions as descriptive text and no column names a record type from the provided list.)",
+     "completion_tokens": 1853,
+     "prompt_chars": {
+      "ekg_table_shape": 18128
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Order Management | ACME Commerce: Order Management > Signals we publish",
+     "rows": 4,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table defines signal terms and their required meanings with no columns naming records of the listed types.)",
+     "completion_tokens": 1750,
+     "prompt_chars": {
+      "ekg_table_shape": 17681
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > The purchase and payment journey",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table is a descriptive layout of journey steps with customer experience and financial outcome text and does not name records of a listed type.)",
+     "completion_tokens": 2374,
+     "prompt_chars": {
+      "ekg_table_shape": 18279
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 3. Authorization, fraud review and package-level capture > Processor interaction",
+     "rows": 5,
+     "status": "accepted, also read as text",
+     "row_type": "Requirement",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2"
+      ],
+      "schema_gap": "Column c2 lists key reference identifiers such as order_intent_id, auth_id, amount, package_id, allocation, operation key, capture_id, original tender share, line/package links, processor_operation_id, state, occurred_at with no Requirement field or link to capture them."
+     },
+     "reason": "The table enumerates processor interaction verification requirements, each row is a Requirement named by Action with its statement in What we must verify. c1 is the requirement name used as key, c3 ho",
+     "completion_tokens": 1107,
+     "prompt_chars": {
+      "ekg_table_shape": 17929
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     },
+     "mapping_from": "cache: the earlier mapping, kept: the one asked for the new schema reads less of the table"
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 4. Cancellations, refunds, partial adjustments and disputes > Financial status language",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists financial status terms and their meanings, with no column naming records of a listed type.)",
+     "completion_tokens": 435,
+     "prompt_chars": {
+      "ekg_table_shape": 17865
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 5. Tax, invoices, settlement and finance controls > Financial model and integration constraints",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table presents terms with explanatory meanings and no column names a record type from the list.)",
+     "completion_tokens": 1662,
+     "prompt_chars": {
+      "ekg_table_shape": 17933
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 6. Team access, audit and support operations > Critical cases we must test",
+     "rows": 7,
+     "status": "accepted, also read as text",
+     "row_type": "TestCase",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2"
+      ]
+     },
+     "reason": "The table lists test cases with a case name and an expected product behavior description per row. c1 is the TestCase name column and c2 contains expected behavior descriptions with no framework path s",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 6. Team access, audit and support operations > Recent transaction examples to design against",
+     "rows": 4,
+     "status": "accepted, also read as text",
+     "row_type": "Incident",
+     "links": [],
+     "also_text": {
+      "unread_columns": [],
+      "schema_gap": "Columns c1.1 and c1.2 state a case identifier and case descriptor for each Incident, but no Incident field or link is defined to hold a case reference."
+     },
+     "reason": "Each row provides a case identifier with a descriptive label and a narrative of sequence and product consequence that describes a transaction problem, matching an incident record. c2 contains ordered ",
+     "completion_tokens": 12049,
+     "prompt_chars": {
+      "ekg_table_shape": 18027,
+      "ekg_table_map": 6054
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > Cross-team handoffs",
+     "rows": 5,
+     "status": "accepted, also read as text",
+     "row_type": "Service",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2"
+      ],
+      "schema_gap": "Column c2 states the data Payment & Billing provides to or depends on from each partner Service in c1, a cross-team handoff relation, but no link type is defined to represent handoffs between Service records."
+     },
+     "reason": "The table lists a partner service per row with a description of what is provided or depended on. c1 holds the Service name field and c2 describes an unmapped handoff relation with no matching field or",
+     "completion_tokens": 4262,
+     "prompt_chars": {
+      "ekg_table_shape": 17838,
+      "ekg_table_map": 5857
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > Workflow triggers and team handoffs > How work enters Payment & Billing",
+     "rows": 5,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists descriptive workflow triggers with required information and responses and does not name records of the listed types.)",
+     "completion_tokens": 2619,
+     "prompt_chars": {
+      "ekg_table_shape": 18400
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > Workflow triggers and team handoffs > Event information and idempotency",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table presents signal names with payload descriptions and shared controls as specification text and no column names records of a listed type.)",
+     "completion_tokens": 2487,
+     "prompt_chars": {
+      "ekg_table_shape": 18047
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > The warehouse-to-delivery journey",
+     "rows": 7,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table lists stage terms with descriptive actions and meanings and contains no columns that name records of listed types.)",
+     "completion_tokens": 2066,
+     "prompt_chars": {
+      "ekg_table_shape": 18199
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 3. Packing accuracy, weight and high-value controls > Representative package",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table contains field labels and values/issues with no columns naming records of a listed type, so it is treated as ordinary text.)",
+     "completion_tokens": 13974,
+     "prompt_chars": {
+      "ekg_table_shape": 17746,
+      "ekg_table_map": 10992
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     },
+     "retried_after": "check: key/value mapping has nothing to write"
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 5. Carrier release, custody and 30-minute cancellation protection > Mandatory release decision",
+     "rows": 6,
+     "status": "accepted",
+     "row_type": "Requirement",
+     "links": [],
+     "reason": "The table lists six release gates as separate requirements with a title and a required outcome statement. c1 holds the requirement name which is the title and c2 holds the release conditions which mat",
+     "mapping_from": "cache: this table's accepted mapping from an earlier run"
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 7. Day-to-day operational cases > O-8201: captured and handed to carrier before the cancellation window ended",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "check: a Activity row needs its name or its key field to be matched to the tool's record",
+     "completion_tokens": 15937,
+     "prompt_chars": {
+      "ekg_table_shape": 17938,
+      "ekg_table_map": 6624
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     },
+     "retried_after": "check: mapping names no column for the row's name, key or statement"
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 7. Day-to-day operational cases > Other cases to protect",
+     "rows": 5,
+     "status": "accepted",
+     "row_type": "Requirement",
+     "links": [],
+     "reason": "Each row is a requirement identified by its case name with a statement of what the new workflow must prevent. c1 holds the requirement name/title and c2 holds its statement as per the shape descriptio",
+     "completion_tokens": 10123,
+     "prompt_chars": {
+      "ekg_table_shape": 7454,
+      "ekg_table_map": 5872
+     },
+     "tier": {
+      "ekg_table_shape": "short",
+      "ekg_table_map": "full"
+     },
+     "refused_by_the_guard": [
+      "ekg_table_shape (full): the reply ran into the limit (reply ran away: no answer after 307 seconds)"
+     ]
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 8. Operations records, roles and cross-team updates > Information that should travel with every package",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (The table presents record names with needed attributes as terms and meanings and no column references a listed record type.)",
+     "completion_tokens": 2084,
+     "prompt_chars": {
+      "ekg_table_shape": 17976
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 8. Operations records, roles and cross-team updates > Cross-team handoffs",
+     "rows": 5,
+     "status": "accepted, also read as text",
+     "row_type": "Service",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2"
+      ],
+      "schema_gap": "c2 lists what must stay in sync for each Partner, which is a cross-team handoff requirement not representable by any listed Service field or link."
+     },
+     "reason": "Each row names a partner service and lists what must stay in sync with it. c1 is the Service name column and c2 contains free-text sync items with no matching Service field or link.",
+     "completion_tokens": 8536,
+     "prompt_chars": {
+      "ekg_table_shape": 17962,
+      "ekg_table_map": 5981
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     },
+     "retried_after": "check: mapping names no column for the row's name, key or statement"
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > Workflow triggers and team handoffs > What starts warehouse and shipping work",
+     "rows": 6,
+     "status": "rejected",
+     "row_type": null,
+     "links": [],
+     "reason": "llm: not a table of records (No column names a record type from the listed types; the table is descriptive workflow guidance about triggers, context and actions.)",
+     "completion_tokens": 748,
+     "prompt_chars": {
+      "ekg_table_shape": 18497
+     },
+     "tier": {
+      "ekg_table_shape": "full"
+     }
+    },
+    {
+     "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > Workflow triggers and team handoffs > Signals our team sends to others",
+     "rows": 6,
+     "status": "accepted, also read as text",
+     "row_type": "Activity",
+     "links": [],
+     "also_text": {
+      "unread_columns": [
+       "c2"
+      ],
+      "schema_gap": "Column c2 lists signal-specific required fields such as task_id, package_id, node_id, order_version, etc., and purpose descriptions that do not correspond to any Activity field or listed link."
+     },
+     "reason": "Each row is an outgoing signal activity identified by its signal name in c1. Outgoing signal is used as the Activity verb to identify the row and the purpose/required fields column contains signal-spe",
+     "completion_tokens": 7812,
+     "prompt_chars": {
+      "ekg_table_shape": 18197,
+      "ekg_table_map": 6726
+     },
+     "tier": {
+      "ekg_table_shape": "full",
+      "ekg_table_map": "full"
+     },
+     "mapping_from": "cache: the earlier mapping, kept: the one asked for the new schema reads less of the table"
+    }
+   ],
+   "types_the_tables_added_for_the_documents": [
+    "Account",
+    "Activity",
+    "Commit",
+    "EmailAddress",
+    "Group",
+    "Guideline",
+    "Incident",
+    "Person",
+    "PullRequest",
+    "Repository",
+    "Requirement",
+    "Service",
+    "TestCase",
+    "Topic"
+   ],
+   "cached": 41,
+   "accepted": 22,
+   "rejected": 19,
+   "why_not": {
+    "llm": 17,
+    "check": 2
+   }
+  },
+  "pr_ticket": {
+   "to_ask": 0,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 1,
+    "typical (4.0 chars/token)": 1
+   },
+   "why_not": {}
+  },
+  "commit_pr": {
+   "to_ask": 0,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 1,
+    "typical (4.0 chars/token)": 1
+   },
+   "why_not": {}
+  },
+  "ticket_fix": {
+   "to_ask": 0,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 1,
+    "typical (4.0 chars/token)": 1
+   },
+   "why_not": {}
+  },
+  "email_topic": {
+   "to_ask": 0,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 1,
+    "typical (4.0 chars/token)": 1
+   },
+   "why_not": {}
+  },
+  "identity": {
+   "to_ask": 0,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 1,
+    "typical (4.0 chars/token)": 1
+   },
+   "why_not": {}
+  },
+  "decision_status": {
+   "to_ask": 0,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 1,
+    "typical (4.0 chars/token)": 1
+   },
+   "why_not": {}
+  },
+  "knowledge": {
+   "to_ask": 0,
+   "calls_per_task": 2,
+   "no_candidate": {},
+   "prompt_chars_max": 0,
+   "prompt_chars_total": 0,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 2,
+    "typical (4.0 chars/token)": 2
+   },
+   "why_not": {}
+  },
+  "doc_facts": {
+   "to_ask": 32,
+   "calls_per_task": 1,
+   "no_candidate": {},
+   "prompt_chars_max": 58295,
+   "prompt_chars_total": 1818307,
+   "est_prompt_tokens": {
+    "upper (sizing, 3.0 chars/token)": 606103,
+    "typical (4.0 chars/token)": 454577
+   },
+   "documents": 8,
+   "text_chars_per_window_max": 4946,
+   "table_pieces_left_to_table_map": 8,
+   "tables_read_as_text_after_their_mapping_was_not_accepted": 19,
+   "tables_mapped_in_part_and_read_as_text_too": 14,
+   "cached": 32,
+   "accepted": 32,
+   "why_not": {},
+   "coverage_by_document": {
+    "ACME GitHub Engineering Activity": {
+     "passages": 16,
+     "passages_with_items": 13,
+     "paragraphs": 21,
+     "paragraphs_read_nothing_kept": 3,
+     "chars": 6164,
+     "items": 179,
+     "windows": 2,
+     "follow_up_calls": 2,
+     "items_from_follow_ups": 18,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 0,
+     "items_per_1000_chars": 29.04
+    },
+    "ACME LDAP Employee Directory": {
+     "passages": 14,
+     "passages_with_items": 10,
+     "paragraphs": 16,
+     "paragraphs_read_nothing_kept": 4,
+     "chars": 5339,
+     "items": 170,
+     "windows": 2,
+     "follow_up_calls": 3,
+     "items_from_follow_ups": 70,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 1,
+     "items_per_1000_chars": 31.84
+    },
+    "Analytics & Reporting | ACME Commerce": {
+     "passages": 12,
+     "passages_with_items": 12,
+     "paragraphs": 32,
+     "paragraphs_read_nothing_kept": 0,
+     "chars": 5570,
+     "items": 75,
+     "windows": 2,
+     "follow_up_calls": 1,
+     "items_from_follow_ups": 18,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 1,
+     "items_per_1000_chars": 13.46
+    },
+    "Customer Communications | ACME Commerce": {
+     "passages": 12,
+     "passages_with_items": 12,
+     "paragraphs": 28,
+     "paragraphs_read_nothing_kept": 0,
+     "chars": 5374,
+     "items": 78,
+     "windows": 2,
+     "follow_up_calls": 2,
+     "items_from_follow_ups": 33,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 2,
+     "items_per_1000_chars": 14.51
+    },
+    "Inventory & Availability | ACME Commerce": {
+     "passages": 12,
+     "passages_with_items": 12,
+     "paragraphs": 28,
+     "paragraphs_read_nothing_kept": 0,
+     "chars": 5463,
+     "items": 80,
+     "windows": 2,
+     "follow_up_calls": 1,
+     "items_from_follow_ups": 31,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 1,
+     "items_per_1000_chars": 14.64
+    },
+    "Order Management | ACME Commerce": {
+     "passages": 12,
+     "passages_with_items": 12,
+     "paragraphs": 31,
+     "paragraphs_read_nothing_kept": 0,
+     "chars": 6066,
+     "items": 83,
+     "windows": 2,
+     "follow_up_calls": 1,
+     "items_from_follow_ups": 23,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 1,
+     "items_per_1000_chars": 13.68
+    },
+    "Payment & Billing | Product Requirements": {
+     "passages": 42,
+     "passages_with_items": 42,
+     "paragraphs": 186,
+     "paragraphs_read_nothing_kept": 2,
+     "chars": 37291,
+     "items": 382,
+     "windows": 10,
+     "follow_up_calls": 5,
+     "items_from_follow_ups": 21,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 3,
+     "items_per_1000_chars": 10.24
+    },
+    "Shipment & Operations | Product Requirements": {
+     "passages": 40,
+     "passages_with_items": 37,
+     "paragraphs": 224,
+     "paragraphs_read_nothing_kept": 3,
+     "chars": 37982,
+     "items": 366,
+     "windows": 10,
+     "follow_up_calls": 7,
+     "items_from_follow_ups": 95,
+     "quotes_cited_in_another_passage": 0,
+     "passages_unanswered": 0,
+     "quotes_not_in_their_source": 7,
+     "items_per_1000_chars": 9.64
+    }
+   }
+  },
+  "depends_on": {
+   "to_ask": 21,
+   "calls_per_task": 1,
+   "items asked": 248,
+   "cached": 13,
+   "asked": 8,
+   "rejected": 4,
+   "accepted": 17,
+   "why_not": {
+    "llm": 4
+   }
+  },
+  "grant_level": {
+   "to_ask": 18,
+   "calls_per_task": 1,
+   "asked": 18,
+   "accepted": 4,
+   "rejected": 14,
+   "why_not": {
+    "llm": 13,
+    "check": 1
+   }
+  }
+ },
+ "model": "openrouter meta/muse-glimmer-30b",
+ "budget": {
+  "window_tokens": 131072,
+  "prompt_tokens": 78643,
+  "reply_tokens": 16384,
+  "prompt_chars": 235929,
+  "window_from": "OpenRouter's model list",
+  "reply_limit_tokens": 16384,
+  "reply_limit_from": "--max-reply-tokens",
+  "extraction_text_chars_per_call": 6144,
+  "schema_chars_per_prompt": 219785,
+  "mapping_reply_tokens_max": 12288,
+  "mapping_seconds_max": 307
+ },
+ "sampling": {
+  "limit_new_tasks_per_kind": null,
+  "documents_sampled": null,
+  "documents_only": null
+ },
+ "schema_used": {
+  "creatable": [
+   "AccessScope",
+   "ActionItem",
+   "Ask",
+   "Decision",
+   "EmailAddress",
+   "Group",
+   "Guideline",
+   "Incident",
+   "Knowledge",
+   "Organization",
+   "Person",
+   "Position",
+   "Question",
+   "Requirement",
+   "Role",
+   "Service",
+   "Topic"
+  ],
+  "resolvable": [
+   "File"
+  ],
+  "links": [
+   "ABOUT",
+   "AFFECTS",
+   "ALIAS_OF",
+   "ANSWERS",
+   "APPLIES_TO",
+   "APPROVER_FOR",
+   "ASKED_BY",
+   "ASSIGNED_TO",
+   "ATTEMPTED_AS",
+   "AUTHORED_BY",
+   "BUDDY_OF",
+   "CANDIDATE_FOR",
+   "CAN_ACCESS",
+   "CONTRADICTS",
+   "CONTRIBUTED_TO",
+   "DECIDED_BY",
+   "DEPENDS_ON",
+   "DESCRIBES",
+   "DONE_BY",
+   "ENDED_BY",
+   "EXPANDS_TO",
+   "EXPLAINS",
+   "FORWARDS_TO",
+   "HAS_ALIAS",
+   "HAS_TITLE",
+   "HOLDS_POSITION",
+   "IN",
+   "KNOWS_ABOUT",
+   "LINKS_TO",
+   "MAINTAINED_BY",
+   "MEMBER_OF",
+   "MERGED_INTO",
+   "ON_BEHALF_OF",
+   "OUTDATED_BY",
+   "OWNED_BY",
+   "PART_OF",
+   "REINSTATES",
+   "REPORTS_TO",
+   "REQUESTED_BY",
+   "REVERSES",
+   "SAME_AS",
+   "SCHEDULED_FOR",
+   "STARTED_BY",
+   "SUBGROUP_OF",
+   "SUB_TEAM_OF",
+   "SUCCEEDS",
+   "SUPERSEDES",
+   "SUPPORTED_BY",
+   "TRACKED_IN",
+   "TRIAGE_RESPONSIBLE",
+   "UNTIL",
+   "WORKS_AROUND",
+   "WORKS_AT"
+  ],
+  "origin_links": [
+   "CLAIMED_IN",
+   "DOCUMENTED_IN",
+   "EXTRACTED_FROM",
+   "MADE_IN",
+   "RAISED_IN",
+   "RESTATED_IN"
+  ],
+  "originate_in_documents_but_have_no_name_or_text_field": [
+   "Claim",
+   "Convention"
+  ]
+ },
+ "schema_gaps": [
+  "The registry does not say which record types may be created from a document: `source` is prose. extract_schema matches document-like words in it (SOURCE_WORDS) and adds the types an origin link lets start in a document.",
+  "No origin link exists for an entity made from a document (Person, Group, Position, Role, Organization, Service, Topic, EmailAddress): EXTRACTED_FROM, RAISED_IN and MADE_IN start only at knowledge types. Used instead: Piece -MENTIONS-> the record (kind name), which the registry allows to any type. A document with no Pieces has nothing to cite it from, so no new entity is made from it (counted).",
+  "MADE_IN cannot end at a Piece (Decision -> Document, File, DocSection ...): a decision's origin is its document, with the quoted piece as evidence.",
+  "DECIDED_BY, ASSIGNED_TO, ASKED_BY and AUTHORED_BY end at Account, Alias or EmailAddress, never Person; HOLDS_POSITION and REPORTS_TO start at Person only. A name known only as the other kind is followed through its identity links when there is exactly one, else the link is skipped and counted.",
+  "Claim, Convention, Incident and Handover can originate in a document but have no name or text field, so a text cannot state one: not extracted.",
+  "A DocSection may attach only to a File or another DocSection, never to a Document (a wiki page): wiki sections arrive as Pieces whose heading is the section path.",
+  "Document extraction quality (kept ratio) has no field on File or Document: it is read from the graph's report.json (doc_quality) and multiplied into confidence.",
+  "No link joins two Requirements other than SUPERSEDES: DEPENDS_ON and LINKS_TO do not start at a Requirement, and ABOUT, which starts at any type, does not end at one. A requirement citing another one by id is written as the citing requirement's passage (Piece) LINKS_TO the cited Requirement (LINKS_TO ends at any type); a Requirement -> Requirement reference link would carry it directly (extract_facts.link_cited_ids picks one up as soon as the registry has it).",
+  "No link with a count joins a Person or Account to a Service, Repository or Folder (KNOWS_ABOUT has an order, EDITED_BY a count but starts at a File or Piece): a table of commit counts per person and module cannot store its counts. Such a table's mapping names the gap (schema_gap) and the table is read as text as well."
+ ],
+ "schema_descriptions": {
+  "documents": {
+   "detail": {
+    "types": "full",
+    "links": "full",
+    "link_fields": "full",
+    "fields": "full"
+   },
+   "chars": 40710,
+   "chars_without_descriptions": 11110,
+   "budget_chars": 219785
+  },
+  "tables": {
+   "detail": {
+    "types": "full",
+    "links": "full"
+   },
+   "chars": 83617,
+   "chars_without_descriptions": 43124,
+   "budget_chars": 219785
+  }
+ },
+ "totals": {
+  "tasks": 73,
+  "calls": 73,
+  "prompt_chars": 2556856,
+  "est_prompt_tokens_upper": 852286,
+  "est_prompt_tokens_typical": 639215
+ },
+ "id_references": {
+  "records with an id of their own": 192,
+  "ids that several records carry (one per document, not linked)": 9,
+  "cited ids no record carries": 9,
+  "cited ids several records carry: not linked": 1
+ },
+ "own_case": {
+  "Requirement ABOUT the Topic of its own id: written": 3,
+  "Knowledge ABOUT the Topic of its own id: written": 3,
+  "Knowledge already ABOUT its own case": 5,
+  "Guideline already ABOUT its own case": 1,
+  "Incident already ABOUT its own case": 3,
+  "Incident ABOUT the Topic of its own id: written": 2
+ },
+ "calls": {
+  "made": 26,
+  "answered_from_responses": 0,
+  "prompt_chars_sent": 215615,
+  "concurrency": 16,
+  "wall_seconds": 264,
+  "usage": {
+   "by_step": {
+    "ekg_depends_on": {
+     "calls": 8,
+     "calls_with_usage": 8,
+     "prompt_tokens": 35660,
+     "completion_tokens": 73867,
+     "reasoning_tokens": 73785,
+     "cost": 0.10160058
+    },
+    "ekg_grant_level": {
+     "calls": 18,
+     "calls_with_usage": 18,
+     "prompt_tokens": 9731,
+     "completion_tokens": 19845,
+     "reasoning_tokens": 19903,
+     "cost": 0.028717930000000006
+    }
+   },
+   "total": {
+    "calls": 26,
+    "calls_with_usage": 26,
+    "prompt_tokens": 45391,
+    "completion_tokens": 93712,
+    "reasoning_tokens": 93688,
+    "cost": 0.13031851
+   }
+  }
+ },
+ "coverage_by_document": {
+  "ACME GitHub Engineering Activity": {
+   "passages": 16,
+   "passages_with_items": 13,
+   "paragraphs": 21,
+   "paragraphs_read_nothing_kept": 3,
+   "chars": 6164,
+   "items": 179,
+   "windows": 2,
+   "follow_up_calls": 2,
+   "items_from_follow_ups": 18,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 0,
+   "items_per_1000_chars": 29.04
+  },
+  "ACME LDAP Employee Directory": {
+   "passages": 14,
+   "passages_with_items": 10,
+   "paragraphs": 16,
+   "paragraphs_read_nothing_kept": 4,
+   "chars": 5339,
+   "items": 170,
+   "windows": 2,
+   "follow_up_calls": 3,
+   "items_from_follow_ups": 70,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 1,
+   "items_per_1000_chars": 31.84
+  },
+  "Analytics & Reporting | ACME Commerce": {
+   "passages": 12,
+   "passages_with_items": 12,
+   "paragraphs": 32,
+   "paragraphs_read_nothing_kept": 0,
+   "chars": 5570,
+   "items": 75,
+   "windows": 2,
+   "follow_up_calls": 1,
+   "items_from_follow_ups": 18,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 1,
+   "items_per_1000_chars": 13.46
+  },
+  "Customer Communications | ACME Commerce": {
+   "passages": 12,
+   "passages_with_items": 12,
+   "paragraphs": 28,
+   "paragraphs_read_nothing_kept": 0,
+   "chars": 5374,
+   "items": 78,
+   "windows": 2,
+   "follow_up_calls": 2,
+   "items_from_follow_ups": 33,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 2,
+   "items_per_1000_chars": 14.51
+  },
+  "Inventory & Availability | ACME Commerce": {
+   "passages": 12,
+   "passages_with_items": 12,
+   "paragraphs": 28,
+   "paragraphs_read_nothing_kept": 0,
+   "chars": 5463,
+   "items": 80,
+   "windows": 2,
+   "follow_up_calls": 1,
+   "items_from_follow_ups": 31,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 1,
+   "items_per_1000_chars": 14.64
+  },
+  "Order Management | ACME Commerce": {
+   "passages": 12,
+   "passages_with_items": 12,
+   "paragraphs": 31,
+   "paragraphs_read_nothing_kept": 0,
+   "chars": 6066,
+   "items": 83,
+   "windows": 2,
+   "follow_up_calls": 1,
+   "items_from_follow_ups": 23,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 1,
+   "items_per_1000_chars": 13.68
+  },
+  "Payment & Billing | Product Requirements": {
+   "passages": 42,
+   "passages_with_items": 42,
+   "paragraphs": 186,
+   "paragraphs_read_nothing_kept": 2,
+   "chars": 37291,
+   "items": 382,
+   "windows": 10,
+   "follow_up_calls": 5,
+   "items_from_follow_ups": 21,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 3,
+   "items_per_1000_chars": 10.24
+  },
+  "Shipment & Operations | Product Requirements": {
+   "passages": 40,
+   "passages_with_items": 37,
+   "paragraphs": 224,
+   "paragraphs_read_nothing_kept": 3,
+   "chars": 37982,
+   "items": 366,
+   "windows": 10,
+   "follow_up_calls": 7,
+   "items_from_follow_ups": 95,
+   "quotes_cited_in_another_passage": 0,
+   "passages_unanswered": 0,
+   "quotes_not_in_their_source": 7,
+   "items_per_1000_chars": 9.64
+  }
+ },
+ "confidence_priors": {
+  "table": 0.95,
+  "one": 0.85,
+  "new": 0.7,
+  "chosen": 0.6,
+  "reference": 0.8
+ },
+ "written": {
+  "records_new_or_patched": 899,
+  "links_new": 2320,
+  "people_links": {},
+  "claims_merged": {
+   "counts": {
+    "merged: the same claim and interval, one stating less": 2,
+    "not merged: one interval, values that disagree (conflicting claims)": 8
+   },
+   "conflicting_examples": [
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_a0ee513d05ef91e0afd461663d93e86c",
+     "b": "n_e96d2496587543c317a28c812a352716",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "mahesh@acme.com",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_c3f48512d94714e6d68b79b8e14316f2",
+     "b": "n_fcb422b7b35021356753a59f5d78d1de",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "jonathan@acme.com",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_a0ee513d05ef91e0afd461663d93e86c",
+     "b": "n_1c62a1862346abf29b59adcedf91a53f",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "mahesh@acme.com",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_a0ee513d05ef91e0afd461663d93e86c",
+     "b": "n_6a3621863d3e151ec7921bbc6e488362",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "mahesh@acme.com",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_859983a1db68f6d4633549e1af63588b",
+     "b": "n_7678ae281e5edb45aa714b9c5f0aa70f",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "sophia@acme.com",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_859983a1db68f6d4633549e1af63588b",
+     "b": "n_d6380c0f222ad286ca6a23a900768b38",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "sophia@acme.com",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_96fcf073f3488755012232dd278cf4c7",
+     "b": "n_934fd75c28d9bd8787e7830a360ba42e",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "Mahesh for engineering defects",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    },
+    {
+     "type": "KNOWS_ABOUT",
+     "a": "n_c3f48512d94714e6d68b79b8e14316f2",
+     "b": "n_7075d48738d0fa23060981de75b6562d",
+     "valid_from": null,
+     "valid_to": null,
+     "values": [
+      {
+       "condition": "Ben for infrastructure issues",
+       "role": "escalation"
+      },
+      {
+       "basis": "stated",
+       "role": "point_of_contact"
+      }
+     ]
+    }
+   ],
+   "absorbed": 2,
+   "adapter_links_absorbed": 0
+  },
+  "documents_and_tables": {
+   "Knowledge: created": 362,
+   "Knowledge: DOCUMENTED_IN written": 362,
+   "ABOUT: written": 243,
+   "Requirement: created": 223,
+   "table rows read": 198,
+   "table rows written": 198,
+   "DEPENDS_ON (relies_on): written": 61,
+   "MEMBER_OF: written from a table": 44,
+   "AUTHORED_BY: written from a table": 40,
+   "REPORTS_TO: written from a table": 39,
+   "Topic: resolved to the one existing record": 35,
+   "Group: created from a table row": 34,
+   "OWNED_BY: written": 33,
+   "cell skipped: preferred_name is the row's name column (its name), not a name of its own": 32,
+   "ABOUT: written from a table": 32,
+   "DEPENDS_ON (gate): written": 32,
+   "Group: resolved to the one existing record": 31,
+   "HAS_ACCOUNT: written from a table": 30,
+   "Person: created from a table row": 27,
+   "ABOUT: an end could not be resolved, not linked": 27,
+   "Requirement: resolved to the one existing record": 27,
+   "CONTRIBUTED_TO: written from a table": 26,
+   "Account: resolved to the one existing record": 26,
+   "Person: resolved to the one existing record": 26,
+   "PART_OF: written from a table": 25,
+   "ABOUT: the schema does not allow it between a Requirement and a Group, not linked": 25,
+   "APPROVER_FOR: written from a table": 24,
+   "KNOWS_ABOUT: written": 24,
+   "PullRequest: no such record in the graph (this type is not created from a document)": 23,
+   "APPROVED_BY: written from a table": 22,
+   "MENTIONS: an end could not be resolved, not linked": 22,
+   "CAN_ACCESS: written": 21,
+   "PullRequest: created from a table row (no such record from its tool yet)": 20,
+   "Service: created from a table row": 20,
+   "Commit: created from a table row (no such record from its tool yet)": 20,
+   "CHANGES: written from a table": 20,
+   "CONTAINS: written from a table": 20,
+   "AUTHORED_BY: an end could not be resolved, not linked": 20,
+   "File: created from a table row (no such record from its tool yet)": 18,
+   "HAS_ALIAS: written from a table": 18,
+   "OWNED_BY: written from a table": 18,
+   "Group: created": 18,
+   "HAS_ALIAS: written": 18,
+   "OWNED_BY: the schema does not allow it between a Requirement and a Group, not linked": 18,
+   "Topic: created": 18,
+   "Account: created from a table row (no such record from its tool yet)": 17,
+   "Guideline: created": 17,
+   "Requirement: the same numbered item again in its document, the record made for it": 17,
+   "Requirement: created from a table row": 16,
+   "KNOWS_ABOUT: written from a table": 16,
+   "EmailAddress: resolved to the one existing record": 15,
+   "Service: resolved to the one existing record": 14,
+   "OWNS_PATH: written from a table": 13,
+   "Topic: the name is another record's: that record": 13,
+   "no field for this column: Requested reviewers (part 1)": 12,
+   "no field for this column: Requested reviewers (part 2)": 12,
+   "AccessScope: created": 12,
+   "ABOUT: the schema does not allow it between a Knowledge and a Group, not linked": 11,
+   "EmailAddress: created from a table row": 10,
+   "File: the document itself, by its title": 10,
+   "File: resolved to the one existing record": 10,
+   "Person: an identifying field (work_email) is not given from a text": 10,
+   "Person: an identifying field (hr_worker_id) is not given from a text": 10,
+   "no field for this column: Scope / access": 9,
+   "cell skipped: handle is the row's name column (its name), not a name of its own": 9,
+   "REPORTS_TO: written": 9,
+   "Topic: created from a table row": 8,
+   "Repository: resolved to the one existing record": 8,
+   "Decision: created": 8,
+   "no field for this column: Expected product behavior": 7,
+   "TestCase: created from a table row (no such record from its tool yet)": 7,
+   "Service: created": 7,
+   "Incident: created": 7,
+   "TestCase: resolved to the one existing record": 7,
+   "no field for this column: Relevant event / field": 6,
+   "no field for this column: Downstream concern": 6,
+   "no field for this column: Purpose and required fields": 6,
+   "Activity: created from a table row (no such record from its tool yet)": 6,
+   "no field for this column: What our team does": 5,
+   "Guideline: created from a table row": 5,
+   "no field for this column: Key reference": 5,
+   "no field for this column: We provide / we depend on": 5,
+   "no field for this column: What must stay in sync": 5,
+   "Person: a bare first name, the one record whose name starts with it, already linked to the row's record": 5,
+   "EmailAddress: created": 5,
+   "Guideline: resolved to the one existing record": 5,
+   "Incident: created from a table row": 4,
+   "no field for this column: Product area": 4,
+   "no field for this column: Includes": 4,
+   "Repository: created from a table row (no such record from its tool yet)": 4,
+   "Person: a bare first name the same table settled in another row: that record": 4,
+   "DESCRIBES: between two tool records, left to their adapters": 4,
+   "STARTED_BY: an end could not be resolved, not linked": 3,
+   "Incident: resolved to the one existing record": 3,
+   "Role: created": 3,
+   "placeholder cell (-, n/a ...): no link end, left out": 2,
+   "DESCRIBES: written": 2,
+   "ABOUT: the schema does not allow it between a Guideline and a Group, not linked": 2,
+   "Topic: not created, the name is a heading of the document (a place in it, not a thing it names)": 2,
+   "Incident: the same numbered item again in its document, the record made for it": 2,
+   "Knowledge: the same numbered item again in its document, the record made for it": 2,
+   "Knowledge: resolved to the one existing record": 2,
+   "CAN_ACCESS level write: written from its passage": 2,
+   "CAN_ACCESS level read: written from its passage": 2,
+   "Account: no such record in the graph (this type is not created from a document)": 1,
+   "ADDRESS_OF: written": 1,
+   "ADDRESS_OF: an end could not be resolved, not linked": 1,
+   "MEMBER_OF: written": 1,
+   "MEMBER_OF: an end could not be resolved, not linked": 1,
+   "KNOWS_ABOUT: an end could not be resolved, not linked": 1,
+   "ABOUT: the schema does not allow it between a Incident and a Group, not linked": 1,
+   "Person: not created, the name holds a mark no personal name has (a role or a list, not a person)": 1,
+   "OWNED_BY: an end could not be resolved, not linked": 1,
+   "Organization: created": 1,
+   "Organization: resolved to the one existing record": 1,
+   "DESCRIBES: the schema does not allow it between a File and a Topic, not linked": 1,
+   "ABOUT: the schema does not allow it between a Knowledge and a Organization, not linked": 1,
+   "Topic: not created, the name is that of several other records": 1,
+   "Position: created": 1,
+   "OWNED_BY: the schema does not allow it between a Topic and a Group, not linked": 1,
+   "CAN_ACCESS: the schema does not allow it between a Role and a AccessScope, not linked": 1
+  },
+  "links_by_type": {
+   "MENTIONS": 565,
+   "EXTRACTED_FROM": 631,
+   "REPORTS_TO": 26,
+   "HAS_ACCOUNT": 17,
+   "MEMBER_OF": 45,
+   "HAS_ALIAS": 13,
+   "ABOUT": 268,
+   "AUTHORED_BY": 40,
+   "APPROVED_BY": 22,
+   "KNOWS_ABOUT": 32,
+   "OWNED_BY": 49,
+   "OWNS_PATH": 13,
+   "PART_OF": 25,
+   "CONTRIBUTED_TO": 26,
+   "CHANGES": 20,
+   "CONTAINS": 20,
+   "APPROVER_FOR": 24,
+   "DOCUMENTED_IN": 359,
+   "MADE_IN": 8,
+   "CAN_ACCESS": 21,
+   "ADDRESS_OF": 1,
+   "DESCRIBES": 2,
+   "DEPENDS_ON": 93
+  },
+  "links_by_method": {
+   "template_rule": 775,
+   "llm_judge": 1537,
+   "text_rule": 8
+  },
+  "links_by_confidence": {
+   "0.95": 775,
+   "0.7": 1326,
+   "0.85": 118,
+   "0.6": 93,
+   "0.8": 8
+  },
+  "records_by_type": {
+   "Person": 27,
+   "DerivationRun": 4,
+   "PullRequest": 20,
+   "Topic": 26,
+   "Service": 27,
+   "Group": 52,
+   "Incident": 11,
+   "Repository": 4,
+   "Commit": 20,
+   "File": 18,
+   "Guideline": 22,
+   "Requirement": 239,
+   "TestCase": 7,
+   "Activity": 6,
+   "Account": 17,
+   "EmailAddress": 15,
+   "Knowledge": 359,
+   "Decision": 8,
+   "AccessScope": 12,
+   "Organization": 1,
+   "Position": 1,
+   "Role": 3
+  },
+  "possible_duplicates": {
+   "records": 0,
+   "shared_values": 0,
+   "by_kind": {},
+   "examples": []
+  }
+ },
+ "adapter_hints": {
+  "grant_level": [
+   {
+    "template": "Team product planning and PRD access; no automatic production write.",
+    "count": 2,
+    "where": {
+     "value text": 2
+    },
+    "cues": [
+     "Group entry lists 'PRD access' as the granted capability",
+     "Group entry lists 'PRD access' for pm-orders"
+    ],
+    "examples": [
+     "Team product planning and PRD access; no automatic production write.",
+     "Team product planning and PRD access; no automatic production write."
+    ]
+   },
+   {
+    "template": "Payment engineering source write and reviews; financial data access is separate.",
+    "count": 1,
+    "where": {
+     "value text": 1
+    },
+    "cues": [
+     "scope/access column contains 'source write' indicating write permission"
+    ],
+    "examples": [
+     "Payment engineering source write and reviews; financial data access is separate."
+    ]
+   },
+   {
+    "template": "Infrastructure and deployment operations; does not imply finance-ledger access.",
+    "count": 1,
+    "where": {
+     "value text": 1
+    },
+    "cues": [
+     "deployment operations mentioned for prod-deploy scope"
+    ],
+    "examples": [
+     "Infrastructure and deployment operations; does not imply finance-ledger access."
+    ]
+   }
+  ]
+ }
+}
