@@ -1,0 +1,235 @@
+{
+ "data": "..\\..\\ekg\\ekg-eval-raw\\acme-docs",
+ "window": null,
+ "project": "acme-docs",
+ "tenant": "acme",
+ "out": "..\\..\\ekg\\ekg-eval-out\\acme-docs-v18",
+ "settings": {
+  "default_branch": "main",
+  "release_branches": "(?:(?:release|releases|rel|branch|stable|maint)[-/_]?)?v?\\d+\\.\\d+(?:\\.(?:\\d+|x))?",
+  "release_branch_since": null,
+  "decision_prefix": null,
+  "mail_lists": {},
+  "notifiers": {
+   "notifications@github.com": "code_host"
+  },
+  "tracker_notice_subject": null,
+  "ci_subject": "^\\[(GH|CI|BUILD)\\]|workflow run|build (failed|fixed|is back)|\\bjenkins\\b",
+  "announce_subject": "^\\s*\\[(ANNOUNCE|ANNOUNCEMENT|ANN)\\]",
+  "issue_tracker": null,
+  "infer_people": "auto",
+  "public": true,
+  "vote_threads": false,
+  "withdrawal_phrases": null,
+  "directory_tool": "directory",
+  "directory_name": null,
+  "directory_link_method": null,
+  "directory_email_domain": null,
+  "directory_login_tools": [],
+  "owned_email_domains": null
+ },
+ "adapters": {
+  "docs": {
+   "status": "ran",
+   "problems": []
+  }
+ },
+ "sources": [
+  "docs"
+ ],
+ "totals": {
+  "records": 339,
+  "records_valid": 339,
+  "links": 664,
+  "links_valid": 664,
+  "record_types": 8,
+  "link_types": 8
+ },
+ "raw": null,
+ "records": {
+  "AccessScope (ekg)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Alias (docs)": {
+   "checked": 2,
+   "valid": 2,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "ContentVersion (docs)": {
+   "checked": 8,
+   "valid": 8,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "DocSection (docs)": {
+   "checked": 143,
+   "valid": 143,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "File (docs)": {
+   "checked": 8,
+   "valid": 8,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "FileMetadata (docs)": {
+   "checked": 8,
+   "valid": 8,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Piece (docs)": {
+   "checked": 168,
+   "valid": 168,
+   "stubs": 0,
+   "top_errors": {}
+  },
+  "Public (ekg)": {
+   "checked": 1,
+   "valid": 1,
+   "stubs": 0,
+   "top_errors": {}
+  }
+ },
+ "links": {
+  "CAN_ACCESS": {
+   "checked": 1,
+   "valid": 1,
+   "methods": {
+    "snapshot": 1
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "HAS_METADATA": {
+   "checked": 8,
+   "valid": 8,
+   "methods": {
+    "field": 8
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "METADATA_CREATOR": {
+   "checked": 8,
+   "valid": 8,
+   "methods": {
+    "field": 8
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "NEXT": {
+   "checked": 160,
+   "valid": 160,
+   "methods": {
+    "field": 160
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "OF_VERSION": {
+   "checked": 168,
+   "valid": 168,
+   "methods": {
+    "field": 168
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "PART_OF": {
+   "checked": 168,
+   "valid": 168,
+   "methods": {
+    "field": 168
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "SECTION_OF": {
+   "checked": 143,
+   "valid": 143,
+   "methods": {
+    "field": 143
+   },
+   "top_errors": {},
+   "warnings": {}
+  },
+  "VERSION_OF": {
+   "checked": 8,
+   "valid": 8,
+   "methods": {
+    "field": 8
+   },
+   "top_errors": {},
+   "warnings": {}
+  }
+ },
+ "cross_pillar": {},
+ "linker": {
+  "resolved": {},
+  "unresolved": {
+   "Piece → EmailAddress: MENTIONS (text_rule)": 38
+  },
+  "stubbed_targets": {},
+  "outside_addresses": {},
+  "wiki_page_addresses": {}
+ },
+ "identity": {
+  "links": {},
+  "persons": 0,
+  "persons_by_tool_count": {},
+  "persons_in_tool": {}
+ },
+ "coverage": {},
+ "stubs": {},
+ "documents": {
+  "documents": 8,
+  "by_source": {
+   "docs (pdf)": {
+    "documents": 8,
+    "text_chars": 116897,
+    "source_chars": 99075,
+    "kept_chars": 99075,
+    "pages": 47,
+    "tables": 41
+   }
+  },
+  "kept_ratio": {
+   "1.0": 8
+  },
+  "confidence_rule": "text-rule links from a document's pieces: confidence x max(0.5, kept ratio)",
+  "piece_chars": 4000,
+  "counts": {
+   "docs versions read into pieces": 8,
+   "docs pieces": 168,
+   "docs: pdf files with text": 8
+  },
+  "not_understood": {},
+  "left_out_on_purpose": {
+   "running headers, footers and page numbers (lines)": 94
+  },
+  "worst": []
+ },
+ "notes": {
+  "docs: pdf files with text": 8,
+  "documents: docs pieces": 168,
+  "documents: docs versions read into pieces": 8
+ },
+ "timings_s": {
+  "documents adapter": 4.2,
+  "group names in mail": 0.0,
+  "cross-source linker": 0.0,
+  "identity resolution": 0.0,
+  "email domains": 0.0,
+  "document owners": 0.0,
+  "validation": 0.0,
+  "write graph": 0.0,
+  "total": 4.2
+ }
+}

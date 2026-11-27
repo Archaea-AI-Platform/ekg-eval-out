@@ -1,0 +1,2549 @@
+{
+ "f3ba5a96fd1fa8530b2e0d18": {
+  "table": "Table in ACME LDAP Employee Directory: page 4",
+  "model": "",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists LDAP attribute names with their meanings and typical values, which is a terms and meanings definition table with no columns naming records of a listed type.",
+   "_verdict": "rejected"
+  }
+ },
+ "7cac898b2d8daf2f3e32f31f": {
+  "table": "Table in ACME GitHub Engineering Activity: page 1",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Repository",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "Columns c2 Product area and c3 Includes state a product area classification and a list of included capabilities for each Repository, but no Repository field or link for product area or includes is listed.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row describes a repository with its product area and includes. The table gives Repository name with product area and includes values that have no matching Repository field or link in the provided schema."
+  }
+ },
+ "a0e82e1c96a2838443de639d": {
+  "table": "Table in ACME GitHub Engineering Activity: page 5",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "Columns c2 Relevant event / field and c3 Downstream concern describe per-Service events/fields and downstream concerns with no matching Service field or link, and c1 Component is the Service identifier not covered by listed fields.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row describes a distinct component service with its relevant event field and downstream concern. No column maps to the listed Service fields or links, so the table is reported as a schema gap."
+  }
+ },
+ "ed886410b710cc6b218cf8de": {
+  "table": "Table in ACME GitHub Engineering Activity: page 4",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Commit",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "c2",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c3",
+     "type": "Account"
+    },
+    {
+     "column": "c4",
+     "type": "PullRequest"
+    },
+    {
+     "column": "c5",
+     "type": "File"
+    }
+   ],
+   "key_field": "sha",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "committed_at"
+    },
+    {
+     "column": "c2",
+     "field": "sha"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c3",
+     "link": "AUTHORED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c4",
+     "link": "CONTAINS",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "PullRequest"
+    },
+    {
+     "column": "c5",
+     "link": "CHANGES",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "File"
+    }
+   ],
+   "reason": "The table is a commit log with SHA as key and references to author account, pull request and file. The table rows are Commit records keyed by SHA with Date as committed_at, Author as AUTHORED_BY Account, PR as PullRequest CONTAINS Commit, and File changed as Commit CHANGES File."
+  }
+ },
+ "ae9441de3c10e8c3d72d0b7e": {
+  "table": "Table in ACME GitHub Engineering Activity: page 2",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": "",
+     "pattern": "(.+) (\\d+)"
+    },
+    {
+     "column": "c3",
+     "parts": 2,
+     "separator": "",
+     "pattern": "(.+) (\\d+)"
+    }
+   ],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.1",
+     "type": "Account"
+    },
+    {
+     "column": "c3.1",
+     "type": "Account"
+    },
+    {
+     "column": "c4",
+     "type": "PullRequest"
+    }
+   ],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "Columns c2 and c3 list the account with most commits and second most commits per module together with a commit count, which is an activity count per person and module; no listed link has a count field and a count of commits does not imply ownership, approval or knows-about.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c4",
+     "link": "ABOUT",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "number",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "PullRequest"
+    }
+   ],
+   "reason": "The table lists one service module per row with its top committers and latest merged pull request. c4 names a PullRequest and the table states the PR is about the Service row, matching ABOUT PullRequest -> Service; c2 and c3 contain commit counts per Account with no matching link or Service field."
+  }
+ },
+ "1160cdba85ca209765028e2a": {
+  "table": "Table in ACME LDAP Employee Directory: page 2",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Person",
+   "cell_parts": [
+    {
+     "column": "c1",
+     "parts": 3,
+     "separator": "",
+     "pattern": "^(E\\\\d{3})\\\\s+([^/]+)\\\\s*/\\\\s*(.+)$"
+    }
+   ],
+   "name_column": "c1.2",
+   "key_column": "c1.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c3",
+     "type": "Person"
+    },
+    {
+     "column": "c4",
+     "type": "EmailAddress"
+    }
+   ],
+   "key_field": "hr_worker_id",
+   "fields": [
+    {
+     "column": "c1.2",
+     "field": "preferred_name"
+    },
+    {
+     "column": "c2",
+     "field": "title"
+    }
+   ],
+   "schema_gap": "Column c1.3 contains an employee code/role identifier e.g. pm-orders with no matching Person field or link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c3",
+     "link": "REPORTS_TO",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c4",
+     "link": "HAS_ALIAS",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "EmailAddress"
+    }
+   ],
+   "reason": "c1.1 is the Person key, c1.2 is the preferred name, c2 is the title, c3 names the manager via REPORTS_TO and c4 names an email address via HAS_ALIAS, leaving c1.3 unmapped."
+  }
+ },
+ "4972fdebcc6a38c3427cdeaf": {
+  "table": "Table in ACME LDAP Employee Directory: page 4",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Group",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "handle",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "handle"
+    }
+   ],
+   "schema_gap": "Column c2 'Scope / access' contains descriptive scope/access text that is not represented by any listed Group field or link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "c1 holds group short names/keys matching the handle field and c2 is descriptive access information with no matching field or link."
+  }
+ },
+ "6d77268c202da6f70f04f593": {
+  "table": "Table in ACME GitHub Engineering Activity: page 1",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2",
+     "type": "Repository"
+    },
+    {
+     "column": "c3",
+     "type": "File"
+    }
+   ],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c2",
+     "field": "repo_paths"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c3",
+     "link": "PART_OF",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "File"
+    }
+   ],
+   "reason": "Each row names a service module and references its repository and primary file. Repository lists the service's code repositories matching repo_paths and Primary file identifies a File that is part of the Service."
+  }
+ },
+ "6ed09c98c2c7a851cd2e651b": {
+  "table": "Table in ACME GitHub Engineering Activity: page 5",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Handover",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "",
+   "fields": [],
+   "links": [],
+   "_verdict": "rejected"
+  }
+ },
+ "1ec28332e7df1779473a57aa": {
+  "table": "Table in ACME LDAP Employee Directory: page 3",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.1",
+     "type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "type": "Account"
+    },
+    {
+     "column": "c3",
+     "type": "Person"
+    }
+   ],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.1",
+     "link": "OWNED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [
+      {
+       "column": "c4",
+       "field": "valid_from"
+      }
+     ],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "link": "HAS_ACCOUNT",
+     "row_is": "from",
+     "from_column": "c2.1",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c3",
+     "link": "REPORTS_TO",
+     "row_is": "from",
+     "from_column": "c2.1",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    }
+   ],
+   "reason": "The table lists a service with its current steward person and account and the steward’s manager with an effective date for the stewardship."
+  }
+ },
+ "d1fabbbbfbc5f492585cfde9": {
+  "table": "Table in ACME LDAP Employee Directory: page 1",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Person",
+   "cell_parts": [
+    {
+     "column": "c1",
+     "parts": 3,
+     "separator": "",
+     "pattern": "^(E\\d+)\\s+(.+?)\\s*/\\s*(.+)$"
+    },
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    },
+    {
+     "column": "c4",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c1.2",
+   "key_column": "c1.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c1.3",
+     "type": "Group"
+    },
+    {
+     "column": "c2.1",
+     "type": "Role"
+    },
+    {
+     "column": "c2.2",
+     "type": "Group"
+    },
+    {
+     "column": "c3",
+     "type": "Person"
+    },
+    {
+     "column": "c4.1",
+     "type": "Account"
+    },
+    {
+     "column": "c4.2",
+     "type": "EmailAddress"
+    }
+   ],
+   "key_field": "hr_worker_id",
+   "fields": [
+    {
+     "column": "c1.2",
+     "field": "preferred_name"
+    },
+    {
+     "column": "c2.1",
+     "field": "title"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c1.3",
+     "link": "MEMBER_OF",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Group"
+    },
+    {
+     "column": "c2.2",
+     "link": "MEMBER_OF",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Group"
+    },
+    {
+     "column": "c3",
+     "link": "REPORTS_TO",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c4.1",
+     "link": "HAS_ACCOUNT",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c4.2",
+     "link": "HAS_ALIAS",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "EmailAddress"
+    }
+   ],
+   "reason": "Columns were mapped to Person fields and links using the split definitions and the stated record-naming columns, with title used for the Role name and MEMBER_OF, REPORTS_TO, HAS_ACCOUNT and HAS_ALIAS covering the named Group, Person, Account and EmailAddress columns."
+  }
+ },
+ "c6086c7add6e8c0323e5513d": {
+  "table": "Table in ACME LDAP Employee Directory: page 3",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Person",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " · ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c2.1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.2",
+     "type": "Service"
+    }
+   ],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.2",
+     "link": "KNOWS_ABOUT",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [
+      {
+       "column": "c3",
+       "field": "aspect"
+      }
+     ],
+     "fixed": [],
+     "period": {
+      "column": "c1",
+      "from_words": [
+       "From"
+      ],
+      "to_words": [
+       "Before"
+      ]
+     },
+     "other_type": "Service"
+    }
+   ],
+   "reason": "The row is a Person and c2.2 names a Service, with c1 giving a time-bounded validity and c3 giving free-text aspect for the Person -> Service knows-about relationship."
+  }
+ },
+ "f410ee9ef128cb65a00a9bd9": {
+  "table": "Table in ACME GitHub Engineering Activity: page 3",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "PullRequest",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c5",
+   "key_column": "c2.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.2",
+     "type": "Service"
+    },
+    {
+     "column": "c3",
+     "type": "Account"
+    },
+    {
+     "column": "c4",
+     "type": "Account"
+    }
+   ],
+   "key_field": "number",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "merged_at"
+    },
+    {
+     "column": "c2.1",
+     "field": "number"
+    }
+   ],
+   "schema_gap": "c5 Change holds the PullRequest name/description which has no matching PullRequest field or link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.2",
+     "link": "ABOUT",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Service"
+    },
+    {
+     "column": "c3",
+     "link": "AUTHORED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [
+      {
+       "field": "role",
+       "value": "author"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c4",
+     "link": "APPROVED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": ",",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    }
+   ],
+   "reason": "Merged is merged_at, PR / module splits into PR number and Service about link, Author is AUTHORED_BY with role author, and Approved by is APPROVED_BY."
+  }
+ },
+ "102c2b1f308fb3d16faf7a8b": {
+  "table": "Table in ACME LDAP Employee Directory: page 2",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Topic",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " · ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.1",
+     "type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "type": "EmailAddress"
+    }
+   ],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "c3 Engineering / operating contact contains engineering contacts with varying formats including multiple persons and conditions e.g. 'Kim / Mahesh for engineering defects' and 'Jonathan; Ben for infrastructure issues' with no separate columns for person, role or condition so KNOWS_ABOUT cannot be reliably mapped.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.1",
+     "link": "KNOWS_ABOUT",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [
+      {
+       "field": "role",
+       "value": "point_of_contact"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "link": "HAS_ALIAS",
+     "row_is": "from",
+     "from_column": "c2.1",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "EmailAddress"
+    }
+   ],
+   "reason": "Product contact pairs a Person with an EmailAddress for each Area and the email is an alias of the person while the person is a point of contact for the topic; engineering contact column is unstructured."
+  }
+ },
+ "1245a2afafa9da6940a84bc6": {
+  "table": "Table in ACME GitHub Engineering Activity: page 5",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "CodeOwnersRule",
+   "cell_parts": [
+    {
+     "column": "c3",
+     "parts": 2,
+     "separator": " ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "none",
+   "key_column": "c2",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c1",
+     "type": "Repository"
+    },
+    {
+     "column": "c3.1",
+     "type": "Account"
+    },
+    {
+     "column": "c3.2",
+     "type": "Account"
+    }
+   ],
+   "key_field": "pattern",
+   "fields": [
+    {
+     "column": "c2",
+     "field": "pattern"
+    },
+    {
+     "column": "c3",
+     "field": "owners"
+    }
+   ],
+   "schema_gap": "Column c1 Repository supplies a repository name for each CodeOwnersRule row but CodeOwnersRule has no repository field and no link to Repository is defined, so the repository information cannot be mapped.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Path scope is the CodeOwnersRule pattern key and Requested reviewers is the owners field, while Repository has no matching field or link."
+  }
+ },
+ "2f4c31028f1418045ee3821e": {
+  "table": "Table in ACME LDAP Employee Directory: LDAP groups and identity matching > Directory groups > Identity fields used to join systems",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists LDAP attribute names with their meanings/typical values and contains no columns that name records of the listed types.",
+   "_verdict": "rejected"
+  }
+ },
+ "04df91638605752c13f2001a": {
+  "table": "Table in ACME GitHub Engineering Activity: GitHub engineering activity > Repository directory",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Repository",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "name",
+   "fields": [],
+   "schema_gap": "c2 Product area and c3 Includes state a product area association and included features respectively, but no Repository field or link for product area or includes exists in the schema.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row describes one repository with its product area and includes. c1 is the Repository name key and c2 and c3 describe product area and includes with no matching Repository field or link."
+  }
+ },
+ "bfb75fe549f5f7f617ce98e4": {
+  "table": "Table in ACME LDAP Employee Directory: LDAP groups and identity matching > Directory groups",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Group",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "handle",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "handle"
+    }
+   ],
+   "schema_gap": "c2 'Scope / access' contains free-text descriptions of access and permissions that are not mapped to any Group field or link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "The table lists directory groups with a scope/access description per row. c1 is the group's handle identifying the record and c2 is descriptive scope text with no matching Group field."
+  }
+ },
+ "4d6b6517172f15f2f685d7e2": {
+  "table": "Table in ACME GitHub Engineering Activity: Ownership and event references > Current review routing > Shared integration touchpoints",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "Columns Relevant event / field and Downstream concern state per Service a relevant event/field reference and a downstream concern, but no listed Service field or link can hold event/field references or downstream concerns.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Component is the Service row identifier and the other two columns describe event references and downstream concerns that are not represented by the listed Service fields or links."
+  }
+ },
+ "7b58ad385b7434595f0ad138": {
+  "table": "Table in ACME GitHub Engineering Activity: Ownership and event references > Current review routing > Dated ownership changes",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Handover",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists dated ownership changes; each row is a handover event with effective date, change description and supporting GitHub record.",
+   "fields": [],
+   "links": [],
+   "_verdict": "rejected"
+  }
+ },
+ "778bcc778b2b7c411e18063b": {
+  "table": "Table in ACME GitHub Engineering Activity: GitHub engineering activity > Module and file reference",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2",
+     "type": "Repository"
+    },
+    {
+     "column": "c3",
+     "type": "File"
+    }
+   ],
+   "key_field": "none",
+   "fields": [],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2",
+     "link": "OWNS_PATH",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Repository"
+    },
+    {
+     "column": "c3",
+     "link": "PART_OF",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "File"
+    }
+   ],
+   "reason": "The table lists a Service Module with its Repository and its Primary file, which is read as a Service OWNS_PATH Repository link and a File PART_OF Service link."
+  }
+ },
+ "09ef926a1bd69c11fccc7b97": {
+  "table": "Table in ACME LDAP Employee Directory: Product, finance and business directory > Product managers and business contacts",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Person",
+   "cell_parts": [
+    {
+     "column": "c1",
+     "parts": 3,
+     "separator": "",
+     "pattern": "^(E\\d+)\\s+(.+?)\\s*/\\s*(.+)$"
+    }
+   ],
+   "name_column": "c1.2",
+   "key_column": "c1.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c3",
+     "type": "Person"
+    },
+    {
+     "column": "c4",
+     "type": "EmailAddress"
+    }
+   ],
+   "key_field": "person_id",
+   "fields": [
+    {
+     "column": "c1.2",
+     "field": "preferred_name"
+    },
+    {
+     "column": "c2",
+     "field": "title"
+    }
+   ],
+   "schema_gap": "Column c1.3 contains a role/code identifier such as pm-orders with no matching Person field or listed link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c3",
+     "link": "REPORTS_TO",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c4",
+     "link": "HAS_ALIAS",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "EmailAddress"
+    }
+   ],
+   "reason": "Table lists employees with ID, name, handle, responsibility, manager and email. Column meanings are taken from the table heading, header and sample rows, with c1 split into id/name/code and c3/c4 naming Person/EmailAddress records."
+  }
+ },
+ "0c8c826d040cc4a3d65b598d": {
+  "table": "Table in ACME GitHub Engineering Activity: Selected Git commit log > Commit records",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Commit",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "c2",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c3",
+     "type": "Account"
+    },
+    {
+     "column": "c4",
+     "type": "PullRequest"
+    },
+    {
+     "column": "c5",
+     "type": "File"
+    }
+   ],
+   "key_field": "sha",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "committed_at"
+    },
+    {
+     "column": "c2",
+     "field": "sha"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c3",
+     "link": "AUTHORED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c4",
+     "link": "CONTAINS",
+     "row_is": "to",
+     "from_column": "c4",
+     "other_key_field": "number",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "PullRequest"
+    },
+    {
+     "column": "c5",
+     "link": "CHANGES",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "path",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "File"
+    }
+   ],
+   "reason": "The table is a commit log where each row is a Commit identified by SHA with author account, pull request and changed file. Date mapped to committed_at and SHA to sha for Commit records; Author links via AUTHORED_BY, PR via CONTAINS, File changed via CHANGES as indicated by headers."
+  }
+ },
+ "2a066384bd8382530620829a": {
+  "table": "Table in ACME GitHub Engineering Activity: Pull requests and approvals > PR activity ledger",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "PullRequest",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c5",
+   "key_column": "c2.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.2",
+     "type": "Service"
+    },
+    {
+     "column": "c3",
+     "type": "Account"
+    },
+    {
+     "column": "c4",
+     "type": "Account"
+    }
+   ],
+   "key_field": "number",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "merged_at"
+    },
+    {
+     "column": "c2.1",
+     "field": "number"
+    }
+   ],
+   "schema_gap": "Column c5 Change contains a free-text change description with no matching PullRequest field or link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.2",
+     "link": "ABOUT",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Service"
+    },
+    {
+     "column": "c3",
+     "link": "AUTHORED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c4",
+     "link": "APPROVED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": ",",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    }
+   ],
+   "reason": "The ledger lists merged pull requests with merge date, module, author, approvers and title. Mapped merged date, PR number, service about link, author and approvers from the ledger columns."
+  }
+ },
+ "62861c03a3d655048e3c5f89": {
+  "table": "Table in ACME LDAP Employee Directory: Employee directory — LDAP > Engineering directory",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Person",
+   "cell_parts": [
+    {
+     "column": "c1",
+     "parts": 3,
+     "separator": "",
+     "pattern": "^(E\\d+)\\s+(.+?)\\s+/\\s+(.+)$"
+    },
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    },
+    {
+     "column": "c4",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c1.2",
+   "key_column": "c1.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c3",
+     "type": "Person"
+    },
+    {
+     "column": "c2.1",
+     "type": "Role"
+    },
+    {
+     "column": "c2.2",
+     "type": "Group"
+    },
+    {
+     "column": "c4.1",
+     "type": "Account"
+    },
+    {
+     "column": "c4.2",
+     "type": "EmailAddress"
+    },
+    {
+     "column": "c1.3",
+     "type": "Group"
+    }
+   ],
+   "key_field": "person_id",
+   "fields": [
+    {
+     "column": "c1.2",
+     "field": "preferred_name"
+    },
+    {
+     "column": "c2.1",
+     "field": "title"
+    },
+    {
+     "column": "c4.2",
+     "field": "work_email"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c3",
+     "link": "REPORTS_TO",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c4.1",
+     "link": "HAS_ACCOUNT",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c1.3",
+     "link": "MEMBER_OF",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Group"
+    },
+    {
+     "column": "c2.2",
+     "link": "MEMBER_OF",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Group"
+    }
+   ],
+   "reason": "Table lists engineering employees with ID, name, role, team, manager and contact details. Mapping follows the stated column splits and the record-naming hints, using Person fields where no listed link fits and REPORTS_TO, HAS_ACCOUNT and MEMBER_OF where the table states those relations."
+  }
+ },
+ "fc7230f224da78ec72b196af": {
+  "table": "Table in ACME GitHub Engineering Activity: Ownership and event references > Current review routing",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "File",
+   "cell_parts": [
+    {
+     "column": "c3",
+     "parts": 2,
+     "separator": " ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c2",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c1",
+     "type": "Repository"
+    },
+    {
+     "column": "c3.1",
+     "type": "Account"
+    },
+    {
+     "column": "c3.2",
+     "type": "Account"
+    }
+   ],
+   "key_field": "path",
+   "fields": [
+    {
+     "column": "c2",
+     "field": "path"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c1",
+     "link": "PART_OF",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Repository"
+    },
+    {
+     "column": "c3",
+     "link": "APPROVER_FOR",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "space",
+     "fields": [],
+     "fixed": [
+      {
+       "field": "kind",
+       "value": "default_reviewer"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    }
+   ],
+   "reason": "Each row names a file or folder path scope within a repository and lists the requested reviewer accounts, matching a File record with Repository and Account references. The table lists a File per row via its path scope, links each File to its Repository via PART_OF and to two reviewer Accounts via APPROVER_FOR with default reviewer semantics."
+  }
+ },
+ "522ec1322f27492ba65b2aef": {
+  "table": "Table in ACME LDAP Employee Directory: Service stewardship and history > Current component steward register",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.1",
+     "type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "type": "Account"
+    },
+    {
+     "column": "c3",
+     "type": "Person"
+    }
+   ],
+   "key_field": "name",
+   "fields": [],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.1",
+     "link": "OWNED_BY",
+     "row_is": "from",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [
+      {
+       "column": "c4",
+       "field": "valid_from"
+      }
+     ],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "link": "HAS_ACCOUNT",
+     "row_is": "from",
+     "from_column": "c2.1",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Account"
+    },
+    {
+     "column": "c3",
+     "link": "REPORTS_TO",
+     "row_is": "from",
+     "from_column": "c2.1",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    }
+   ],
+   "reason": "The table lists modules with their current steward, manager and effective date, so each row is a Service named by Module. The table lists a Service by name with its steward Person and Account and the steward’s manager, with Effective as the ownership start date, matching OWNED_BY, HAS_ACCOUNT and REPORTS_TO."
+  }
+ },
+ "a516531cf86a70bbd4676268": {
+  "table": "Table in ACME LDAP Employee Directory: Service stewardship and history > Current component steward register > Change history",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Person",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " · ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c2.1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.2",
+     "type": "Service"
+    }
+   ],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c2.1",
+     "field": "preferred_name"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.2",
+     "link": "OWNED_BY",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [
+      {
+       "column": "c3",
+       "field": "aspect"
+      }
+     ],
+     "fixed": [],
+     "period": {
+      "column": "c1",
+      "from_words": [
+       "From"
+      ],
+      "to_words": [
+       "Before"
+      ]
+     },
+     "other_type": "Service"
+    }
+   ],
+   "reason": "Table lists stewardship assignments with period, person and service module per row. The change history lists a person and a service per row with a period and a stewardship description, which maps to Service OWNED_BY Person with period and aspect."
+  }
+ },
+ "c545fcaf0b1902fcd97025ea": {
+  "table": "Table in ACME LDAP Employee Directory: Product, finance and business directory > Product managers and business contacts > Team and escalation structure",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Topic",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": " · ",
+     "pattern": ""
+    },
+    {
+     "column": "c3",
+     "parts": 2,
+     "separator": "",
+     "pattern": "^(.*?)(?: / |; | · | for )(.*)$"
+    }
+   ],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.1",
+     "type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "type": "EmailAddress"
+    },
+    {
+     "column": "c3.1",
+     "type": "Person"
+    }
+   ],
+   "key_field": "name",
+   "fields": [],
+   "schema_gap": "c3 mixes Person·EmailAddress rows with Person/Person for condition rows and uses both '/' and ';' separators for multiple persons, so HAS_ALIAS for engineering contacts and a consistent KNOWS_ABOUT condition cannot be reliably mapped from c3.1/c3.2.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.1",
+     "link": "KNOWS_ABOUT",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [
+      {
+       "field": "role",
+       "value": "point_of_contact"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c2.2",
+     "link": "HAS_ALIAS",
+     "row_is": "from",
+     "from_column": "c2.1",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "EmailAddress"
+    },
+    {
+     "column": "c3.1",
+     "link": "KNOWS_ABOUT",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "/",
+     "fields": [
+      {
+       "column": "c3.2",
+       "field": "condition"
+      }
+     ],
+     "fixed": [
+      {
+       "field": "role",
+       "value": "escalation"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    }
+   ],
+   "reason": "Product contact clearly maps to KNOWS_ABOUT point_of_contact with HAS_ALIAS email, while engineering contact format is inconsistent."
+  }
+ },
+ "dd9ecb5e6affffdb2733ccf6": {
+  "table": "Table in Customer Communications | ACME Commerce: Customer Communications > Signals we publish",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists signal terms with required meaning descriptions and contains no columns naming records of listed types.",
+   "_verdict": "rejected"
+  }
+ },
+ "1e7b2790eb5a6efb5333a449": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 4. Cancellations, refunds, partial adjustments and disputes > Financial status language",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists financial status terms and their meanings, with no column naming records of a listed type.",
+   "_verdict": "rejected"
+  }
+ },
+ "ad60ace7ac915340231462f1": {
+  "table": "Table in Inventory & Availability | ACME Commerce: Inventory & Availability > Signals we publish",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists signal terms with their required meaning information and does not name records of the listed types.",
+   "_verdict": "rejected"
+  }
+ },
+ "0215361d3eb40bd3ec766a9a": {
+  "table": "Table in Order Management | ACME Commerce: Order Management > Signals we publish",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table defines signal terms and their required meanings with no columns naming records of the listed types.",
+   "_verdict": "rejected"
+  }
+ },
+ "a5ddf36fb6f6c60e309ba568": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 5. Tax, invoices, settlement and finance controls > Financial model and integration constraints",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table presents terms with explanatory meanings and no column names a record type from the list.",
+   "_verdict": "rejected"
+  }
+ },
+ "33ad816a9afec291d2824d97": {
+  "table": "Table in Analytics & Reporting | ACME Commerce: Analytics & Reporting > When our team is involved",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists triggers, required context and team actions as descriptive text and no column names records of a listed type.",
+   "_verdict": "rejected"
+  }
+ },
+ "c409842c44e96d86e5fa9a5d": {
+  "table": "Table in Inventory & Availability | ACME Commerce: Inventory & Availability > When our team is involved",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "No column names a record type from the listed types, so the table is read as ordinary descriptive text.",
+   "_verdict": "rejected"
+  }
+ },
+ "202de1c1f487046fd0da1612": {
+  "table": "Table in Analytics & Reporting | ACME Commerce: Analytics & Reporting > Signals we publish",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table presents signal terms with their required meaning as a terms-and-meanings layout and no column names a listed record type.",
+   "_verdict": "rejected"
+  }
+ },
+ "125ce8d2ff81b5b9477e38e4": {
+  "table": "Table in Order Management | ACME Commerce: Order Management > When our team is involved",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists triggers, required context and team actions as descriptive text and no column names a record type from the provided list.",
+   "_verdict": "rejected"
+  }
+ },
+ "1b1fe949c2e7cd980fac74d9": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > Workflow triggers and team handoffs > How work enters Payment & Billing",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists descriptive workflow triggers with required information and responses and does not name records of the listed types.",
+   "_verdict": "rejected"
+  }
+ },
+ "cdd8cb3f5bad17916bdbbc79": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 8. Operations records, roles and cross-team updates > Information that should travel with every package",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table presents record names with needed attributes as terms and meanings and no column references a listed record type.",
+   "_verdict": "rejected"
+  }
+ },
+ "c8892a2313777dbf5392061a": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > The purchase and payment journey",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table is a descriptive layout of journey steps with customer experience and financial outcome text and does not name records of a listed type.",
+   "_verdict": "rejected"
+  }
+ },
+ "43fae1957a9ed93dd8553323": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 7. Day-to-day operational cases > Other cases to protect",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Requirement",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "c2",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "title"
+    },
+    {
+     "column": "c2",
+     "field": "statement"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row is a requirement identified by its case name with a statement of what the new workflow must prevent. c1 holds the requirement name/title and c2 holds its statement as per the shape description, with no key column or links identified."
+  }
+ },
+ "5fe9d62cd08bda8b7e18e567": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 6. Team access, audit and support operations > Recent transaction examples to design against",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Incident",
+   "cell_parts": [
+    {
+     "column": "c1",
+     "parts": 2,
+     "separator": " / ",
+     "pattern": ""
+    }
+   ],
+   "name_column": "c1.2",
+   "key_column": "c1.1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c2",
+     "field": "timeline"
+    }
+   ],
+   "schema_gap": "Columns c1.1 and c1.2 state a case identifier and case descriptor for each Incident, but no Incident field or link is defined to hold a case reference.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row provides a case identifier with a descriptive label and a narrative of sequence and product consequence that describes a transaction problem, matching an incident record. c2 contains ordered steps with times matching timeline while c1.1 and c1.2 provide case identifiers and descriptors with no matching Incident field or link."
+  }
+ },
+ "aacd82382a04c91f621de01c": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > Workflow triggers and team handoffs > Event information and idempotency",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table presents signal names with payload descriptions and shared controls as specification text and no column names records of a listed type.",
+   "_verdict": "rejected"
+  }
+ },
+ "c5db3e1b7256875739af4bfd": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > The warehouse-to-delivery journey",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table lists stage terms with descriptive actions and meanings and contains no columns that name records of listed types.",
+   "_verdict": "rejected"
+  }
+ },
+ "aed99bc4893d5079ea0d7d9d": {
+  "table": "Table in Customer Communications | ACME Commerce: Customer Communications > When our team is involved",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Guideline",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "applies_to"
+    },
+    {
+     "column": "c2",
+     "field": "check_hint"
+    }
+   ],
+   "schema_gap": "Column c3 describes what the team does with no matching Guideline field or link; a statement/description field is missing.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row defines a communication rule for a trigger with required context and team action, matching a Guideline record named by its trigger title. Trigger maps to applies_to and context maps to a check hint, while the action column lacks a matching Guideline field."
+  }
+ },
+ "a5961f54d8c7bf649282eaa2": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > Workflow triggers and team handoffs > What starts warehouse and shipping work",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "No column names a record type from the listed types; the table is descriptive workflow guidance about triggers, context and actions.",
+   "_verdict": "rejected"
+  }
+ },
+ "fc02411eb32125a2c1422597": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 6. Team access, audit and support operations > Critical cases we must test",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "TestCase",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "name",
+   "fields": [],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "The table lists test cases with a case name and an expected product behavior description per row. c1 is the TestCase name column and c2 contains expected behavior descriptions with no framework path suite fields or links to map."
+  }
+ },
+ "2f0a8a12c68f598d04b1b1bd": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 5. Carrier release, custody and 30-minute cancellation protection > Mandatory release decision",
+  "model": "",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Requirement",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "c2",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "title"
+    },
+    {
+     "column": "c2",
+     "field": "acceptance_criteria"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "The table lists six release gates as separate requirements with a title and a required outcome statement. c1 holds the requirement name which is the title and c2 holds the release conditions which match acceptance criteria."
+  }
+ },
+ "46f29803be5b36ea3c073d9e": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 8. Operations records, roles and cross-team updates > Cross-team handoffs",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "name",
+   "fields": [],
+   "schema_gap": "c2 lists what must stay in sync for each Partner, which is a cross-team handoff requirement not representable by any listed Service field or link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row names a partner service and lists what must stay in sync with it. c1 is the Service name column and c2 contains free-text sync items with no matching Service field or link."
+  }
+ },
+ "93cc7ba38a63b1528c397d43": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 3. Packing accuracy, weight and high-value controls > Representative package",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "none",
+   "row_type": "none",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "none",
+   "statement_column": "none",
+   "columns": [],
+   "entity_name": "",
+   "reason": "The table contains field labels and values/issues with no columns naming records of a listed type, so it is treated as ordinary text.",
+   "_verdict": "rejected"
+  }
+ },
+ "e9a10bb7fff2ee33c5e4e419": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > 3. Authorization, fraud review and package-level capture > Processor interaction",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Requirement",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "c3",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "title",
+   "fields": [
+    {
+     "column": "c3",
+     "field": "acceptance_criteria"
+    }
+   ],
+   "schema_gap": "Column c2 lists key reference identifiers such as order_intent_id, auth_id, amount, package_id, allocation, operation key, capture_id, original tender share, line/package links, processor_operation_id, state, occurred_at with no Requirement field or link to capture them.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "The table enumerates processor interaction verification requirements, each row is a Requirement named by Action with its statement in What we must verify. c1 is the requirement name used as key, c3 holds the verification conditions matching acceptance_criteria, and c2 contains reference identifiers with no matching schema."
+  }
+ },
+ "acf9b85cf7bc24c00fd0791c": {
+  "table": "Table in Payment & Billing | Product Requirements: Payment & Billing > Cross-team handoffs",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "name",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "name"
+    }
+   ],
+   "schema_gap": "Column c2 states the data Payment & Billing provides to or depends on from each partner Service in c1, a cross-team handoff relation, but no link type is defined to represent handoffs between Service records.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "The table lists a partner service per row with a description of what is provided or depended on. c1 holds the Service name field and c2 describes an unmapped handoff relation with no matching field or link."
+  }
+ },
+ "ae150b61d81142096814f2c4": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > 7. Day-to-day operational cases > O-8201: captured and handed to carrier before the cancellation window ended",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Activity",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "c1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "none",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "at"
+    },
+    {
+     "column": "c2",
+     "field": "reason"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Table lists timestamped operational events for case O-8201; each row is an Activity identified by Time. Time is the activity timestamp and What happened is the free-text reason for the activity.",
+   "_verdict": "rejected"
+  }
+ },
+ "77536934de8bfa23f1a37520": {
+  "table": "Table in Shipment & Operations | Product Requirements: Shipment & Operations > Workflow triggers and team handoffs > Signals our team sends to others",
+  "model": "",
+  "registry": "aef4e296f22726822169c04bc937ccafd0ad890cf275ad8087d80d4b48023033",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Activity",
+   "cell_parts": [],
+   "name_column": "none",
+   "key_column": "c1",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [],
+   "key_field": "verb",
+   "fields": [],
+   "schema_gap": "Column c2 lists signal-specific required fields such as task_id, package_id, node_id, order_version, etc., and purpose descriptions that do not correspond to any Activity field or listed link.",
+   "label_fields": [],
+   "label_links": [],
+   "links": [],
+   "reason": "Each row is an outgoing signal activity identified by its signal name in c1. Outgoing signal is used as the Activity verb to identify the row and the purpose/required fields column contains signal-specific metadata with no matching Activity field or link."
+  }
+ },
+ "fc24002c856e0acc2e34b566": {
+  "table": "Table in ACME GitHub Engineering Activity: Module contribution summary > Contributions by code area",
+  "model": "",
+  "registry": "42d6c8ea33e332e79215290937abf8f60176ac4e18d3730477f53ba225a272db",
+  "answer": {
+   "shape": "rows",
+   "row_type": "Service",
+   "cell_parts": [
+    {
+     "column": "c2",
+     "parts": 2,
+     "separator": "",
+     "pattern": "(\\S+) (\\d+)"
+    },
+    {
+     "column": "c3",
+     "parts": 2,
+     "separator": "",
+     "pattern": "(\\S+) (\\d+)"
+    }
+   ],
+   "name_column": "c1",
+   "key_column": "none",
+   "statement_column": "none",
+   "entity_name": "",
+   "columns": [
+    {
+     "column": "c2.1",
+     "type": "Person"
+    },
+    {
+     "column": "c3.1",
+     "type": "Person"
+    },
+    {
+     "column": "c4",
+     "type": "PullRequest"
+    }
+   ],
+   "key_field": "name",
+   "fields": [
+    {
+     "column": "c1",
+     "field": "name"
+    }
+   ],
+   "schema_gap": "",
+   "label_fields": [],
+   "label_links": [],
+   "links": [
+    {
+     "column": "c2.1",
+     "link": "CONTRIBUTED_TO",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [
+      {
+       "column": "c2.2",
+       "field": "count"
+      }
+     ],
+     "fixed": [
+      {
+       "field": "kind",
+       "value": "commits"
+      },
+      {
+       "field": "rank",
+       "value": "1"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c3.1",
+     "link": "CONTRIBUTED_TO",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "none",
+     "split": "none",
+     "fields": [
+      {
+       "column": "c3.2",
+       "field": "count"
+      }
+     ],
+     "fixed": [
+      {
+       "field": "kind",
+       "value": "commits"
+      },
+      {
+       "field": "rank",
+       "value": "2"
+      }
+     ],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "Person"
+    },
+    {
+     "column": "c4",
+     "link": "ABOUT",
+     "row_is": "to",
+     "from_column": "row",
+     "other_key_field": "number",
+     "split": "none",
+     "fields": [],
+     "fixed": [],
+     "period": {
+      "column": "none",
+      "from_words": [],
+      "to_words": []
+     },
+     "other_type": "PullRequest"
+    }
+   ],
+   "reason": "c1 is the Service name, c2.1/c3.1 name Persons who contributed with counts in c2.2/c3.2 and rank fixed by header, and c4 names a PullRequest about the Service."
+  }
+ }
+}
